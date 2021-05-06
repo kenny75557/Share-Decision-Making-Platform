@@ -1,12 +1,8 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+醫病共享平台：基於 Share Decision Making概念的網頁應用程式，具備之功能應用在共享決策的各個階段，提供比起以往紙本問卷更加方便且有效率的方式，使得在醫師方面，能夠快速新增各類疾病表單供病患參閱填寫，也提供一個容易管理的環境來管理病歷，並能同時與病患溝通瞭解其想法，來做為診斷的輔助。
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+
 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
