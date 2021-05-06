@@ -1,0 +1,62 @@
+﻿@model SDMProject.Models.Kidplaza
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h2>刪除病歷</h2>
+    <hr />
+
+    病歷號碼：
+    @Html.DisplayFor(model => model.PatientID)
+    <br>
+    治療方法：
+    @Html.DisplayFor(model => model.Pattern)
+    <br>
+    <br>
+    @*1.接受手術治療，傷口會疼痛，復原需要時間。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+    2.接受放射治療的效果等同手術治療，雖然沒有割除腫瘤，但陰道會乾澀且影響性生活。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+    3.接受放射治療，卵巢亦有可能遭受輻射傷害。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+    4.進行手術治療之後，有可能產生暫時性或慢性膀胱與腸道功能障礙。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+    5.進行骨盆腔淋巴廓清手術之後，有可能發生淋巴水腫的副作用。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+    6.接受放射治療，我必須分階段，經過至少 5 次的治療。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition6)
+    <br>
+    7.我已經確認好想要的治療方式，我決定選擇：（下列擇一）
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    8.我目前還無法決定
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Determine)
+    @Html.DisplayFor(model => model.Text)
+    @Html.DisplayFor(model => model.Text2)
+    <br>
+    <br>*@
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="刪除" class="btn btn-outline-primary" />
+            <span class="btn btn-outline-primary">@Html.ActionLink("返回清單", "Index","Patients")</span>
+        </div>
+    }
+</div>

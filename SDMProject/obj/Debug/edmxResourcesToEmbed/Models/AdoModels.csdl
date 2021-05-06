@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SDMdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AircutList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degree1" Type="Int32" />
+    <Property Name="Degree2" Type="Int32" />
+    <Property Name="Degree3" Type="Int32" />
+    <Property Name="Degree4" Type="Int32" />
+    <Property Name="Degree5" Type="Int32" />
+    <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Token" Type="Int32" />
+    <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dr_token" Type="Int32" />
+    <Property Name="Patient_token" Type="Int32" />
+    <Property Name="checkAnsTure" Type="Int32" />
+    <Property Name="checkAnsWrong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Kidney">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Degree1" Type="Int32" />
+    <Property Name="Degree2" Type="Int32" />
+    <Property Name="Degree3" Type="Int32" />
+    <Property Name="Degree4" Type="Int32" />
+    <Property Name="Degree5" Type="Int32" />
+    <Property Name="Degree6" Type="Int32" />
+    <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yesno3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Token" Type="Int32" />
+    <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dr_token" Type="Int32" />
+    <Property Name="Patient_token" Type="Int32" />
+    <Property Name="checkAnsTure" Type="Int32" />
+    <Property Name="checkAnsWrong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Kidplaza">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pattern" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degree1" Type="Int32" />
+    <Property Name="Degree2" Type="Int32" />
+    <Property Name="Degree3" Type="Int32" />
+    <Property Name="Degree4" Type="Int32" />
+    <Property Name="Degree5" Type="Int32" />
+    <Property Name="Degree6" Type="Int32" />
+    <Property Name="Degree7" Type="Int32" />
+    <Property Name="Degree8" Type="Int32" />
+    <Property Name="Degree9" Type="Int32" />
+    <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognition6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Text2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Text2Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Token" Type="Int32" />
+    <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dr_token" Type="Int32" />
+    <Property Name="Patient_token" Type="Int32" />
+    <Property Name="checkAnsTure" Type="Int32" />
+    <Property Name="checkAnsWrong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keypass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="DiseaseType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Form" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CheckMsg" Type="Int32" />
+    <Property Name="CheckFinish" Type="Int32" />
+    <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SDMdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AircutList" EntityType="Self.AircutList" />
+    <EntitySet Name="Kidney" EntityType="Self.Kidney" />
+    <EntitySet Name="Kidplaza" EntityType="Self.Kidplaza" />
+    <EntitySet Name="Login" EntityType="Self.Login" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" />
+    <EntitySet Name="sysdiagrams" EntityType="SDMdbModel.sysdiagrams" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

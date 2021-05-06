@@ -1,0 +1,103 @@
+﻿@model IPagedList<SDMProject.Models.Patient>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Show_All_Patient";
+}
+
+<html>
+<head>
+    <link href="~/Content/PagedList.css" />
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center; font-weight:bold;">病歷查詢</h2>
+    <br>
+
+    <table class="table" style="word-break:break-all; word-wrap:break-word;" align="center" valign="center">
+        <tr>
+            <th style="min-width:100px">醫師姓名</th>
+            <th style="min-width:100px">病歷號碼</th>
+            <th style="min-width:100px">病患姓名</th>
+            <th style="min-width:110px">看診日期</th>
+            <th style="min-width:60px">年齡</th>
+            <th style="min-width:80px">性別</th>
+            <th style="min-width:130px">表單類型</th>
+            <th style="min-width:70px"></th>
+            <th style="min-width:90px"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DrName)</td>
+                <td>@Html.DisplayFor(modelItem => item.PatientID)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                <td>@Html.DisplayFor(modelItem => item.Form)</td>
+                <td>
+                    @*<td>@Html.DisplayFor(modelItem => item.DrName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Form)</td>
+                        <td>*@
+                    @Html.ActionLink("詳情", "Details", new { id = item.ID })&ensp;
+                    @Html.ActionLink("編輯", "Edit", new { id = item.ID })&ensp;
+                    @Html.ActionLink("刪除", "Delete", new { id = item.ID })&ensp;
+                    @Html.ActionLink("所有", "Show_All_Patient", new { id = item.ID })&ensp;
+                    @Html.ActionLink("列印", "PrintForm", new { id = item.ID })&ensp;
+                    @if (item.Form == "子宮頸癌")
+                    {
+                        @Html.ActionLink("討論", "Kidplazas_Dr_QA", "Kidplazas", new { id = item.ID }, null)
+                    }
+                    @if (item.Form == "氣管造口術")
+                    {
+                        @Html.ActionLink("討論", "Aircut_Dr_QA", "AircutLists", new { id = item.ID }, null)
+                    }
+                    @if (item.Form == "慢性腎臟疾病")
+                    {
+                        @Html.ActionLink("討論", "Kidneys_Dr_QA", "Kidneys", new { id = item.ID }, null)
+                    }
+                </td>
+                <td>
+                    @if (item.CheckFinish == 1)
+                    {
+                        <span style="color:forestgreen">已完成</span>
+                    }
+                    @if (item.CheckFinish == 0)
+                    {
+                        <span style="color:red">未完成</span>
+                    }
+                    @if (item.CheckMsg == 1)
+                    {
+                        <span style="color:red;">*</span>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</body>
+</html>

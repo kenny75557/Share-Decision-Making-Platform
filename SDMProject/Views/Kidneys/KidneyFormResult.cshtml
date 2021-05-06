@@ -1,0 +1,285 @@
+﻿@model SDMProject.Models.Kidney
+
+@{
+    ViewBag.Title = "KidneyForm";
+}
+
+
+@*病患介面*@
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.8;
+        }
+
+        #c01 {
+            font-weight: bolder;
+        }
+
+        #bt01 {
+            color: #00AA00;
+            font-weight: bolder;
+        }
+
+        #bt02 {
+            color: #FF0000;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center;font-weight:bold;">慢性腎臟疾病表單結果</h2>
+    <hr>
+
+    <div>
+        <span id="c01">病歷號碼：</span>
+        @Html.DisplayFor(model => model.PatientID)
+        <br>
+        <span id="c01">您想要選擇的治療方式：</span>
+        @Html.DisplayFor(model => model.Method)
+        <hr/>
+
+        <span id="c01">步驟二：</span>
+        <br>
+        <div style="width:100%;">
+            <canvas id="heyChart"></canvas>
+        </div>
+        <hr />
+
+        <span id="c01">步驟三：</span>
+        <br>
+        <span id="c01">@TempData["question1"]</span>
+        <br>
+        @if (TempData["right1"] != null)
+        {
+            <span id="bt01">@TempData["right1"]</span>
+        }
+        @if (TempData["wrong1"] != null)
+        {
+            <span id="bt02">@TempData["wrong1"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition1)
+        <br>
+
+        <span id="c01">@TempData["question2"]</span>
+        <br>
+        @if (TempData["right2"] != null)
+        {
+            <span id="bt01">@TempData["right2"]</span>
+        }
+        @if (TempData["wrong2"] != null)
+        {
+            <span id="bt02">@TempData["wrong2"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition2)
+        <br>
+
+        <span id="c01">@TempData["question3"]</span>
+        <br>
+        @if (TempData["right3"] != null)
+        {
+            <span id="bt01">@TempData["right3"]</span>
+        }
+        @if (TempData["wrong3"] != null)
+        {
+            <span id="bt02">@TempData["wrong3"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition3)
+        <br>
+
+        <span id="c01">@TempData["question4"]</span>
+        <br>
+        @if (TempData["right4"] != null)
+        {
+            <span id="bt01">@TempData["right4"]</span>
+        }
+        @if (TempData["wrong4"] != null)
+        {
+            <span id="bt02">@TempData["wrong4"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition4)
+        <br>
+
+        <span id="c01">@TempData["question5"]</span>
+        <br>
+        @if (TempData["right5"] != null)
+        {
+            <span id="bt01">@TempData["right5"]</span>
+        }
+        @if (TempData["wrong5"] != null)
+        {
+            <span id="bt02">@TempData["wrong5"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition5)
+        <br>
+
+        <span id="c01">@TempData["question6"]</span>
+        <br>
+        @if (TempData["right6"] != null)
+        {
+            <span id="bt01">@TempData["right6"]</span>
+        }
+        @if (TempData["wrong6"] != null)
+        {
+            <span id="bt02">@TempData["wrong6"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition6)
+        <br>
+
+        <span id="c01">@TempData["question7"]</span>
+        <br>
+        @if (TempData["right7"] != null)
+        {
+            <span id="bt01">@TempData["right7"]</span>
+        }
+        @if (TempData["wrong7"] != null)
+        {
+            <span id="bt02">@TempData["wrong7"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition7)
+        <br>
+
+        <span id="c01">@TempData["question8"]</span>
+        <br>
+        @if (TempData["right8"] != null)
+        {
+            <span id="bt01">@TempData["right8"]</span>
+        }
+        @if (TempData["wrong8"] != null)
+        {
+            <span id="bt02">@TempData["wrong8"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition8)
+        <br>
+
+        <span id="c01">@TempData["question5"]</span>
+        <br>
+        @if (TempData["right9"] != null)
+        {
+            <span id="bt01">@TempData["right9"]</span>
+        }
+        @if (TempData["wrong9"] != null)
+        {
+            <span id="bt02">@TempData["wrong9"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition9)
+        <br>
+
+        <span id="c01">@TempData["question10"]</span>
+        <br>
+        @if (TempData["right10"] != null)
+        {
+            <span id="bt01">@TempData["right10"]</span>
+        }
+        @if (TempData["wrong10"] != null)
+        {
+            <span id="bt02">@TempData["wrong10"]</span>
+        }
+        您的答案：@Html.DisplayFor(model => model.Cognition10)
+        <br>
+
+        <div style="width:50%;">
+            <canvas id="TFChart"></canvas>
+        </div>
+        <hr />
+
+        <span id="c01">步驟四：</span>
+        <br>
+        <span id="c01">11.我已經了解有腹膜透析治療有 2 種方式。</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Yesno1)
+        <br>
+        <span id="c01">12.我已經了解不同腹膜透析治療方式的優缺點。</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Yesno2)
+        <br>
+        <span id="c01">13.我已經有足夠的知識可以做決定。</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Yesno3)
+        <br>
+        <span id="c01">14.我做決定前，有想要在了解腹膜透析治療方式：</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Decision)
+        <br>
+        <span id="c01">15.我有多麼確定自己的抉擇：</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Determine)
+        <br>
+        <span id="c01">16.我還有問題，想和我的醫師及護人員再次討論清楚。</span>
+        <br>
+        您的答案：@Html.DisplayFor(model => model.Text)
+        <br>
+        <br>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+        @*@Html.ActionLink("返回清單", "Index")*@
+
+        <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["生活自由在意度", "白天影響", "白天不方便", "睡覺不不能適應", "不想頻繁往返透析中心", "人工或自動"],
+            datasets: [{
+                label: '慢性腎臟疾病',
+                data: [ @Html.DisplayFor(model => model.Degree1), @Html.DisplayFor(model => model.Degree2), @Html.DisplayFor(model => model.Degree3), @Html.DisplayFor(model => model.Degree4), @Html.DisplayFor(model => model.Degree5), @Html.DisplayFor(model => model.Degree6)],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+
+        <script>
+        var tx = document.getElementById("TFChart");
+        var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '慢性腎臟疾病',
+                data: [@Html.DisplayFor(model => model.checkAnsTure), @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+    </div>
+</body>
+</html>

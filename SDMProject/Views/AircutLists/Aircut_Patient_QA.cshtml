@@ -1,0 +1,305 @@
+﻿@model SDMProject.Models.AircutList
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        body {
+            line-height: 1.8;
+        }
+
+        #Header01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-bottom: 6px;
+            border-radius: 10px;
+        }
+
+        #Sidebar01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-top: 6px;
+            margin-right: 2px;
+            border-radius: 10px;
+            width: 49%;
+            height: 1000px;
+            float: left;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        #Body01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-top: 6px;
+            margin-left: 2px;
+            border-radius: 10px;
+            width: 49%;
+            height: 1000px;
+            float: right;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        #c01 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h4>病歷號碼：@Html.DisplayFor(model => model.PatientID)</h4>
+    <hr />
+
+    <form action="/AircutLists/Aircut_Patient_QA" method="post">
+        @Html.AntiForgeryToken()
+        <div id="Header01">
+            <span id="c01">開立醫師：</span>
+            @TempData["QA_patient_Detail_DrName"]
+            <br>
+            <span id="c01">病患姓名：</span>
+            @TempData["QA_patient_Detail_Name"]
+            <br>
+            <span id="c01">創建日期：</span>
+            @TempData["QA_patient_Detail_Date"]
+            <br>
+            <span id="c01">病患年齡：</span>
+            @TempData["QA_patient_Detail_Age"]
+            <br>
+            <span id="c01">病患性別：</span>
+            @TempData["QA_patient_Detail_Gender"]
+            <br>
+            <span id="c01">表單類別：</span>
+            @TempData["QA_patient_Detail_Form"]
+            <br>
+            <span id="c01">您目前想要的治療方式是：</span>
+            @Html.DisplayFor(model => model.Method)
+            <br>
+            <hr />
+
+            <span id="c01">步驟二：</span>
+            <br>
+            <div style="width:100%;">
+                <canvas id="heyChart"></canvas>
+            </div>
+            <hr />
+
+            <span id="c01">步驟三：</span>
+            <br>
+            <span id="c01">1.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口會增加住院天數？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Cognition1)
+            <br>
+            <span id="c01">2.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸會較穩定？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Cognition2)
+            <br>
+            <span id="c01">3.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，方式費用較高？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Cognition3)
+            <br>
+            <span id="c01">4.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人平均存活率較高？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Cognition4)
+            <br>
+            <span id="c01">5.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸狀態預後較好？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Cognition5)
+            <br>
+            <div style="width:50%;">
+                <canvas id="TFChart"></canvas>
+            </div>
+            <hr />
+
+            <span id="c01">步驟四：</span>
+            <br>
+            <span id="c01">6.我已經清楚知道有哪些治療的選擇</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Yesno1)
+            <br>
+            <span id="c01">7.我清楚知道不同治療方式的優點和缺點</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Yesno2)
+            <br>
+            <span id="c01">8.我已經接受足夠的知識及建議可以做決定</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Yesno3)
+            <br>
+            <span id="c01">9.我做決定前還需要：</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Decision)
+            <br>
+            <span id="c01">10.我對於自己的決定有多確定？</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Determine)
+            <br>
+            <span id="c01">11.我還有想和醫師討論的問題：</span>
+            <br>
+            您的答案：@Html.DisplayFor(model => model.Text)
+            <br>
+        </div>
+
+        <div id="Sidebar01">
+            <h4 id="c01" style="text-align:center;">醫師的回覆</h4>
+            <hr />
+            @if (Model.Ans1 != null)
+            {
+                @Html.DisplayFor(model => model.Ans6)
+                <span id="c01">回覆一：</span>
+                <br>@Html.DisplayFor(model => model.Ans1)
+                <br>
+            }
+            @if (Model.Ans2 != null)
+            {
+                @Html.DisplayFor(model => model.Ans7)
+                <span id="c01">回覆二：</span>
+                <br>@Html.DisplayFor(model => model.Ans2)
+                <br>
+            }
+            @if (Model.Ans3 != null)
+            {
+                @Html.DisplayFor(model => model.Ans8)
+                <span id="c01">回覆三：</span>
+                <br>@Html.DisplayFor(model => model.Ans3)
+                <br>
+            }
+            @if (Model.Ans4 != null)
+            {
+                @Html.DisplayFor(model => model.Ans9)
+                <span id="c01">回覆四：</span>
+                <br>@Html.DisplayFor(model => model.Ans4)
+                <br>
+            }
+            @if (Model.Ans5 != null)
+            {
+                @Html.DisplayFor(model => model.Ans10)
+                <span id="c01">回覆五：</span>
+                <br>@Html.DisplayFor(model => model.Ans5)
+                <br>
+            }
+
+            <hr />
+            <span id="c01">討論結果：</span>
+            @if (Model.Result != null)
+            {
+                @Html.DisplayFor(model => model.Result)
+            }
+        </div>
+
+        <div id="Body01">
+            <h4 id="c01" style="text-align:center;">病患的問題</h4>
+            <hr />
+            @if (Model.Ques1 != null)
+            {
+                @Html.DisplayFor(model => model.Ques6)
+                <span id="c01">問題一：</span>
+                <br>@Html.DisplayFor(model => model.Ques1)
+                <br>
+            }
+            @if (Model.Ques2 != null)
+            {
+                @Html.DisplayFor(model => model.Ques7)
+                <span id="c01">問題二：</span>
+                <br>@Html.DisplayFor(model => model.Ques2)
+                <br>
+            }
+            @if (Model.Ques3 != null)
+            {
+                @Html.DisplayFor(model => model.Ques8)
+                <span id="c01">問題三：</span>
+                <br>@Html.DisplayFor(model => model.Ques3)
+                <br>
+            }
+            @if (Model.Ques4 != null)
+            {
+                @Html.DisplayFor(model => model.Ques9)
+                <span id="c01">問題四：</span>
+                <br>@Html.DisplayFor(model => model.Ques4)
+                <br>
+            }
+            @if (Model.Ques5 != null)
+            {
+                @Html.DisplayFor(model => model.Ques10)
+                <span id="c01">問題五：</span>
+                <br>@Html.DisplayFor(model => model.Ques5)
+                <br>
+            }
+
+            <hr />
+            <span id="c01">留言內容：</span>
+            <br>
+            <textarea name="Patient_QA" style="width:100%; height:100px;"></textarea>
+            <br>
+            <input type="submit" value="送出" class="btn btn-outline-primary" />
+        </div>
+
+        <div style='clear:both;'></div>
+    </form>
+
+    <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["存活重要性", "日後照護", "治療風險", "治療費用", "治療所需時間"],
+            datasets: [{
+                label: '氣管造口術',
+                data: [@Html.DisplayFor(model => model.Degree1),@Html.DisplayFor(model => model.Degree2),@Html.DisplayFor(model => model.Degree3),@Html.DisplayFor(model => model.Degree4),@Html.DisplayFor(model => model.Degree5)],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    <script>
+    var tx = document.getElementById("TFChart");
+    var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '氣管開口術',
+                data: [ @Html.DisplayFor(model => model.checkAnsTure), @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>

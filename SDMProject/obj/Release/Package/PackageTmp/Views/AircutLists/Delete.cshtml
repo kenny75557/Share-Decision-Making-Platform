@@ -1,0 +1,72 @@
+﻿@model SDMProject.Models.AircutList
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h2>刪除病歷</h2>
+    <hr />
+
+    病歷號碼：
+    @Html.DisplayFor(model => model.PatientID)
+    <br>
+    治療方法：
+    @Html.DisplayFor(model => model.Method)
+    <br>
+    <br>
+    @*1.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口會增加住院天數？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+    2.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸會較穩定？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+    3.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，方式費用較高？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+    4.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人平均存活率較高？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+    5.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸狀態預後較好？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+    6.我已經清楚知道有哪些治療的選擇
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno1)
+    <br>
+    7.我清楚知道不同治療方式的優點和缺點
+    <br>
+    病患答案： @Html.DisplayFor(model => model.Yesno2)
+    <br>
+    8.我已經接受足夠的知識及建議可以做決定
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno3)
+    <br>
+    9.我做決定前還需要：
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    10.我對於自己的決定有多確定？
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Determine)
+    <br>
+    11.我還有想和醫師討論的問題：
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Text)
+    <br>
+    <br>*@
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="刪除" class="btn btn-outline-primary" />
+            <span class="btn btn-outline-primary">@Html.ActionLink("返回清單", "Index","Patients")</span>
+        </div>
+    }
+</div>

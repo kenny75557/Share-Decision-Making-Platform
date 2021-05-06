@@ -1,0 +1,80 @@
+﻿@model SDMProject.Models.Patient
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center; font-weight:bold;">建立新的病歷</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @*<span>醫師姓名：</span>
+            @Html.EditorFor(model => model.DrName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DrName, "", new { @class = "text-danger" })
+            <br>*@
+        <span>病歷號碼：</span>
+        @Html.EditorFor(model => model.PatientID, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+        <br>
+        <span>病患姓名：</span>
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        <br>
+        <span>身分證字號：</span>
+        @Html.EditorFor(model => model.DiseaseType, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DiseaseType, "", new { @class = "text-danger" })
+        <br>
+        <span>建立日期：</span>
+        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        <br>
+        <span>病患年齡：</span>
+        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        <br>
+        @*<span>疾病類型：</span>
+            @Html.EditorFor(model => model.DiseaseType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DiseaseType, "", new { @class = "text-danger" })
+            <br>*@
+        <span>病患性別：</span>
+        <select name="CheckPatientGender">
+            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            <option value="男">男</option>
+            <option value="女">女</option>
+            <option value="不公開">不公開</option>
+        </select>
+        <br>
+        <br>
+        <span>表單類型：</span>
+        <select name="CheckPatientForm">
+            @Html.ValidationMessageFor(model => model.Form, "", new { @class = "text-danger" })
+            <option value="子宮頸癌">子宮頸癌</option>
+            <option value="氣管造口術">氣管造口術</option>
+            <option value="慢性腎臟疾病">慢性腎臟疾病</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="建立" class="btn btn-outline-primary" />
+        <span>&emsp;</span>
+        <span class="btn btn-outline-primary"><a>@Html.ActionLink("返回清單", "Index")</a></span>
+    }
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

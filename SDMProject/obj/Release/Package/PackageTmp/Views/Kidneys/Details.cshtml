@@ -1,0 +1,205 @@
+﻿@model SDMProject.Models.Kidney
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.8;
+        }
+
+        #c01 {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center;font-weight:bold;">慢性腎臟疾病填表結果</h2>
+    <br>
+
+    <h4>病號號碼：@Html.DisplayFor(model => model.PatientID)</h4>
+    <hr />
+
+    <span id="c01">開立醫生：</span>
+    @TempData["kidney_Detail_DrName"]
+    <br>
+    <span id="c01">病患姓名：</span>
+    @TempData["kidney_Detail_Name"]
+    <br>
+    <span id="c01">身分證字號：</span>
+    @TempData["kidney_Detail_pID"]
+    <br>
+    <span id="c01">創建日期：</span>
+    @TempData["kidney_Detail_Date"]
+    <br>
+    <span id="c01">病患年齡：</span>
+    @TempData["kidney_Detail_Age"]
+    <br>
+    <span id="c01">病患性別：</span>
+    @TempData["kidney_Detail_Gender"]
+    <br>
+    <span id="c01">表單類別：</span>
+    @TempData["kidney_Detail_Form"]
+    <br>
+    <span id="c01">病患想要選擇的方式是：</span>
+    @Html.DisplayFor(model => model.Method)
+    <hr />
+
+    <span id="c01">步驟二：</span>
+    <br>
+    <div style="width:50%;">
+        <canvas id="heyChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟三：</span>
+    <br>
+    <span id="c01">1.腹膜透析治療分為人工洗和自動洗。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+    <span id="c01">2.選擇人工洗治療一天需換液3 ~ 5次，每次約20 ~ 30分。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+    <span id="c01">3.選擇自動洗治療一天只需上機一次，一次約8 ~ 10小時。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+    <span id="c01">4.接受人工洗或自動洗治療可至國內外旅遊。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+    <span id="c01">5.接受腹膜透析治療不限磷，需維持高蛋白質（1.2 ~ 1.5 gm/kg）。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+    <span id="c01">6.人工洗治療需要生活可獨立自理（矯正視力良好，可執行精細動作）或生活無法完全獨立自理有家人或外傭協助。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition6)
+    <br>
+    <span id="c01">7.腹膜透析場所需要無菌室。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition7)
+    <br>
+    <span id="c01">8.統計腹膜透析腹膜炎的感染途徑，最常見是「經導管內感染（Transuluminal），30 ~ 40%」，主要來自未注意無菌技術及不當的操作技術所造成。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition8)
+    <br>
+    <span id="c01">9.APD「自動洗」腹膜透析應該是居家透析治療的第一選擇。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition9)
+    <br>
+    <span id="c01">10.CAPD「人工洗」腹膜透析應該是居家透析治療的第一選擇。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition10)
+    <br>
+    <div style="width:25%;">
+        <canvas id="TFChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟四：</span>
+    <br>
+    <span id="c01">11.我已經了解有腹膜透析治療有 2 種方式。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno1)
+    <br>
+    <span id="c01">12.我已經了解不同腹膜透析治療方式的優缺點。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno2)
+    <br>
+    <span id="c01">13.我已經有足夠的知識可以做決定。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno3)
+    <br>
+    <span id="c01">14.我做決定前，有想要在了解腹膜透析治療方式：</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    <span id="c01">15.我有多麼確定自己的抉擇：</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Determine)
+    <br>
+    <span id="c01">16.我還有問題，想和我的醫師及護人員再次討論清楚。</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Text)
+    <br>
+    <br>
+    @*<span class="btn btn-outline-primary"><a>@Html.ActionLink("編輯", "Edit", new { id = Model.ID })</a></span>*@
+    <span class="btn btn-outline-primary"><a>@Html.ActionLink("返回清單", "Index", "Patients")</a></span>
+
+    <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["對自由在意程度", "白天影響", "白天不方便", "睡覺不不能適應", "不想頻繁往返透析中心","人工或自動"],
+            datasets: [{
+                label: '慢性腎臟疾病',
+                data: [ @Html.DisplayFor(model => model.Degree1), @Html.DisplayFor(model => model.Degree2), @Html.DisplayFor(model => model.Degree3), @Html.DisplayFor(model => model.Degree4), @Html.DisplayFor(model => model.Degree5), @Html.DisplayFor(model => model.Degree6)],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    <script>
+        var tx = document.getElementById("TFChart");
+        var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '慢性腎臟疾病',
+                data: [@Html.DisplayFor(model => model.checkAnsTure) , @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

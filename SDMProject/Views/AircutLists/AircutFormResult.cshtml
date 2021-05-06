@@ -1,0 +1,219 @@
+﻿@model SDMProject.Models.AircutList
+@{
+    ViewBag.Title = "AircutFormResult";
+}
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+@*病患介面*@
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.8;
+        }
+
+        #c01 {
+            font-weight: bolder;
+        }
+
+        #bt01 {
+            color: #00AA00;
+            font-weight: bolder;
+        }
+
+        #bt02 {
+            color: #FF0000;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center;font-weight:bold;">氣管造口術表單結果</h2>
+    <hr>
+
+    <span id="c01">病歷號碼：</span>
+    @Html.DisplayFor(model => model.PatientID)
+    <br>
+    <span id="c01">您想要選擇的治療方式：</span>
+    @Html.DisplayFor(model => model.Method)
+    <hr />
+
+    <span id="c01">步驟二：</span>
+    <br>
+    <div style="width:100%;">
+        <canvas id="heyChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟三：</span>
+    <br>
+    <span id="c01">@TempData["question1"]</span>
+    <br>
+    @if (TempData["right1"] != null)
+    {
+        <span id="bt01">@TempData["right1"]</span>
+    }
+    @if (TempData["wrong1"] != null)
+    {
+        <span id="bt02">@TempData["wrong1"]</span>
+    }
+    您的答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+
+    <span id="c01">@TempData["question2"]</span>
+    <br>
+    @if (TempData["right2"] != null)
+    {
+        <span id="bt01">@TempData["right2"]</span>
+    }
+    @if (TempData["wrong2"] != null)
+    {
+        <span id="bt02">@TempData["wrong2"]</span>
+    }
+    您的答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+
+    <span id="c01">@TempData["question3"]</span>
+    <br>
+    @if (TempData["right3"] != null)
+    {
+        <span id="bt01">@TempData["right3"]</span>
+    }
+    @if (TempData["wrong3"] != null)
+    {
+        <span id="bt02">@TempData["wrong3"]</span>
+    }
+    您的答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+
+    <span id="c01">@TempData["question4"]</span>
+    <br>
+    @if (TempData["right4"] != null)
+    {
+        <span id="bt01">@TempData["right4"]</span>
+    }
+    @if (TempData["wrong4"] != null)
+    {
+        <span id="bt02">@TempData["wrong4"]</span>
+    }
+    您的答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+
+    <span id="c01">@TempData["question5"]</span>
+    <br>
+    @if (TempData["right5"] != null)
+    {
+        <span id="bt01">@TempData["right5"]</span>
+    }
+    @if (TempData["wrong5"] != null)
+    {
+        <span id="bt02">@TempData["wrong5"]</span>
+    }
+    您的答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+
+    <div style="width:50%;">
+        <canvas id="TFChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟四：</span>
+    <br>
+    <span id="c01">6.我已經清楚知道有哪些治療的選擇：</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Yesno1)
+    <br>
+    <span id="c01">7.我清楚知道不同治療方式的優點和缺點：</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Yesno2)
+    <br>
+    <span id="c01">8.我已經接受足夠的知識及建議可以做決定：</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Yesno3)
+    <br>
+    <span id="c01">9.我做決定前還需要：</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    <span id="c01">10.我對於自己的決定有多確定？</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Determine)
+    <br>
+    <span id="c01">11.我還有想和醫師討論的問題：</span>
+    <br>
+    您的答案：@Html.DisplayFor(model => model.Text)
+    <br>
+    <br>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @*@Html.ActionLink("返回清單", "Index")*@
+
+    <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["存活下來", "呼吸恢復", "治療的風險", "治療費用的高低", "治療所需要的時間"],
+            datasets: [{
+                label: '氣管造口術',
+                data: [ @Html.DisplayFor(model => model.Degree1), @Html.DisplayFor(model => model.Degree2), @Html.DisplayFor(model => model.Degree3), @Html.DisplayFor(model => model.Degree4), @Html.DisplayFor(model => model.Degree5)],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var tx = document.getElementById("TFChart");
+        var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '氣管造口術',
+                data: [@Html.DisplayFor(model => model.checkAnsTure), @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model SDMProject.Models.Login
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2 style="text-align:center; font-weight:bold;">刪除帳號或清除表單</h2>
+        <hr />
+
+        <span>醫師姓名：</span>
+        @Html.DisplayFor(model => model.DrName)
+        <br>
+        <span>帳號：</span>
+        @Html.DisplayFor(model => model.Account)
+        <br>
+        <span>密碼：</span>
+        @Html.DisplayFor(model => model.Password)
+        <br>
+
+        <br>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="清除所有PDA" class="btn btn-outline-primary" />
+                @*<input type="submit" value="刪除帳號" class="btn btn-outline-primary" style="position:absolute;right:20%;" />*@
+                <button class="btn btn-outline-primary" type="submit" name="delete_account" value="delete" style="position:absolute;right:20%;">刪除帳號</button>
+                <br>
+                <br>
+                <span class="btn btn-outline-primary"><a>@Html.ActionLink("返回清單", "Index")</a></span>
+            </div>
+        }
+    </div>
+</body>
+</html>

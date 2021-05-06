@@ -1,0 +1,62 @@
+﻿@model IPagedList<SDMProject.Models.AircutList>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <link href="~/Content/PagedList.css" />
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        th, td {
+            padding: 6px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center; font-weight:bold;">氣管造口術</h2>
+
+    <h3 style="text-align:center; font-weight:bold;">病患清單</h3>
+    <br>
+
+    <div style="overflow-x:auto;">
+        <table class="table" style="word-break:break-all; word-wrap:break-word;" align="center" valign="center">
+            <tr>
+                <th style="min-width:200px">病歷號碼</th>
+                <th style="min-width:270px">想要的治療方式</th>
+                <th style="min-width:300px">對於治療方式的疑問</th>
+                <th style="min-width:120px"></th>
+                <th style="min-width:120px"></th>
+                <th style="min-width:120px"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.PatientID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Method)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Text)</td>
+                    <td>@Html.ActionLink("詳細資料", "Details", new { id = item.ID })</td>
+                    <td>@Html.ActionLink("刪除病歷", "Delete", new { id = item.ID })</td>
+                    <td>@Html.ActionLink("前往表單", "AircutForm", new { id = item.ID })</td>
+                </tr>
+            }
+        </table>
+        <br>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</body>
+</html>

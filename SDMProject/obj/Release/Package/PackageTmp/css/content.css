@@ -1,0 +1,2557 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------------------------*/
+/* Header */
+
+/*----------------------------------------------------------------------*/
+/* 內頁 */
+#Center > div {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#Center::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* 標題 */
+.page_header {
+    overflow: hidden;
+}
+
+.PageTitle {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+
+    .PageTitle h2 {
+        line-height: 150%;
+        font-size: 125%;
+        color: #505050;
+        position: relative;
+        padding: 10px 0;
+        font-weight: 500;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 文章內容 */
+h3.title {
+    clear: both;
+    font-size: 2em;
+    font-weight: 500;
+    color: #df7b39;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    h3.title::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 5px;
+        background-color: #df7b39;
+        margin-bottom: 12px;
+    }
+
+    h3.title span {
+        line-height: 130%;
+    }
+
+/*文章日期*/
+.postdate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.875rem;
+    color: #9d9d9d;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    padding-left: 15px;
+}
+
+    .postdate::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 15px;
+        background: url(../images/icon_date.png) no-repeat 0 center;
+        padding-left: 15px;
+    }
+
+/*文章更新日期*/
+.post_info {
+    padding: 5px 35px 5px 0;
+}
+
+    .post_info span {
+        display: inline-block;
+        border-left: 1px solid #dedede;
+        padding-left: 14px;
+        margin-left: 12px;
+        line-height: 20px;
+        color: #8b8b8b;
+        font-size: 81.25%;
+    }
+
+        .post_info span:first-child {
+            border-left: 0;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .post_info span.date {
+            padding-left: 16px;
+            background: url("../images/icon_date.png") no-repeat 0 center;
+            font-family: Arial,"Microsoft JhengHei", "微軟正黑體", Helvetica, sans-serif;
+        }
+
+    .post_info.below {
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+/* 內頁顯示欄位 */
+.content_info {
+    padding: 5px 0;
+}
+
+    .content_info > div {
+        background-color: #ebf0f0;
+        border-left: 5px solid #82aaaa;
+        padding: 10px;
+    }
+
+    .content_info li span {
+        font-size: 0.875rem;
+        line-height: 180%;
+        font-family: "Heiti TC", "微軟正黑體",'Arial', sans-serif;
+    }
+
+        .content_info li span.title {
+            font-weight: bold;
+            color: #444;
+            white-space: nowrap;
+        }
+
+            .content_info li span.title::after {
+                content: "：";
+            }
+
+        .content_info li span.cont {
+            color: #646464;
+        }
+
+    .content_info li a {
+        word-break: break-all;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 內頁元素 */
+/* 導覽列(麵包屑) */
+#Breadcrumbs ul {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+    #Breadcrumbs ul li {
+        float: left;
+        padding-left: 5px;
+        padding-right: 20px;
+        font-size: 87.5%;
+        color: #444;
+        line-height: 24px;
+        position: relative;
+    }
+
+        #Breadcrumbs ul li a {
+            display: block;
+            color: #525252;
+            text-decoration: none;
+        }
+
+        #Breadcrumbs ul li:first-child {
+            padding-left: 30px;
+        }
+
+            #Breadcrumbs ul li:first-child::before {
+                content: '';
+                display: inline-block;
+                background: url('../images/icon_home.png') no-repeat;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+            }
+
+        #Breadcrumbs ul li:last-child {
+            padding-right: 6px;
+        }
+
+        #Breadcrumbs ul li::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 8px;
+            background-color: #dbdbdb;
+            display: block;
+            width: 1px;
+            height: 20px;
+            -webkit-transform: skewX(-15deg);
+            -moz-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+        }
+
+        #Breadcrumbs ul li:last-child::after {
+            display: none;
+        }
+
+        #Breadcrumbs ul li:last-child a {
+            color: #cf4747;
+        }
+
+        #Breadcrumbs ul li a:hover {
+            text-decoration: underline;
+        }
+
+/* 工具列 */
+.ToolBar {
+    overflow: hidden;
+    font-size: 87.5%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .ToolBar dl.font_size, .ToolBar dl.share {
+        height: 32px;
+    }
+
+        .ToolBar .colm_left a, .ToolBar dl.font_size dt, .ToolBar dl.share dt {
+            line-height: 32px;
+        }
+
+            .ToolBar .colm_left a span, .ToolBar dl.font_size dd, .ToolBar dl.font_size a, .ToolBar dl.share dd, .ToolBar dl.share a {
+                width: 32px;
+                height: 32px;
+            }
+
+                .ToolBar .colm_left a, .ToolBar dl.font_size dd, .ToolBar dl.share dd a, .ToolBar .colm_left a span::before {
+                    -webkit-transition: background-color 0.5s ease, opacity 0.3s ease, border 0.3s ease;
+                    -moz-transition: background-color 0.5s ease, opacity 0.3s ease, border 0.3s ease;
+                    transition: background-color 0.5s ease, opacity 0.3s ease, border 0.3s ease;
+                }
+
+    .ToolBar .colm_left, .ToolBar dl.font_size, .ToolBar dl.share {
+        padding-bottom: 5px;
+    }
+
+    .ToolBar .colm_left {
+        float: left;
+        text-align: center;
+    }
+
+        .ToolBar .colm_left a {
+            text-indent: -9999px;
+            display: inline-block;
+            float: left;
+            position: relative;
+            text-decoration: none;
+            color: #000;
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+            padding-left: 30px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+            .ToolBar .colm_left a span::before {
+                content: '';
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                border: 1px solid #bdbdbd;
+                background: url("../images/icon_toolbar.png") no-repeat;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+            }
+
+                .ToolBar .colm_left a span::before:hover {
+                    background-color: #f0f0f0;
+                }
+
+            .ToolBar .colm_left a.return span::before {
+                background-position: 8px 8px;
+            }
+
+            .ToolBar .colm_left a.print span::before {
+                background-position: 7px -22px;
+            }
+
+            .ToolBar .colm_left a:hover {
+                color: #666;
+                background-color: #f0f0f0;
+            }
+
+    .ToolBar dl.font_size {
+        position: relative;
+        padding-right: 5px;
+    }
+
+        .ToolBar dl.font_size > * {
+            float: left;
+        }
+
+        .ToolBar dl.font_size dd {
+            margin-right: 6px;
+        }
+
+        .ToolBar dl.font_size a {
+            display: block;
+            background: url("../images/icon_toolbar.png") no-repeat;
+            text-indent: -10000px;
+            border: 1px solid #bdbdbd;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        .ToolBar dl.font_size dd.font_small a {
+            background-position: 8px -50px;
+        }
+
+        .ToolBar dl.font_size dd.font_medium a {
+            background-position: 8px -84px;
+        }
+
+        .ToolBar dl.font_size dd.font_big a {
+            background-position: 6px -115px;
+        }
+
+        .ToolBar dl.font_size a:hover {
+            background-color: #f0f0f0;
+        }
+
+    .ToolBar dl.share > * {
+        float: left;
+    }
+
+    .ToolBar dl.share dt {
+    }
+
+    .ToolBar dl.share dd {
+        margin-right: 6px;
+        opacity: 1;
+    }
+
+        .ToolBar dl.share dd:last-child {
+            margin-right: 0;
+        }
+
+        .ToolBar dl.share dd a {
+            display: block;
+            background-color: #fff;
+            background: url("../images/icon_toolbar.png") no-repeat;
+            text-indent: -10000px;
+            cursor: pointer;
+            border: 1px solid #bdbdbd;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        .ToolBar dl.share dd.facebook a {
+            background-position: 10px -146px;
+            border-color: #3b5998;
+        }
+
+            .ToolBar dl.share dd.facebook a:hover {
+                border: 1px solid #3b5998;
+                background-color: #d9e1f0;
+            }
+
+        .ToolBar dl.share dd.twitter a {
+            background-position: 7px -173px;
+            border-color: #00abf1;
+        }
+
+            .ToolBar dl.share dd.twitter a:hover {
+                border: 1px solid #00abf1;
+                background-color: #d5eaf3;
+            }
+
+        .ToolBar dl.share dd.google_plus a {
+            background-position: 8px -204px;
+            border-color: #da4b42;
+        }
+
+            .ToolBar dl.share dd.google_plus a:hover {
+                border: 1px solid #da4b42;
+                background-color: #f1e3e2;
+            }
+
+        .ToolBar dl.share dd.line a {
+            background-position: 6px -234px;
+            border-color: #01b901;
+        }
+
+            .ToolBar dl.share dd.line a:hover {
+                border: 1px solid #01b901;
+                background-color: #def1de;
+            }
+
+
+/*----------------------------------------------------------------------*/
+/* 分類下拉 */
+.CatTitle {
+    margin: 15px 0 20px;
+    border-bottom: 1px dotted #ccc;
+}
+
+    .CatTitle::after {
+        content: '';
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+
+    .CatTitle h3 {
+        display: inline-block;
+        font-size: 1.25rem;
+        line-height: 35px;
+        font-weight: normal;
+        color: #df7b39;
+    }
+
+    .CatTitle .cat_select {
+        line-height: 35px;
+    }
+
+        .CatTitle .cat_select .btn {
+            color: #fff;
+            box-sizing: border-box;
+            border: 0;
+            margin: 0 0 0 5px;
+            padding: 0 15px;
+            height: 35px;
+            line-height: 35px;
+            background-color: #df7b39;
+            font-size: 1em;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .CatTitle .cat_select select {
+            background-color: #fff;
+        }
+
+        .CatTitle .cat_select .btn:hover, .CatTitle .cat_select .btn:focus {
+            opacity: 0.8;
+        }
+
+        .CatTitle .cat_select select, .CatTitle .cat_select .btn {
+            vertical-align: top;
+        }
+
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單+衛教專區:共用列表 */
+/* 頁籤 */
+.searchFilter .tabStyle .tabs ul li {
+    float: left;
+    background-color: #ededed;
+    border: 1px solid #cccccc;
+    margin-left: -1px;
+}
+
+    .searchFilter .tabStyle .tabs ul li:hover {
+        background-color: #f5f5f5;
+    }
+
+    .searchFilter .tabStyle .tabs ul li a {
+        font-weight: bold;
+    }
+
+    .searchFilter .tabStyle .tabs ul li.active {
+        background-color: #fff;
+        border-top: 2px solid #000;
+        border-bottom: 0;
+    }
+
+.searchFilter .tab_container {
+    border: 1px solid #cccccc;
+    margin-top: -1px;
+    margin-left: -1px;
+    background-color: #fff;
+}
+
+.searchFilter .filter_tt {
+    display: none;
+}
+
+/* 篩選關鍵字 */
+.searchFilter .SearchBOX {
+    border-bottom: 1px dotted #cccccc;
+}
+
+    .searchFilter .SearchBOX > div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .searchFilter .SearchBOX .ListSearch {
+        padding: 0;
+        margin-right: 10px;
+    }
+
+.searchFilter .ListSearch.FormElmt {
+    margin-bottom: 0;
+}
+
+    .searchFilter .ListSearch.FormElmt .item > div {
+        display: inline-block;
+    }
+
+    .searchFilter .ListSearch.FormElmt .item .label {
+        position: inherit;
+        display: none;
+    }
+
+        .searchFilter .ListSearch.FormElmt .item .label::after {
+            content: '：';
+        }
+
+    .searchFilter .ListSearch.FormElmt .item .cont {
+        padding-top: 0;
+    }
+
+    .searchFilter .ListSearch.FormElmt .item select {
+        height: 32px;
+        line-height: 32px;
+        border-color: #f0f0f0;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+    }
+
+        .searchFilter .ListSearch.FormElmt .item select:focus {
+            box-shadow: none;
+        }
+
+.searchFilter .search > div {
+    display: inline-block;
+    position: relative;
+}
+
+.searchFilter .search .text input {
+    background-color: #eee;
+    width: 180px;
+    border: 0;
+}
+
+.searchFilter .search .btn input {
+    border: 0;
+    font-size: 16px !important;
+}
+
+/* 部位圖片按鈕 */
+.bodyPart_searchBtn {
+    display: block;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    padding: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .bodyPart_searchBtn a {
+        display: inline-block;
+        background-color: #fff;
+        color: #444;
+        font-weight: bold;
+        padding: 8px 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+        .bodyPart_searchBtn a::before {
+            content: '\f302';
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 500;
+            padding-right: 5px;
+            font-size: 18px;
+        }
+
+/* tags */
+.filter_tags li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+.filter_tags a {
+    display: block;
+    font-weight: bold;
+    border: 2px solid #dddddd;
+    background-color: #fff;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+}
+
+    .filter_tags a span {
+        margin-left: 5px;
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 400;
+    }
+
+        .filter_tags a span::after {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+
+    .filter_tags a:hover, .filter_tags a:hover span::after, .filter_tags a:focus,
+    .filter_tags a:focus span::after {
+        color: #fff;
+    }
+
+/*.searchFilter .filter_tags{ overflow:hidden; }*/
+.searchFilter .filter_tags.more {
+    max-height: 100%;
+}
+
+.searchFilter .filter_tags a span::after {
+    content: '\f067';
+}
+
+.searchFilter .more_btn {
+    text-align: right;
+}
+
+    .searchFilter .more_btn a {
+        font-size: 1.125em;
+        color: #000;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+        .searchFilter .more_btn a::before {
+            content: '...';
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+
+        .searchFilter .more_btn a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .searchFilter .more_btn a span {
+            padding-left: 5px;
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 400;
+        }
+
+            .searchFilter .more_btn a span::after {
+                content: '\f107';
+                font-size: 20px;
+            }
+
+/* 已選取區塊 */
+.tagSelected {
+    padding: 10px 20px 2px;
+    margin-bottom: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+    .tagSelected::before, .tagSelected::after {
+        position: absolute;
+        left: 50%;
+        margin-left: -12px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 12px 0 12px;
+        border-color: #999 transparent transparent transparent;
+    }
+
+    .tagSelected::before {
+        bottom: -18px;
+        z-index: 99;
+    }
+
+    .tagSelected::after {
+        bottom: -20px;
+    }
+
+    .tagSelected .tt::after {
+        content: '：';
+    }
+
+    .tagSelected .filter_tags {
+        display: inline-block;
+    }
+
+        .tagSelected .filter_tags a span::after {
+            content: '\f00d';
+        }
+
+        .tagSelected .filter_tags a:hover, .tagSelected .filter_tags a:focus {
+            border-color: #999;
+            background-color: #999;
+            color: #fff;
+        }
+
+            .tagSelected .filter_tags a:hover span::after, .tagSelected .filter_tags a:focus span::after {
+                color: #fff;
+            }
+
+/* tag搜尋結果區塊 */
+.search_results {
+    line-height: 170%;
+}
+
+    .search_results strong {
+        display: block;
+        font-weight: normal;
+        font-size: 1.25em;
+    }
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 列表 */
+.sdm_search_filter .tabStyle .tabs ul li:hover a {
+    color: #eb1760;
+}
+
+.sdm_search_filter .tabStyle .tabs ul li.active {
+    border-top-color: #eb1760;
+}
+
+    .sdm_search_filter .tabStyle .tabs ul li.active a {
+        color: #eb1760;
+    }
+
+.sdm_search_filter .filter_tags a:hover, .sdm_search_filter .filter_tags a:focus {
+    border-color: #eb1760;
+    background-color: #eb1760;
+}
+
+.sdm_search_filter .search .btn:hover input {
+    background-position: 0 -53px;
+}
+
+.sdm_search_filter .bodyPart_searchBtn a:hover {
+    background-color: #eb1760;
+    color: #fff;
+}
+
+.sdm_tag_selected::before {
+    border-top-color: #f3e9ec;
+}
+
+.sdm_tag_selected::after {
+    border-top-color: #e8d4da;
+}
+
+.sdm_tag_selected {
+    background-color: #f3e9ec;
+    border-color: #e8d4da;
+}
+
+    .sdm_tag_selected .filter_tags a {
+        border-color: #eb1760;
+        color: #eb1760;
+    }
+
+        .sdm_tag_selected .filter_tags a span::after {
+            color: #eb1760;
+        }
+
+/*----------------------------------------------------------------------*/
+/* 衛教專區 列表 */
+.health_search_filter .tabStyle .tabs ul li:hover a {
+    color: #2ba8aa;
+}
+
+.health_search_filter .tabStyle .tabs ul li.active {
+    border-top-color: #2ba8aa;
+}
+
+    .health_search_filter .tabStyle .tabs ul li.active a {
+        color: #2ba8aa;
+    }
+
+.health_search_filter .filter_tags a:hover, .health_search_filter .filter_tags a:focus {
+    border-color: #2ba8aa;
+    background-color: #2ba8aa;
+}
+
+.health_search_filter .search .btn:hover input {
+    background-position: 0 -83px;
+}
+
+.health_search_filter .bodyPart_searchBtn a:hover {
+    background-color: #2ba8aa;
+    color: #fff;
+}
+
+.health_tag_selected::before {
+    border-top-color: #e8f0f0;
+}
+
+.health_tag_selected::after {
+    border-top-color: #cae2e2;
+}
+
+.health_tag_selected {
+    background-color: #e8f0f0;
+    border-color: #cae2e2;
+}
+
+    .health_tag_selected .filter_tags a {
+        border-color: #2ba8aa;
+        color: #2ba8aa;
+    }
+
+        .health_tag_selected .filter_tags a span::after {
+            color: #2ba8aa;
+        }
+
+        .health_tag_selected .filter_tags a:hover span::after, .health_tag_selected .filter_tags a:focus span::after {
+            color: #fff;
+        }
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 內容元素 */
+.inside_tags span::before {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #bbb;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -3px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/* 步驟按鈕 */
+.TOP_STEPS_BTN::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.TOP_STEPS_BTN .step {
+    float: left;
+    width: 16.6666%;
+    text-align: center;
+    background-color: #dfdfdf;
+    padding: 15px 0;
+    position: relative;
+}
+
+    .TOP_STEPS_BTN .step::before, .TOP_STEPS_BTN .step::after {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    .TOP_STEPS_BTN .step::after {
+        bottom: -13px;
+        left: 50%;
+        margin-left: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 13px 10px 0 10px;
+        border-color: #dfdfdf transparent transparent transparent;
+    }
+
+    .TOP_STEPS_BTN .step:hover {
+        background-color: #ececec;
+    }
+
+    .TOP_STEPS_BTN .step:last-child a {
+        border-right: 0;
+    }
+
+.TOP_STEPS_BTN a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #808080;
+    font-size: 1.5em;
+    border-right: 1px solid #b2b2b2;
+}
+
+.TOP_STEPS_BTN .step:hover a {
+    color: #444;
+}
+
+.TOP_STEPS_BTN a span {
+    display: block;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+}
+
+.TOP_STEPS_BTN .unwrite {
+    width: 80px;
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -40px;
+    border: 3px solid #eb1760;
+    background-color: #fff9cd;
+    color: #eb1760;
+    z-index: 999;
+    font-weight: bold;
+    padding: 3px 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.TOP_STEPS_BTN .active {
+    background-color: #eb1760;
+}
+
+    .TOP_STEPS_BTN .active::after {
+        border-top-color: #eb1760;
+    }
+
+    .TOP_STEPS_BTN .active a {
+        color: #fff;
+        border-right: 0;
+    }
+
+    .TOP_STEPS_BTN .active:hover {
+        background-color: #eb1760;
+    }
+
+        .TOP_STEPS_BTN .active:hover a {
+            color: #fff;
+        }
+
+/* QRcode */
+.QRcode_block > div {
+    max-width: 530px;
+    margin: auto;
+}
+
+.QRcode_block .item {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #c5c5c5;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+    .QRcode_block .item .tt {
+        margin-bottom: 10px;
+    }
+
+.QRcode_block .cont {
+    width: 100%;
+    display: table;
+    text-align: center;
+}
+
+.QRcode_block .img_box {
+    display: table-cell;
+    vertical-align: top;
+}
+
+    .QRcode_block .img_box .img {
+        display: inline-block;
+        max-width: 140px;
+        text-align: center;
+    }
+
+        .QRcode_block .img_box .img img {
+            width: 100%;
+            height: auto;
+        }
+
+    .QRcode_block .img_box .text {
+        display: block;
+    }
+
+/* 評估表單:標題 */
+.form_title {
+    text-align: center;
+}
+
+    .form_title span {
+        position: relative;
+        display: block;
+    }
+
+        .form_title span::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            margin-left: -7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px 7px 0 7px;
+            border-color: #f36a6a transparent transparent transparent;
+        }
+
+/*----------------------------------------------------------------------*/
+/* 評估表單:表格 */
+.sdmFormWrap {
+    margin-bottom: 40px;
+}
+
+.compareChart table {
+    width: 100%;
+    border: 2px solid #000;
+}
+
+    .compareChart table th, .compareChart table td {
+        border: 1px solid #000;
+    }
+
+    .compareChart table tr:nth-child(even) {
+        background-color: #fff;
+    }
+
+    .compareChart table tr:nth-child(odd) {
+        background-color: #fff6e3;
+    }
+
+    .compareChart table th {
+        background-color: #ffd583;
+        font-size: 1.375em;
+        padding: 10px 25px;
+    }
+
+    .compareChart table td {
+        padding: 15px 25px;
+        box-sizing: border-box;
+    }
+
+        .compareChart table td.tt {
+            vertical-align: top;
+        }
+
+    .compareChart table .tt {
+        width: 20%;
+        font-size: 1.125em;
+        text-align: center;
+    }
+
+    .compareChart table .cont {
+        width: 40%;
+    }
+
+        .compareChart table .cont .text {
+            margin-bottom: 10px;
+        }
+
+    .compareChart table td.tt {
+        font-weight: 900;
+    }
+
+    .compareChart table .info {
+        font-weight: 400;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+        .compareChart table .info > div {
+            font-size: 0.875em;
+            margin-bottom: 10px;
+        }
+
+        .compareChart table .info .icon-people {
+            margin-right: 10px;
+        }
+
+    .compareChart table .icon-people {
+        display: inline-block;
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 900;
+    }
+
+    .compareChart table .people_box {
+        width: 320px;
+        margin-bottom: 15px;
+    }
+
+        .compareChart table .people_box .icon-people {
+            width: 10%;
+            margin-bottom: 10px;
+        }
+
+    .compareChart table .icon-people::before {
+        content: '\f183';
+        display: inline-block;
+        font-size: 1.875em;
+    }
+
+    .compareChart table .color1::before {
+        color: #6c7d97;
+    }
+
+    .compareChart table .color2::before {
+        color: #858585;
+    }
+
+    .compareChart table .color3::before {
+        color: #ea5953;
+    }
+
+
+/*----------------------------------------------------------------------*/
+/* 問答題型 */
+.question_box .ques_title {
+    font-size: 1.75em;
+    position: relative;
+    padding-left: 5rem;
+    padding-top: 10px;
+    margin-bottom: 35px;
+}
+
+    .question_box .ques_title span {
+        background-color: #f36a6a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+        .question_box .ques_title span::before {
+            content: 'Q';
+            font-size: 30px;
+            color: #fff;
+            z-index: 999;
+            width: 30px;
+            display: block;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -15px;
+            font-family: 'Times New Roman', 'Noto Serif CJK TC', "Microsoft JhengHei", "微軟正黑體", sans-serif;
+        }
+
+        .question_box .ques_title span::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 30px 14px;
+            border-color: transparent transparent #f36a6a transparent;
+        }
+
+.question_box .cont_box {
+    padding-left: 5rem;
+    margin-bottom: 35px;
+}
+
+.question_box .item {
+    margin-bottom: 25px;
+}
+
+    .question_box .item .title {
+        font-size: 1.5em;
+        position: relative;
+        margin-bottom: 15px;
+        padding-left: 3.5rem;
+        padding-top: 5px;
+    }
+
+        .question_box .item .title .no {
+            display: inline-block;
+            background-color: #df7b39;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            text-align: center;
+            font-family: 'Times New Roman', 'Noto Serif CJK TC', sans-serif;
+            font-weight: 600;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+            .question_box .item .title .no::after {
+                content: '.';
+                color: #fff;
+            }
+
+    .question_box .item .cont_box {
+        padding-left: 3.5rem;
+    }
+
+.question_box .input_group > div {
+    margin-bottom: 10px;
+    line-height: 160%;
+}
+
+.question_box .input_group label {
+    vertical-align: middle;
+}
+
+/* 題型綜合樣式 */
+.tableWrap .evaluationForm {
+    margin-bottom: 35px;
+}
+
+.evaluationForm table {
+    width: 100%;
+}
+
+    .evaluationForm table tr:nth-child(even) {
+        background-color: #fff9ed;
+    }
+
+    .evaluationForm table tr:nth-child(odd) {
+        background-color: #f8f2e6;
+    }
+
+    .evaluationForm table tr:nth-child(even) td.choose {
+        background-color: #fff;
+    }
+
+    .evaluationForm table tr:nth-child(odd) td.choose {
+        background-color: #f7f7f7;
+    }
+
+    .evaluationForm table th, .evaluationForm table td {
+        border: 1px solid #c6c6c6;
+        text-align: left;
+        box-sizing: border-box;
+        line-height: 160%;
+    }
+
+    .evaluationForm table th {
+        background-color: #ffd583;
+    }
+
+    .evaluationForm table .choose {
+        width: 50%;
+        min-width: 590px;
+    }
+
+    .evaluationForm table .cont {
+        width: 25%;
+        min-width: 180px;
+    }
+
+    .evaluationForm table .choose {
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    .evaluationForm table th.choose {
+        padding: 25px 0;
+    }
+
+        .evaluationForm table th.choose > div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+    .evaluationForm table td.choose .input_group {
+        width: 100%;
+    }
+
+        .evaluationForm table td.choose .input_group > div {
+            width: 14.285%;
+            margin: 0;
+            text-align: center;
+        }
+
+/* 題型一 */
+.evaluationForm.st1 table th.choose .line-left, .evaluationForm.st1 table th.choose .line-right {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+    width: 130px;
+    height: 2px;
+    position: relative;
+    background-color: #000;
+}
+
+    .evaluationForm.st1 table th.choose .line-left::before, .evaluationForm.st1 table th.choose .line-right::before {
+        position: absolute;
+        top: -3px;
+        content: '';
+        display: block;
+        border-left: 2px solid #000;
+        border-top: 2px solid #000;
+        width: 6px;
+        height: 6px;
+    }
+
+    .evaluationForm.st1 table th.choose .line-left::before {
+        left: 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .evaluationForm.st1 table th.choose .line-right::before {
+        right: 0;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+.evaluationForm.st1 table th.choose .text {
+    width: 17%;
+}
+
+/* 題型二 */
+.evaluationForm.st2 table th.choose .line-right {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+    width: 55%;
+    height: 2px;
+    position: relative;
+    background-color: #000;
+}
+
+.evaluationForm.st2 table th.choose {
+    position: relative;
+}
+
+    .evaluationForm.st2 table th.choose .text {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 20%;
+    }
+
+    .evaluationForm.st2 table th.choose .line-right::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        right: 0;
+        border-left: 2px solid #000;
+        border-top: 2px solid #000;
+        width: 6px;
+        height: 6px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    .evaluationForm.st2 table th.choose .text2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 999;
+        width: 80px;
+        line-height: 20px;
+        margin-left: -40px;
+        margin-top: -25px;
+    }
+
+.evaluationForm.st2 table td.choose .input_group > div {
+    width: 16.666%;
+}
+
+/* 題型三 */
+.evaluationForm.st3 table th.choose .line-right {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+    width: 70%;
+    height: 2px;
+    position: relative;
+    background-color: #000;
+}
+
+.evaluationForm.st3 table th.choose {
+    position: relative;
+}
+
+    .evaluationForm.st3 table th.choose .text {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .evaluationForm.st3 table th.choose .line-right::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        right: 0;
+        border-left: 2px solid #000;
+        border-top: 2px solid #000;
+        width: 6px;
+        height: 6px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    .evaluationForm.st3 table th.choose .text2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 999;
+        width: 80px;
+        line-height: 20px;
+        margin-left: -40px;
+        margin-top: -25px;
+        font-size: 1.063em;
+    }
+
+.evaluationForm.st3 table td.choose .input_group > div {
+    width: 16.666%;
+}
+
+.evaluationForm.st3 table .choose {
+    width: 60%;
+    min-width: 590px;
+}
+
+.evaluationForm.st3 table .cont {
+    min-width: 180px;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* 瞭解更多資訊及資源 */
+.information_wrap .QRcode_block > div {
+    max-width: 90%;
+}
+
+.information_wrap .QRcode_block .img_box {
+    width: 25%;
+    margin-bottom: 15px;
+}
+
+    .information_wrap .QRcode_block .img_box .img {
+        max-width: 105px;
+    }
+
+.information_wrap .text_block {
+    margin-bottom: 30px;
+}
+
+    .information_wrap .text_block p {
+        font-size: 0.875em;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 暫存 */
+.save_box .popup_title {
+    display: none;
+}
+
+.save_box .personal_box {
+    margin-bottom: 25px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 填寫個人資料 */
+.personalBlock {
+    margin-bottom: 3rem;
+}
+
+    .personalBlock > div {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px 35px;
+        background-color: #fff;
+        border: 1px solid #cecece;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+.personal_box .text {
+    margin-bottom: 20px;
+    line-height: 160%;
+}
+
+.personal_box .FormElmt {
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+    .personal_box .FormElmt > div {
+        width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .personal_box .FormElmt input[type="text"] {
+        height: 40px;
+        padding-left: 3.4rem;
+    }
+
+    .personal_box .FormElmt input[type="text"] {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    /* 一排兩個排列 */
+    /*.personal_box .FormElmt .item{ position:relative; width:50%; float:left; margin-bottom:15px; }*/
+    /*.personal_box .FormElmt .item.birth{ padding-right:25px; }
+.personal_box .FormElmt .item.edu{ padding-left:25px; }*/
+
+    .personal_box .FormElmt .item::before, .personal_box .FormElmt .randomcode .input::before,
+    .personal_box .FormElmt .item2 .label::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('../images/icon_save.png') no-repeat;
+        padding-left: 5px;
+        border-right: 1px solid #c3c3c3;
+        width: 30px;
+        height: 26px;
+        top: 50%;
+        left: 10px;
+        margin-top: -13px;
+    }
+
+    .personal_box .FormElmt .gender {
+        display: block;
+        clear: both;
+    }
+
+    .personal_box .FormElmt .email {
+        width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+        .personal_box .FormElmt .email::before {
+            background-position: 0 -50px;
+        }
+
+    .personal_box .FormElmt .birth::before {
+        background-position: 0 -250px;
+    }
+
+    .personal_box .FormElmt .edu::before {
+        background-position: 0 -150px; /*left:35px;*/
+    }
+
+    .personal_box .FormElmt .name::before {
+        background-position: 0 -300px;
+    }
+
+    .personal_box .FormElmt .another::before {
+        background-position: 0 -350px;
+        top: 25px;
+    }
+
+    .personal_box .FormElmt .gender .label::before {
+        background-position: 0 -200px;
+    }
+
+.personal_box .item2 {
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+    .personal_box .item2 .label {
+        position: relative;
+        padding-left: 2.8rem;
+    }
+
+.personal_box .FormElmt .item2 .label::before {
+    left: 0;
+}
+
+.personal_box .item2 .label::after {
+    content: '：';
+}
+
+.personal_box .item2 > div {
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    padding: 0 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .personal_box .item2 > div > div {
+        display: inline-block;
+    }
+
+.personal_box .FormElmt .gender input[type="radio"] {
+    margin-left: 0;
+}
+
+.personal_box .FormElmt .randomcode .input::before {
+    background-position: 0 -100px;
+}
+
+.personal_box .randomcode {
+    width: 100%;
+    clear: both;
+}
+
+.personal_box .FormElmt .randomcode .input input[type="text"] {
+    width: 100% !important;
+}
+
+.personal_box .randomcode .input {
+    width: 50%;
+    padding-right: 20px;
+    margin-right: 0;
+    position: relative;
+}
+
+    .personal_box .randomcode .input > * {
+        display: inline-block;
+    }
+
+.personal_box .FormElmt {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.personal_box select {
+    margin-bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 3.4rem;
+}
+
+.personal_box .FormElmt .input_group > div {
+    padding-bottom: 0;
+}
+
+.personal_box .FormElmt .lang .input_group input[type="text"] {
+    width: 80px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.personal_box .FormElmt .another {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: #f7f7f7;
+}
+
+    .personal_box .FormElmt .another .label {
+        padding-left: 2.8rem;
+        line-height: 28px;
+    }
+
+    .personal_box .FormElmt .another .ano_info {
+        vertical-align: middle;
+        margin-top: 20px;
+    }
+
+        .personal_box .FormElmt .another .ano_info .item {
+            margin-bottom: 8px;
+        }
+
+            .personal_box .FormElmt .another .ano_info .item::before {
+                background-image: none;
+                border-right: 0;
+            }
+
+            .personal_box .FormElmt .another .ano_info .item > div {
+                display: inline-block;
+            }
+
+        .personal_box .FormElmt .another .ano_info .label {
+            padding-left: 0;
+        }
+
+            .personal_box .FormElmt .another .ano_info .label::after {
+                content: '：';
+            }
+
+    .personal_box .FormElmt .another input[type="text"] {
+        display: inline-block;
+        width: 150px;
+        height: 32px;
+        padding-left: 10px;
+        vertical-align: middle;
+        line-height: 32px;
+    }
+
+
+
+/*----------------------------------------------------------------------*/
+/* 滿意度調查 */
+/*驗證碼*/
+.RandomCodeBox {
+    margin-bottom: 30px;
+}
+
+    .RandomCodeBox > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .RandomCodeBox .label {
+        display: none;
+    }
+
+    .RandomCodeBox.FormElmt .randomcode .input input[type="text"] {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-shadow: inset 1px 1px 8px #ccc;
+        -moz-box-shadow: inset 1px 1px 8px #ccc;
+        box-shadow: inset 1px 1px 8px #ccc;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 搜尋表單 */
+.ListSearch {
+    overflow: hidden;
+}
+
+    .ListSearch .item {
+        display: inline-block;
+        max-width: 100%;
+        line-height: 35px;
+        position: relative;
+        float: left;
+        margin-right: 15px;
+    }
+
+        .ListSearch .item:last-child {
+            margin-right: 0;
+        }
+
+        .ListSearch .item span.label::after {
+            content: '：';
+        }
+
+    .ListSearch.FormElmt input[type="text"], .ListSearch.FormElmt select {
+        vertical-align: top;
+        margin-bottom: 0;
+    }
+
+    .ListSearch.FormElmt {
+        margin-bottom: 15px;
+    }
+
+        .ListSearch.FormElmt .item {
+            position: relative;
+        }
+
+            .ListSearch.FormElmt .item .label {
+                color: #333;
+                font-weight: bold;
+                font-size: 0.938em;
+                position: absolute;
+                top: 0;
+                left: 0;
+                line-height: 20px;
+            }
+
+            .ListSearch.FormElmt .item .cont {
+                padding-top: 25px;
+                display: inline-block;
+            }
+
+        .ListSearch.FormElmt select {
+            padding: 0 15px;
+            background-color: #f0f0f0;
+        }
+
+        .ListSearch.FormElmt .BtnCommon {
+            position: inherit;
+            display: inline-block;
+            padding-top: 25px;
+            border: 0px;
+        }
+
+            .ListSearch.FormElmt .BtnCommon input[type="submit"] {
+                padding: 0;
+                line-height: 35px;
+                width: 80px;
+                font-size: 100%;
+            }
+
+/*----------------------------------------------------------------------*/
+/* 相關網站 */
+.LinkWrap {
+    margin-bottom: 15px;
+}
+
+    .LinkWrap .link_title {
+        line-height: 160%;
+        font-size: 1.375em;
+        border-bottom: 2px solid #666666;
+        padding: 5px 0;
+        font-weight: 700;
+    }
+
+        .LinkWrap .link_title span {
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 400;
+            margin-right: 5px;
+        }
+
+            .LinkWrap .link_title span::before {
+                content: "\f0c1";
+                color: #df7b39;
+            }
+
+    .LinkWrap .item {
+        margin-bottom: 30px;
+    }
+
+        .LinkWrap .item ul li {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .LinkWrap .item ul li:nth-child(even) {
+                background-color: #fff;
+            }
+
+            .LinkWrap .item ul li:hover {
+                background-color: #fcfbf1;
+            }
+
+            .LinkWrap .item ul li a {
+                display: table;
+                width: 100%;
+                height: 100%;
+                padding: 8px 35px 8px 15px;
+                position: relative;
+                overflow: hidden;
+            }
+
+                .LinkWrap .item ul li a::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    margin-top: -5px;
+                    border-left: 3px solid #aeaeae;
+                    border-top: 3px solid #aeaeae;
+                    width: 10px;
+                    height: 10px;
+                    -webkit-transform: rotate(135deg);
+                    -moz-transform: rotate(135deg);
+                    transform: rotate(135deg);
+                }
+
+                .LinkWrap .item ul li a:hover::after {
+                    right: 15px;
+                    border-color: #df7b39;
+                }
+
+                .LinkWrap .item ul li a > div {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+        .LinkWrap .item .img {
+            width: 15%;
+            max-width: 150px;
+            min-width: 120px;
+        }
+
+            .LinkWrap .item .img img {
+                width: 100%;
+                height: auto;
+            }
+
+        .LinkWrap .item .tt {
+            width: 85%;
+            line-height: 160%;
+            font-family: 'Arial', "Microsoft JhengHei", "微軟正黑體", "Heiti TC", "黑體-繁", sans-serif;
+        }
+
+/*----------------------------------------------------------------------*/
+/* 搜尋結果 */
+.SearchResult {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+    .SearchResult .results_count {
+        background-color: #ebf0f0;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    .SearchResult .item {
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+        .SearchResult .item:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .SearchResult .item:nth-child(even) {
+            background-color: transparent;
+        }
+
+        .SearchResult .item > div {
+            margin-bottom: 5px;
+        }
+
+    .SearchResult .title {
+        margin-bottom: 10px;
+        line-height: 150%;
+        font-size: 1.25em;
+        letter-spacing: 0.03em;
+    }
+
+        .SearchResult .title a {
+            display: block;
+            color: #333;
+        }
+
+            .SearchResult .title a:hover {
+                color: #df7b39;
+                text-decoration: underline;
+            }
+
+    .SearchResult .desc {
+        color: #555;
+        line-height: 160%;
+    }
+
+    .SearchResult .item span {
+        color: #333;
+        background-color: #f6decf;
+    }
+
+    .SearchResult .cat a {
+        color: #8b8b8b;
+        text-decoration: none;
+    }
+
+    .SearchResult .date {
+        margin-right: 20px;
+        color: #8b8b8b;
+        font-size: 87.5%;
+        line-height: 175%;
+        background: url(../images/icon_date.png) no-repeat 0 center;
+        padding-left: 16px;
+        font-family: Arial, sans-serif;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 文字列表 */
+.ListTable {
+    margin-top: 10px;
+    position: relative;
+}
+
+    .ListTable table {
+        width: 100%; /*border-collapse:separate; border-spacing:3px;*/
+    }
+
+        .ListTable table th, .ListTable table td {
+            text-align: center;
+            color: #333;
+        }
+
+            .ListTable table th.title {
+                font-family: "Heiti TC", "黑體-繁", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            }
+
+            .ListTable table td.title {
+                text-align: left;
+                letter-spacing: .015rem;
+            }
+
+                .ListTable table td.title a {
+                    display: inline-block;
+                    color: #333;
+                    text-decoration: none;
+                    line-height: 1.6;
+                }
+
+                    .ListTable table td.title a:hover {
+                        color: #df7b39;
+                        text-decoration: underline;
+                    }
+
+            .ListTable table td.date {
+                font-family: 'Arial', sans-serif;
+                font-size: 93.8%;
+            }
+
+            .ListTable table td.download li {
+                display: block;
+            }
+
+                .ListTable table td.download li a {
+                    white-space: nowrap;
+                    color: #333;
+                    text-decoration: underline;
+                }
+
+                    .ListTable table td.download li a:hover {
+                        color: #de1e19;
+                    }
+
+            .ListTable table td.download .file_ext {
+                background-position: top right;
+                padding-right: 24px;
+            }
+
+            .ListTable table th.thum {
+                width: 150px;
+            }
+
+            .ListTable table td.thum {
+                width: 150px;
+                text-align: center;
+            }
+
+                .ListTable table td.thum img {
+                    max-width: 150px;
+                }
+
+            .ListTable table th.p_number {
+                width: 150px;
+            }
+
+            .ListTable table th.name {
+                width: 120px;
+            }
+
+            .ListTable table th.division {
+                width: 180px;
+            }
+
+            .ListTable table th.status {
+                width: 120px;
+            }
+
+            .ListTable table td.status a {
+                display: inline-block;
+                background-color: #afafaf;
+                color: #fff;
+                padding: 7px 15px;
+                font-size: 0.875em;
+                -webkit-border-radius: 35px;
+                -moz-border-radius: 35px;
+                border-radius: 35px;
+            }
+
+                .ListTable table td.status a:hover {
+                    background-color: #df7b39;
+                }
+
+                .ListTable table td.status a span {
+                    font-family: 'Font Awesome 5 Pro';
+                    font-weight: 400;
+                    margin-right: 5px;
+                }
+
+                    .ListTable table td.status a span::before {
+                        content: '\f304';
+                    }
+
+        .ListTable table tr td.title-link {
+            text-align: left;
+            line-height: 150%;
+        }
+
+        .ListTable table .text-left {
+            text-align: left;
+        }
+
+        .ListTable table .text-center {
+            text-align: center;
+        }
+
+
+/*----------------------------------------------------------------------*/
+/* 圖文列表 */
+.editable_content + .ListPicText {
+    margin-top: 0;
+}
+
+.ListPicText::after, .ListPicText .item > div::after {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.ListPicText .item, .ListPicText .item > div, .ListPicText .img, .ListPicText .img > div, .ListPicText .cont,
+.ListPicText .btn {
+    box-sizing: border-box;
+}
+
+.ListPicText {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+
+    .ListPicText .item > div {
+        background-color: #fff;
+        height: 100%;
+        position: relative;
+        border-top: 3px solid #df7b39;
+        box-shadow: 0 0 15px rgba(0,0,0,0.12);
+        /* -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;*/
+    }
+
+    .ListPicText .img {
+        position: relative;
+        overflow: hidden;
+        padding: 10px;
+        /* -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;*/
+    }
+
+        .ListPicText .img > div {
+            padding-bottom: 75%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            /* -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;*/
+        }
+
+        .ListPicText .img a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-indent: -10000px;
+        }
+
+    .ListPicText .date {
+        color: #8b8b8b;
+        line-height: 180%;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .ListPicText .title {
+        margin-bottom: 10px;
+    }
+
+        .ListPicText .title a {
+            display: block;
+            color: #333333;
+            line-height: 150%;
+            text-decoration: none;
+            /*描述最多顯2行，但此語法IE、Firefox皆不支援*/
+            line-height: 1.5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            /*不支援上述語法時的備案*/
+            max-height: 3em;
+        }
+
+            .ListPicText .title a:hover, .ListPicText .title a:focus {
+                color: #df7b39;
+                text-decoration: underline;
+            }
+
+    .ListPicText .desc {
+        margin-bottom: 40px;
+        color: #999999;
+        line-height: 170%;
+        /*描述最多顯示3行，但此語法IE、Firefox皆不支援*/
+        /*line-height:1.5em; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;*/
+        /*不支援上述語法時的備案*/
+        /*max-height:4.5em;*/
+    }
+
+    .ListPicText .btn {
+        text-align: right;
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+    }
+
+        .ListPicText .btn a {
+            padding: 5px 10px;
+            display: inline-block;
+            color: #000000;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+            .ListPicText .btn a::after {
+                font-size: 16px;
+                content: '+';
+            }
+
+            .ListPicText .btn a:hover, .ListPicText .btn a:focus {
+                opacity: 0.8;
+                background-color: #eee;
+            }
+
+    /* 限制行數 */
+    .ListPicText.single .title a {
+        line-height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        max-height: 3em;
+    }
+
+    .ListPicText.list-view.trisection .title a {
+        line-height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        max-height: 4.5em;
+    }
+
+    .ListPicText.grid-view .desc, .ListPicText.single .desc, .ListPicText.trisection .desc {
+        line-height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        max-height: 4.5em;
+    }
+
+
+/*----------------------------------------------------------------------*/
+/* 延伸閱讀 */
+.related_articles {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-left: 4px solid #cf4747;
+    background-color: #f5f5f5;
+    padding: 20px 15px;
+}
+
+    .related_articles .title {
+        font-size: 112.5%;
+        font-weight: normal;
+        line-height: 150%;
+        color: #333;
+        position: relative;
+        padding: 0 0 10px 40px;
+    }
+
+        .related_articles .title::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 2px;
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            background: url("../images/icon_related_articles.png") no-repeat 0 0;
+            background-size: cover;
+        }
+
+    .related_articles .list {
+        list-style-type: decimal;
+        margin-left: 30px;
+    }
+
+        .related_articles .list li {
+            padding: 8px 0;
+            color: #595959;
+            line-height: 150%;
+        }
+
+        .related_articles .list a {
+            display: block;
+            color: #595959;
+            text-decoration: none;
+        }
+
+            .related_articles .list a:hover {
+                color: #cf4747;
+            }
+
+/*----------------------------------------------------------------------*/
+/* 頁碼 */
+#Pagination {
+    clear: both;
+    text-align: center;
+}
+
+    #Pagination .pages {
+        display: inline-block;
+        font-size: 87.5%;
+    }
+
+    #Pagination a {
+        display: inline-block;
+        width: 35px;
+        text-decoration: none;
+        line-height: 35px;
+        color: #6b6b6b;
+        background-color: #f0f0f0;
+        -webkit-border-radius: 5%;
+        -moz-border-radius: 5%;
+        border-radius: 5%;
+    }
+
+        #Pagination a:hover {
+            background-color: #ddd;
+        }
+
+        #Pagination a.focuz {
+            color: #fff;
+            background-color: #777;
+            border: none;
+        }
+
+        #Pagination a.first, #Pagination a.prev, #Pagination a.next, #Pagination a.last {
+            width: auto;
+            padding: 0 10px;
+        }
+
+    #Pagination .current {
+        width: auto;
+        background-color: transparent;
+        cursor: default;
+        padding: 0 10px;
+        border: 0;
+    }
+
+        #Pagination .current:hover {
+            color: #333;
+            background-color: transparent;
+        }
+
+    #Pagination .setting {
+        display: block;
+        clear: both;
+        padding-top: 15px;
+        line-height: 35px;
+        color: #515151;
+        font-size: 75%;
+    }
+
+        #Pagination .setting select {
+            padding: 6px 0 5px;
+            border: 1px solid #ccc;
+            height: 35px;
+            vertical-align: middle;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        #Pagination .setting input[type="text"] {
+            width: 38px;
+            height: 35px;
+            border: 1px solid #ccc;
+            vertical-align: bottom;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+    #Pagination .per_page select, #Pagination .goto input[type="text"] {
+        margin: 0 5px;
+    }
+
+    #Pagination .setting input[type="submit"] {
+        height: 32px;
+        padding: 0 6px;
+        margin-left: 3px;
+    }
+
+    #Pagination .setting input[type="button"] {
+        border: 0;
+        height: 35px;
+        line-height: 35px;
+        background-color: #ddd;
+        border: 1px solid #ddd;
+        color: #000;
+        padding: 0 6px;
+        vertical-align: top;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+        #Pagination .setting input[type="button"]:hover {
+            background-color: #ccc;
+            border-color: #ccc;
+        }
+
+
+/* 內頁頁碼 */
+.inPagination {
+    margin-top: 30px;
+    clear: both;
+    text-align: center;
+    font-size: 81.25%;
+    display: none;
+}
+
+    .inPagination .pages {
+        display: inline-block;
+    }
+
+    .inPagination a {
+        display: inline-block;
+        width: 35px;
+        margin: 0 4px 12px 4px;
+        background-color: #f0f0f0;
+        color: #6b6b6b;
+        text-decoration: none;
+        line-height: 35px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+        .inPagination a:hover {
+            background-color: #ddd;
+        }
+
+        .inPagination a.focuz {
+            color: #fff;
+            background-color: #777;
+        }
+
+
+/* 檔案下載icon */
+.file_ext {
+    background-repeat: no-repeat;
+    display: inline-block !important;
+}
+
+.file_doc {
+    background-image: url("../images/file_ext/doc.png");
+}
+
+.file_img {
+    background-image: url("../images/file_ext/img.png");
+}
+
+.file_mov {
+    background-image: url("../images/file_ext/mov.png");
+}
+
+.file_other {
+    background-image: url("../images/file_ext/other.png");
+}
+
+.file_pdf {
+    background-image: url("../images/file_ext/pdf.png");
+}
+
+.file_ppt {
+    background-image: url("../images/file_ext/ppt.png");
+}
+
+.file_txt {
+    background-image: url("../images/file_ext/txt.png");
+}
+
+.file_xls {
+    background-image: url("../images/file_ext/xls.png");
+}
+
+.file_zip {
+    background-image: url("../images/file_ext/zip.png");
+}
+
+.file_odp {
+    background-image: url("../images/file_ext/odp.png");
+}
+
+.file_csv {
+    background-image: url("../images/file_ext/csv.png");
+}
+
+.file_ods {
+    background-image: url("../images/file_ext/ods.png");
+}
+
+.file_odt {
+    background-image: url("../images/file_ext/odt.png");
+}
+
+.file_xml {
+    background-image: url("../images/file_ext/xml.png");
+}

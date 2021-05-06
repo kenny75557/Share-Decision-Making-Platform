@@ -1,0 +1,377 @@
+﻿@model SDMProject.Models.AircutList
+
+@{
+    ViewBag.title = "printform";
+}
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        #table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #th01 {
+            text-align: center;
+        }
+
+        #c02 {
+            font-weight: bolder;
+            text-align: center;
+            display: block;
+        }
+
+        #c03 {
+            font-weight: bolder;
+        }
+
+        #boxtext01 {
+            border: 1px black solid;
+            padding: 6px;
+            width: auto;
+            border-radius: 10px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        img {
+            /*width: auto;*/
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+
+</head>
+
+<body>
+    <br>
+    <h1 id="c03" style="text-align:center;">氣管造口術－氣切要不要？</h1>
+    <br>
+
+    &emsp;&emsp;放置氣管內管管或氣切造口，都是搶救生命的一種緊急醫療處置，能快速爭取時間幫助病人度過生死關頭，但若病人需要長期使用機器幫助呼吸，通常會考慮施行氣切造口術，將原本經由口腔或鼻腔進入氣管的氣管內管，換成直接從頸部氣管開口處直接放入氣管的氣切管，以利病人能順利排除分泌物，維持呼吸道通暢。
+    <br>
+    <br>
+
+    ●
+    <span id="c03">適用對象：</span>
+    <br>
+    &emsp;➤ 使用氣管內管無法脫離呼吸器之病人，且有清除呼吸道痰液困難病人。
+    <br>
+    &emsp;➤ 呼吸道阻塞之緊急狀況，如口鼻外傷、急性會厭炎急性發作、支氣管腫脹等。
+    <br>
+    <br>
+
+    ●
+    <span id="c03">適用狀況：</span>
+    <br>
+    &emsp;➤ 使用氣管內管無法脫離呼吸器之病人，且有清除呼吸道痰液困難病人。
+    <br>
+    &emsp;➤ 無法經口鼻放置氣管內管維持呼吸道通暢病人。
+    <br>
+    <br>
+
+    ●
+    <span id="c03">疾病介紹：</span>
+    <br>
+    &emsp;&emsp;因病人患有肺部或其他疾病導致呼吸功能異常，無法順利清除呼吸道分泌物，或需長期依賴呼吸器時，經醫師評估建議氣切造口，藉由氣管造口的使用，以期提升長期使用呼吸器病人的生活品質。
+    <br>
+    <br>
+
+    ●
+    <span id="c03">治療方式介紹：</span>
+    <br>
+    &emsp;&emsp;氣管造口屬於人工氣道，目的是要建立一個與外界連接的管道，可接上呼吸器或作為抽痰的通道，可較長期使用。
+    <br>
+    &emsp;&emsp;在執行氣切時通常會使用局部麻醉或全身麻醉，而且病人使用氣切管的不舒服會比使用氣管內管輕微，相關併發症也較少，病人做起呼吸訓練也比較容易。
+    <br>
+    <br>
+
+    ●
+    <span id="c03">想要選擇的治療方式是？</span>
+    <br>
+    <input type="checkbox"> 氣切手術
+    <input type="checkbox"> 插管治療
+    <br>
+    <br>
+
+    ●
+    <span id="c03">接著請透過以下四個步驟來幫助您做決定</span>
+    <br>
+    <br>
+
+    <div id="boxtext01">步驟一：比較每一項選擇的優點、風險、副作用(併發率)、替代方案</div>
+    <br>
+
+    <table id="table" border=1 align=center>
+        <tr align=center>
+            <td width="110px"></td>
+            <th align=center width="500px">氣切手術</th>
+            <th align=center width="500px">插管治療</th>
+        </tr>
+        <tr>
+            <th id="th01">優點</th>
+            <td>
+                1.固定時不需在臉部黏貼膠布或綁棉繩，較美觀且舒適度較佳。
+                <br>
+                2.口腔衛生較易維持。
+                <br>
+                3.呼吸較不費力，有助於脫離呼吸器。
+                <br>
+                4.抽痰容易。
+                <br>
+                5.經訓練後可以使用發聲器說話。
+                <br>
+                6.經訓練後可以以口進食。
+                <br>
+                7.更換容易，風險低。
+                <br>
+                8.可居家照顧。
+            </td>
+            <td>緊急狀況下能快速建立呼吸道，在病況緊急救命時施行。</td>
+        </tr>
+        <tr>
+            <th id="th01">風險</th>
+            <td>手術都是有風險，包括麻醉、出血及感染風險。</td>
+            <td>咽喉受傷、牙齒斷落、心律不整、食道傷害、氣管攣縮，皮下氣腫等。</td>
+        </tr>
+        <tr>
+            <th id="th01">副作用（併發率）</th>
+            <td>出血、局部皮膚感染、氣胸、氣管狹窄等，後期可能會有氣管狹窄的問題，但是機率低於15%。</td>
+            <td>若插氣管內管時間過久，容易造成口腔潰瘍或出血、氣管潰瘍或出血、氣管狹窄或聲帶受損等併發症；因氣囊過度壓迫氣管造成氣管軟化症。</td>
+        </tr>
+        <tr>
+            <th id="th01">費用</th>
+            <td>健保給付但氣切套管材質不同，有些需自費。</td>
+            <td>健保給付。</td>
+        </tr>
+        <tr>
+            <th id="th01">替代方案</th>
+            <td>氣管內管。</td>
+            <td>非侵襲性症壓呼吸。</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <div id="boxtext01">步驟二：您選擇治療方式會在意的因素有什麼？以及在意的程度</div>
+    <br>
+
+    ●
+    <span id="c03">請圈選下列考量因素，由左至右代表對您不同的重要程度</span>
+    <br>
+
+    <table id="table" border=1 align=center>
+        <tr align=center>
+            <th width="400px"></th>
+            <th width="100px">不重要</th>
+            <th width="100px">較不重要</th>
+            <th width="100px">普通</th>
+            <th width="100px">重要</th>
+            <th width="100px">很重要</th>
+            <th width="100px">非常重要</th>
+        </tr>
+        <tr align=center>
+            <th id="th01">病人較有機會存活下來</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr align=center>
+            <th id="th01">病人的呼吸功能恢復（例如：家人日後長期照顧的問題、生活自理功能等）</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr align=center>
+            <th id="th01">治療的風險</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr align=center>
+            <th id="th01">治療費用的高低</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr align=center>
+            <th id="th01">治療所需要的時間</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <div id="boxtext01">步驟三：您對治療方式的認知有多少？</div>
+    <br>
+
+    ●
+    <span id="c03">請試著回答下列問題：</span>
+    <br>
+
+    <span id="c03">1.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口會增加住院天數？</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <input type="checkbox"> 我不確定
+    <br>
+    <br>
+
+    <span id="c03">2.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸會較穩定？</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <input type="checkbox"> 我不確定
+    <br>
+    <br>
+
+    <span id="c03">3.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，方式費用較高？</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <input type="checkbox"> 我不確定
+    <br>
+    <br>
+
+    <span id="c03">4.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人平均存活率較高？</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <input type="checkbox"> 我不確定
+    <br>
+    <br>
+
+    <span id="c03">5.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸狀態預後較好？</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <input type="checkbox"> 我不確定
+    <br>
+    <br>
+
+    <img src="~/img/img03.png" style="display:block; margin:auto;">
+    <br>
+
+    <div id="boxtext01">步驟四：您現在確認好治療方式了嗎？</div>
+    <br>
+
+    ●
+    <span id="c03">經過前面幾個步驟，您已經花了一些時間了解亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口與氣管內管的差異和您在意的因素，現在決定好想要的治療方式了嗎？</span>
+    <br>
+
+    <span id="c03">1.我已經清楚知道有哪些治療的選擇</span>
+    <br>
+    <input type="checkbox"> 知道
+    <input type="checkbox"> 不知道
+    <br>
+    <br>
+
+    <span id="c03">2.我清楚知道不同治療方式的優點和缺點</span>
+    <br>
+    <input type="checkbox"> 知道
+    <input type="checkbox"> 不知道
+    <br>
+    <br>
+
+    <span id="c03">3.我已經接受足夠的知識及建議可以做決定</span>
+    <br>
+    <input type="checkbox"> 是
+    <input type="checkbox"> 否
+    <br>
+    <br>
+
+    <span id="c03">4.我做決定前還需要：</span>
+    <br>
+    <input type="checkbox"> 我想要再更深入了解每個治療方式<br>
+    <input type="checkbox"> 我需要再和其他人（如家人、朋友等）討論看看<br>
+    <input type="checkbox"> 我還是想要再和醫師做更詳細的討論<br>
+    <input type="checkbox"> 完全不用，我已經做好選擇<br><br>
+
+    <span id="c03">5.我對於自己的決定有多確定？</span><br>
+    <input type="checkbox"> 完全確定
+    <input type="checkbox"> 不是很確定
+    <input type="checkbox"> 完全不確定<br><br>
+
+    <span id="c03">6.我還有想和醫師討論的問題：</span><br>
+    <textarea cols="100" rows="4"></textarea><br><br>
+
+    <span id="c02">完成以上評估後，您可以列印及攜帶此份結果與您的主治醫師討論。</span>
+    <br>
+
+    @{
+        string str = TempData["aircutprintform"].ToString();
+    }
+    
+<div style="visibility:hidden">
+    @*<input id="text" type="text" value=" @Url.Action("AircutForm", "AircutLists", new { id = str }, "http")" />*@
+    <input id="text" type="text" value=" @Url.Action("check_ID", "AircutLists", new { id = str }, "http")" />
+</div>
+
+    <div id="qrcode"></div>
+
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 120,
+            height: 120
+        });
+
+        function makeCode() {
+            var elText = document.getElementById("text");
+            if (!elText.value) {
+                alert("Input a text");
+                elText.focus();
+                return;
+            }
+            qrcode.makeCode(elText.value);
+        }
+        makeCode();
+        $("#text").
+            on("blur", function () {
+                makeCode();
+            }).
+            on("keydown", function (e) {
+                if (e.keyCode == 13) {
+                    makeCode();
+                }
+            });
+    </script>
+</body>
+</html>

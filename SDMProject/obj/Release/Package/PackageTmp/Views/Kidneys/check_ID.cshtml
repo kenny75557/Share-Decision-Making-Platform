@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<form action="/Kidneys/check_ID" align="center" valign="center" method="post">
+    @Html.AntiForgeryToken()
+    <h1>請輸入身分證字號</h1>
+    <br>
+    <input type="text" name="Check">
+    <input type="submit" value="登入" class="btn btn-outline-primary" />
+</form>
+
+<br><br>
+<h2 style="text-align:center;font-weight:bold;">@ViewBag.ck3Msg</h2>

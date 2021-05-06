@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta content="zh-Hant" http-equiv="content-language" />
+    <title>醫病共享決策平台</title>
+    @*<link rel="shortcut icon" href="/files/atts/0I075385001830884494/layout/images/favicon.ico" />*@
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/jquery.mmenu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/css/css01.css" rel="stylesheet" />
+    <link href="/css/width_narrow.css" media="only screen and (max-width: 639px)" rel="stylesheet" type="text/css" />
+    <link href="/css/width_wide.css" media="only screen and (min-width: 640px) and (max-width: 1023px)" rel="stylesheet" type="text/css" />
+    <link href="/css/width_desktop.css" media="only screen and (min-width: 1024px)" rel="stylesheet" type="text/css" />
+    @*<script src="~/css/js01.js"></script>*@
+
+    <link href="/css/content.css" rel="stylesheet" type="text/css" />
+    <link href="/css/editable_content.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/PagedList.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <style>
+        body {
+            background-image: url('../../img/bg.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Wrap">
+        <header id="Header">
+            <div class="hd_top">
+                <div>
+                    <h1 class="logo">
+                        <a href="~/Patients/loginhome" title="新光吳火獅紀念醫院"><img src="~/img/新光醫院.png" alt="新光吳火獅紀念醫院"></a>
+                    </h1>
+                    <div class="tool_box">
+                        <div>
+                            <div class="links">
+                                <ul>
+                                    @if (Session["NameAccount"] != null)
+                                    {
+                                        <span>帳戶名稱：@Session["NameAccount"]&emsp;</span>
+                                        <li @*class="link"*@>
+                                            <a href="@Url.Action("Logout", "Logins")">登出</a>
+                                        </li>
+                                    }
+                                    @if (Session["NameAccount"] == null)
+                                    {
+                                        <li @*class="link"*@>
+                                            <a href="@Url.Action("Logout", "Logins")">登出</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav id="Menu">
+            <div>
+                <ul class="superfish">
+                    <li>
+                        <a href="/Patients/Index">病例清單</a>
+                    </li>
+                    <li>
+                        <a href="/Kidplazas/Index">子宮頸癌</a>
+                    </li>
+                    <li>
+                        <a href="/AircutLists/Index">氣管造口術</a>
+                    </li>
+                    <li>
+                        <a href="/Kidneys/Index">慢性腎臟疾病</a>
+                    </li>
+                    @*<li>
+                        <a href="~/Logins/Login">登入</a>
+                    </li>*@
+                </ul>
+            </div>
+        </nav>
+
+        <div id="Center" class="content">
+            <div>
+                <div id="Content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        <div class="BtnTop">
+            <a class="btn btn-outline-secondary btn-lg" href="~/Logins/Login">登入</a>
+            <a href="#" title="回最上層">TOP</a>
+        </div>
+
+        <footer id="Footer">
+            <div id="Copyright">
+                <span>
+                    醫病共享決策平台 版權所有 &copy; 2019 All Rights Reserved.
+                </span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

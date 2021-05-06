@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SDMdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AircutList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="nvarchar(max)" />
+          <Property Name="Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degree1" Type="int" />
+          <Property Name="Degree2" Type="int" />
+          <Property Name="Degree3" Type="int" />
+          <Property Name="Degree4" Type="int" />
+          <Property Name="Degree5" Type="int" />
+          <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+          <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Token" Type="int" />
+          <Property Name="Ans1" Type="nvarchar(max)" />
+          <Property Name="Ans2" Type="nvarchar(max)" />
+          <Property Name="Ans3" Type="nvarchar(max)" />
+          <Property Name="Ans4" Type="nvarchar(max)" />
+          <Property Name="Ans5" Type="nvarchar(max)" />
+          <Property Name="Ans6" Type="nvarchar(max)" />
+          <Property Name="Ans7" Type="nvarchar(max)" />
+          <Property Name="Ans8" Type="nvarchar(max)" />
+          <Property Name="Ans9" Type="nvarchar(max)" />
+          <Property Name="Ans10" Type="nvarchar(max)" />
+          <Property Name="Ques1" Type="nvarchar(max)" />
+          <Property Name="Ques2" Type="nvarchar(max)" />
+          <Property Name="Ques3" Type="nvarchar(max)" />
+          <Property Name="Ques4" Type="nvarchar(max)" />
+          <Property Name="Ques5" Type="nvarchar(max)" />
+          <Property Name="Ques6" Type="nvarchar(max)" />
+          <Property Name="Ques7" Type="nvarchar(max)" />
+          <Property Name="Ques8" Type="nvarchar(max)" />
+          <Property Name="Ques9" Type="nvarchar(max)" />
+          <Property Name="Ques10" Type="nvarchar(max)" />
+          <Property Name="Result" Type="nvarchar(max)" />
+          <Property Name="Dr_token" Type="int" />
+          <Property Name="Patient_token" Type="int" />
+          <Property Name="checkAnsTure" Type="int" />
+          <Property Name="checkAnsWrong" Type="int" />
+        </EntityType>
+        <EntityType Name="Kidney">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="nvarchar(max)" />
+          <Property Name="Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degree1" Type="int" />
+          <Property Name="Degree2" Type="int" />
+          <Property Name="Degree3" Type="int" />
+          <Property Name="Degree4" Type="int" />
+          <Property Name="Degree5" Type="int" />
+          <Property Name="Degree6" Type="int" />
+          <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition7" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition8" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition9" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition10" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Yesno3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+          <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Token" Type="int" />
+          <Property Name="Ans1" Type="nvarchar(max)" />
+          <Property Name="Ans2" Type="nvarchar(max)" />
+          <Property Name="Ans3" Type="nvarchar(max)" />
+          <Property Name="Ans4" Type="nvarchar(max)" />
+          <Property Name="Ans5" Type="nvarchar(max)" />
+          <Property Name="Ans6" Type="nvarchar(max)" />
+          <Property Name="Ans7" Type="nvarchar(max)" />
+          <Property Name="Ans8" Type="nvarchar(max)" />
+          <Property Name="Ans9" Type="nvarchar(max)" />
+          <Property Name="Ans10" Type="nvarchar(max)" />
+          <Property Name="Ques1" Type="nvarchar(max)" />
+          <Property Name="Ques2" Type="nvarchar(max)" />
+          <Property Name="Ques3" Type="nvarchar(max)" />
+          <Property Name="Ques4" Type="nvarchar(max)" />
+          <Property Name="Ques5" Type="nvarchar(max)" />
+          <Property Name="Ques6" Type="nvarchar(max)" />
+          <Property Name="Ques7" Type="nvarchar(max)" />
+          <Property Name="Ques8" Type="nvarchar(max)" />
+          <Property Name="Ques9" Type="nvarchar(max)" />
+          <Property Name="Ques10" Type="nvarchar(max)" />
+          <Property Name="Result" Type="nvarchar(max)" />
+          <Property Name="Dr_token" Type="int" />
+          <Property Name="Patient_token" Type="int" />
+          <Property Name="checkAnsTure" Type="int" />
+          <Property Name="checkAnsWrong" Type="int" />
+        </EntityType>
+        <EntityType Name="Kidplaza">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="nvarchar(max)" />
+          <Property Name="Pattern" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degree1" Type="int" />
+          <Property Name="Degree2" Type="int" />
+          <Property Name="Degree3" Type="int" />
+          <Property Name="Degree4" Type="int" />
+          <Property Name="Degree5" Type="int" />
+          <Property Name="Degree6" Type="int" />
+          <Property Name="Degree7" Type="int" />
+          <Property Name="Degree8" Type="int" />
+          <Property Name="Degree9" Type="int" />
+          <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognition6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+          <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Text2" Type="nvarchar(max)" />
+          <Property Name="Text2Content" Type="nvarchar(max)" />
+          <Property Name="Token" Type="int" />
+          <Property Name="Ans1" Type="nvarchar(max)" />
+          <Property Name="Ans2" Type="nvarchar(max)" />
+          <Property Name="Ans3" Type="nvarchar(max)" />
+          <Property Name="Ans4" Type="nvarchar(max)" />
+          <Property Name="Ans5" Type="nvarchar(max)" />
+          <Property Name="Ans6" Type="nvarchar(max)" />
+          <Property Name="Ans7" Type="nvarchar(max)" />
+          <Property Name="Ans8" Type="nvarchar(max)" />
+          <Property Name="Ans9" Type="nvarchar(max)" />
+          <Property Name="Ans10" Type="nvarchar(max)" />
+          <Property Name="Ques1" Type="nvarchar(max)" />
+          <Property Name="Ques2" Type="nvarchar(max)" />
+          <Property Name="Ques3" Type="nvarchar(max)" />
+          <Property Name="Ques4" Type="nvarchar(max)" />
+          <Property Name="Ques5" Type="nvarchar(max)" />
+          <Property Name="Ques6" Type="nvarchar(max)" />
+          <Property Name="Ques7" Type="nvarchar(max)" />
+          <Property Name="Ques8" Type="nvarchar(max)" />
+          <Property Name="Ques9" Type="nvarchar(max)" />
+          <Property Name="Ques10" Type="nvarchar(max)" />
+          <Property Name="Result" Type="nvarchar(max)" />
+          <Property Name="Dr_token" Type="int" />
+          <Property Name="Patient_token" Type="int" />
+          <Property Name="checkAnsTure" Type="int" />
+          <Property Name="checkAnsWrong" Type="int" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Account" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Keypass" Type="nvarchar(max)" />
+          <Property Name="DrName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Age" Type="int" />
+          <Property Name="DiseaseType" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Form" Type="nvarchar(max)" />
+          <Property Name="DrName" Type="nvarchar(max)" />
+          <Property Name="CheckMsg" Type="int" />
+          <Property Name="CheckFinish" Type="int" />
+          <Property Name="Account" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="SDMdbModelStoreContainer">
+          <EntitySet Name="AircutList" EntityType="Self.AircutList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kidney" EntityType="Self.Kidney" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kidplaza" EntityType="Self.Kidplaza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SDMdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AircutList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree1" Type="Int32" />
+          <Property Name="Degree2" Type="Int32" />
+          <Property Name="Degree3" Type="Int32" />
+          <Property Name="Degree4" Type="Int32" />
+          <Property Name="Degree5" Type="Int32" />
+          <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Token" Type="Int32" />
+          <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dr_token" Type="Int32" />
+          <Property Name="Patient_token" Type="Int32" />
+          <Property Name="checkAnsTure" Type="Int32" />
+          <Property Name="checkAnsWrong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kidney">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Degree1" Type="Int32" />
+          <Property Name="Degree2" Type="Int32" />
+          <Property Name="Degree3" Type="Int32" />
+          <Property Name="Degree4" Type="Int32" />
+          <Property Name="Degree5" Type="Int32" />
+          <Property Name="Degree6" Type="Int32" />
+          <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Yesno3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Token" Type="Int32" />
+          <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dr_token" Type="Int32" />
+          <Property Name="Patient_token" Type="Int32" />
+          <Property Name="checkAnsTure" Type="Int32" />
+          <Property Name="checkAnsWrong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kidplaza">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pattern" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree1" Type="Int32" />
+          <Property Name="Degree2" Type="Int32" />
+          <Property Name="Degree3" Type="Int32" />
+          <Property Name="Degree4" Type="Int32" />
+          <Property Name="Degree5" Type="Int32" />
+          <Property Name="Degree6" Type="Int32" />
+          <Property Name="Degree7" Type="Int32" />
+          <Property Name="Degree8" Type="Int32" />
+          <Property Name="Degree9" Type="Int32" />
+          <Property Name="Cognition1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognition6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Determine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text2Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Token" Type="Int32" />
+          <Property Name="Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ques10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dr_token" Type="Int32" />
+          <Property Name="Patient_token" Type="Int32" />
+          <Property Name="checkAnsTure" Type="Int32" />
+          <Property Name="checkAnsWrong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keypass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="DiseaseType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Form" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckMsg" Type="Int32" />
+          <Property Name="CheckFinish" Type="Int32" />
+          <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SDMdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AircutList" EntityType="Self.AircutList" />
+          <EntitySet Name="Kidney" EntityType="Self.Kidney" />
+          <EntitySet Name="Kidplaza" EntityType="Self.Kidplaza" />
+          <EntitySet Name="Login" EntityType="Self.Login" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" />
+          <EntitySet Name="sysdiagrams" EntityType="SDMdbModel.sysdiagrams" />
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SDMdbModelStoreContainer" CdmEntityContainer="SDMdbEntities">
+          <EntitySetMapping Name="AircutList">
+            <EntityTypeMapping TypeName="SDMdbModel.AircutList">
+              <MappingFragment StoreEntitySet="AircutList">
+                <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+                <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+                <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+                <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+                <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+                <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+                <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+                <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+                <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+                <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+                <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+                <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+                <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+                <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+                <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+                <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+                <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+                <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+                <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+                <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+                <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+                <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+                <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+                <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+                <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+                <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+                <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+                <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+                <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+                <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+                <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+                <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+                <ScalarProperty Name="Yesno1" ColumnName="Yesno1" />
+                <ScalarProperty Name="Yesno2" ColumnName="Yesno2" />
+                <ScalarProperty Name="Yesno3" ColumnName="Yesno3" />
+                <ScalarProperty Name="Decision" ColumnName="Decision" />
+                <ScalarProperty Name="Determine" ColumnName="Determine" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kidney">
+            <EntityTypeMapping TypeName="SDMdbModel.Kidney">
+              <MappingFragment StoreEntitySet="Kidney">
+                <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+                <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+                <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+                <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+                <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+                <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+                <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+                <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+                <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+                <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+                <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+                <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+                <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+                <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+                <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+                <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+                <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+                <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+                <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+                <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+                <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+                <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+                <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+                <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+                <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+                <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+                <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+                <ScalarProperty Name="Degree6" ColumnName="Degree6" />
+                <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+                <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+                <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+                <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+                <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+                <ScalarProperty Name="Cognition6" ColumnName="Cognition6" />
+                <ScalarProperty Name="Cognition7" ColumnName="Cognition7" />
+                <ScalarProperty Name="Cognition8" ColumnName="Cognition8" />
+                <ScalarProperty Name="Cognition9" ColumnName="Cognition9" />
+                <ScalarProperty Name="Cognition10" ColumnName="Cognition10" />
+                <ScalarProperty Name="Yesno1" ColumnName="Yesno1" />
+                <ScalarProperty Name="Yesno2" ColumnName="Yesno2" />
+                <ScalarProperty Name="Yesno3" ColumnName="Yesno3" />
+                <ScalarProperty Name="Decision" ColumnName="Decision" />
+                <ScalarProperty Name="Determine" ColumnName="Determine" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kidplaza">
+            <EntityTypeMapping TypeName="SDMdbModel.Kidplaza">
+              <MappingFragment StoreEntitySet="Kidplaza">
+                <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+                <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+                <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+                <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+                <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+                <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+                <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+                <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+                <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+                <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+                <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+                <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+                <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+                <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+                <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+                <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+                <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+                <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+                <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+                <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+                <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+                <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+                <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Text2Content" ColumnName="Text2Content" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+                <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+                <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+                <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+                <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+                <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+                <ScalarProperty Name="Degree6" ColumnName="Degree6" />
+                <ScalarProperty Name="Degree7" ColumnName="Degree7" />
+                <ScalarProperty Name="Degree8" ColumnName="Degree8" />
+                <ScalarProperty Name="Degree9" ColumnName="Degree9" />
+                <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+                <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+                <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+                <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+                <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+                <ScalarProperty Name="Cognition6" ColumnName="Cognition6" />
+                <ScalarProperty Name="Decision" ColumnName="Decision" />
+                <ScalarProperty Name="Determine" ColumnName="Determine" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Text2" ColumnName="Text2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login">
+            <EntityTypeMapping TypeName="SDMdbModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="DrName" ColumnName="DrName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Keypass" ColumnName="Keypass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient">
+            <EntityTypeMapping TypeName="SDMdbModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="CheckFinish" ColumnName="CheckFinish" />
+                <ScalarProperty Name="CheckMsg" ColumnName="CheckMsg" />
+                <ScalarProperty Name="DrName" ColumnName="DrName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DiseaseType" ColumnName="DiseaseType" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Form" ColumnName="Form" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SDMdbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

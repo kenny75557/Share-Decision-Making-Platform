@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SDMdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AircutList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar(max)" />
+    <Property Name="Method" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degree1" Type="int" />
+    <Property Name="Degree2" Type="int" />
+    <Property Name="Degree3" Type="int" />
+    <Property Name="Degree4" Type="int" />
+    <Property Name="Degree5" Type="int" />
+    <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+    <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Token" Type="int" />
+    <Property Name="Ans1" Type="nvarchar(max)" />
+    <Property Name="Ans2" Type="nvarchar(max)" />
+    <Property Name="Ans3" Type="nvarchar(max)" />
+    <Property Name="Ans4" Type="nvarchar(max)" />
+    <Property Name="Ans5" Type="nvarchar(max)" />
+    <Property Name="Ans6" Type="nvarchar(max)" />
+    <Property Name="Ans7" Type="nvarchar(max)" />
+    <Property Name="Ans8" Type="nvarchar(max)" />
+    <Property Name="Ans9" Type="nvarchar(max)" />
+    <Property Name="Ans10" Type="nvarchar(max)" />
+    <Property Name="Ques1" Type="nvarchar(max)" />
+    <Property Name="Ques2" Type="nvarchar(max)" />
+    <Property Name="Ques3" Type="nvarchar(max)" />
+    <Property Name="Ques4" Type="nvarchar(max)" />
+    <Property Name="Ques5" Type="nvarchar(max)" />
+    <Property Name="Ques6" Type="nvarchar(max)" />
+    <Property Name="Ques7" Type="nvarchar(max)" />
+    <Property Name="Ques8" Type="nvarchar(max)" />
+    <Property Name="Ques9" Type="nvarchar(max)" />
+    <Property Name="Ques10" Type="nvarchar(max)" />
+    <Property Name="Result" Type="nvarchar(max)" />
+    <Property Name="Dr_token" Type="int" />
+    <Property Name="Patient_token" Type="int" />
+    <Property Name="checkAnsTure" Type="int" />
+    <Property Name="checkAnsWrong" Type="int" />
+  </EntityType>
+  <EntityType Name="Kidney">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar(max)" />
+    <Property Name="Method" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degree1" Type="int" />
+    <Property Name="Degree2" Type="int" />
+    <Property Name="Degree3" Type="int" />
+    <Property Name="Degree4" Type="int" />
+    <Property Name="Degree5" Type="int" />
+    <Property Name="Degree6" Type="int" />
+    <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yesno3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+    <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Token" Type="int" />
+    <Property Name="Ans1" Type="nvarchar(max)" />
+    <Property Name="Ans2" Type="nvarchar(max)" />
+    <Property Name="Ans3" Type="nvarchar(max)" />
+    <Property Name="Ans4" Type="nvarchar(max)" />
+    <Property Name="Ans5" Type="nvarchar(max)" />
+    <Property Name="Ans6" Type="nvarchar(max)" />
+    <Property Name="Ans7" Type="nvarchar(max)" />
+    <Property Name="Ans8" Type="nvarchar(max)" />
+    <Property Name="Ans9" Type="nvarchar(max)" />
+    <Property Name="Ans10" Type="nvarchar(max)" />
+    <Property Name="Ques1" Type="nvarchar(max)" />
+    <Property Name="Ques2" Type="nvarchar(max)" />
+    <Property Name="Ques3" Type="nvarchar(max)" />
+    <Property Name="Ques4" Type="nvarchar(max)" />
+    <Property Name="Ques5" Type="nvarchar(max)" />
+    <Property Name="Ques6" Type="nvarchar(max)" />
+    <Property Name="Ques7" Type="nvarchar(max)" />
+    <Property Name="Ques8" Type="nvarchar(max)" />
+    <Property Name="Ques9" Type="nvarchar(max)" />
+    <Property Name="Ques10" Type="nvarchar(max)" />
+    <Property Name="Result" Type="nvarchar(max)" />
+    <Property Name="Dr_token" Type="int" />
+    <Property Name="Patient_token" Type="int" />
+    <Property Name="checkAnsTure" Type="int" />
+    <Property Name="checkAnsWrong" Type="int" />
+  </EntityType>
+  <EntityType Name="Kidplaza">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar(max)" />
+    <Property Name="Pattern" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degree1" Type="int" />
+    <Property Name="Degree2" Type="int" />
+    <Property Name="Degree3" Type="int" />
+    <Property Name="Degree4" Type="int" />
+    <Property Name="Degree5" Type="int" />
+    <Property Name="Degree6" Type="int" />
+    <Property Name="Degree7" Type="int" />
+    <Property Name="Degree8" Type="int" />
+    <Property Name="Degree9" Type="int" />
+    <Property Name="Cognition1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognition6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Decision" Type="nvarchar" MaxLength="50" />
+    <Property Name="Determine" Type="nvarchar" MaxLength="50" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Text2" Type="nvarchar(max)" />
+    <Property Name="Text2Content" Type="nvarchar(max)" />
+    <Property Name="Token" Type="int" />
+    <Property Name="Ans1" Type="nvarchar(max)" />
+    <Property Name="Ans2" Type="nvarchar(max)" />
+    <Property Name="Ans3" Type="nvarchar(max)" />
+    <Property Name="Ans4" Type="nvarchar(max)" />
+    <Property Name="Ans5" Type="nvarchar(max)" />
+    <Property Name="Ans6" Type="nvarchar(max)" />
+    <Property Name="Ans7" Type="nvarchar(max)" />
+    <Property Name="Ans8" Type="nvarchar(max)" />
+    <Property Name="Ans9" Type="nvarchar(max)" />
+    <Property Name="Ans10" Type="nvarchar(max)" />
+    <Property Name="Ques1" Type="nvarchar(max)" />
+    <Property Name="Ques2" Type="nvarchar(max)" />
+    <Property Name="Ques3" Type="nvarchar(max)" />
+    <Property Name="Ques4" Type="nvarchar(max)" />
+    <Property Name="Ques5" Type="nvarchar(max)" />
+    <Property Name="Ques6" Type="nvarchar(max)" />
+    <Property Name="Ques7" Type="nvarchar(max)" />
+    <Property Name="Ques8" Type="nvarchar(max)" />
+    <Property Name="Ques9" Type="nvarchar(max)" />
+    <Property Name="Ques10" Type="nvarchar(max)" />
+    <Property Name="Result" Type="nvarchar(max)" />
+    <Property Name="Dr_token" Type="int" />
+    <Property Name="Patient_token" Type="int" />
+    <Property Name="checkAnsTure" Type="int" />
+    <Property Name="checkAnsWrong" Type="int" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Account" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Keypass" Type="nvarchar(max)" />
+    <Property Name="DrName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Age" Type="int" />
+    <Property Name="DiseaseType" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Form" Type="nvarchar(max)" />
+    <Property Name="DrName" Type="nvarchar(max)" />
+    <Property Name="CheckMsg" Type="int" />
+    <Property Name="CheckFinish" Type="int" />
+    <Property Name="Account" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="SDMdbModelStoreContainer">
+    <EntitySet Name="AircutList" EntityType="Self.AircutList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kidney" EntityType="Self.Kidney" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kidplaza" EntityType="Self.Kidplaza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

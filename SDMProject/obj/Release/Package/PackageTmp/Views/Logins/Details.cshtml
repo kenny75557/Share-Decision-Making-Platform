@@ -1,0 +1,34 @@
+﻿@model SDMProject.Models.Login
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <div>
+        <h2 style="text-align:center; font-weight:bold;">醫師帳號詳情</h2>
+        <hr />
+
+        醫師姓名：
+        @Html.DisplayFor(model => model.DrName)
+        <br>
+        帳號：
+        @Html.DisplayFor(model => model.Account)
+        <br>
+        密碼：
+        @Html.DisplayFor(model => model.Password)
+        <br>
+        子宮頸癌PDA：
+        @TempData["cal_kidplaza"]
+        <br>
+        氣管開口術PDA：
+        @TempData["cal_aircut"]
+        <br>
+        慢性腎臟疾病PDA：
+        @TempData["cal_kidney"]
+        <br>
+        <br>
+    </div>
+
+<p>
+    @Html.ActionLink("返回清單", "Index")
+</p>

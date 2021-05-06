@@ -1,0 +1,1490 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------------------------*/
+/*共用區塊*/
+/* 動畫在一起 */
+.IndexBlock .more_btn a, .IndexBlock .more_btn a::after, .sdmList .item .goto a::before, .sdmList .item .goto a::after, .sdmList .item .tags > span a,
+.IndexHealth .category_box .tags li a, .IndexHealth .bodyPart_btn a, .IndexHealth .bodyPart_btn a .tt span, .IndexHealth .bodyPart_btn .icon::before,
+.filter_tags a, .filter_tags a span::after, .searchFilter .more_btn a, .TOP_STEPS_BTN .step, .ListTable table td.status a, .LinkWrap .item ul li a::after,
+.LinkWrap .item ul li, .searchFilter .bodyPart_searchBtn a, .bodyPart_box .body_list .img img, .bodyPart_box .body_list .item a,
+.bodyPart_box .body_list .item a .img::before {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* 字型 */
+h3.title, .PageTitle h2, .question_box .ques_title, .question_box .item .title, .ListPicText .title a, .form_title span,
+.TOP_STEPS_BTN a, .editable_content h4, .editable_content h5, .editable_content h6, h4.ext_title, .FormGroup .form_group_subtitle span,
+.LinkWrap .link_title {
+    font-weight: 700;
+    font-family: 'Times New Roman', 'Noto Serif CJK TC', "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+/*----------------------------------------------------------------------*/
+/* Header */
+#Header {
+    /*做動畫*/
+    top: -150px;
+    -webkit-transition: top 0.4s ease-out;
+    -moz-transition: top 0.4s ease-out;
+    transition: top 0.4s ease-out;
+}
+
+.hd_top {
+    display: table;
+    height: 115px;
+}
+
+    .hd_top > div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .hd_top .logo {
+        display: table;
+        height: 100%;
+    }
+
+        .hd_top .logo a {
+            width: 310px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+    .hd_top .tool_box {
+        height: 100%;
+        display: table;
+    }
+
+        .hd_top .tool_box > div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+    .hd_top .search {
+        margin-bottom: 12px;
+    }
+
+@media screen and (max-width: 1360px) {
+    .hd_top .logo {
+        padding-left: 20px;
+    }
+}
+
+/* 浮動效果 */
+.MenuFix #Header {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+/*----------------------------------------------------------------------*/
+/* Menu */
+/* 先隱藏子選單,等網頁載入完畢後再顯示 */
+#Menu {
+    width: 100%;
+    background-color: #fdfdfd;
+    z-index: 10002;
+    border-top: 1px solid #e7bf8c;
+    border-bottom: 5px solid #df7b39;
+    /*做動畫*/
+    top: -150px;
+    -webkit-transition: top 0.4s ease-out;
+    -moz-transition: top 0.4s ease-out;
+    transition: top 0.4s ease-out;
+}
+
+    #Menu > div {
+        max-width: 1220px;
+        margin: auto;
+        height: 50px;
+    }
+
+    #Menu .superfish {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 10001;
+    }
+
+        #Menu .superfish.sf-js-enabled {
+            overflow: visible;
+        }
+
+        #Menu .superfish li {
+            position: relative;
+        }
+
+        #Menu .superfish a {
+            font-family: 'Arial','Noto Sans TC', "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+            font-weight: 400;
+            -webkit-transition: background 0.3s ease, color 0.3s ease;
+            -moz-transition: background 0.3s ease, color 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        #Menu .superfish > li {
+            position: relative;
+            float: left;
+            position: relative;
+        }
+
+            #Menu .superfish > li::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 20px;
+                background-color: #dbdbdb;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top: -10px;
+                -webkit-transform: skewX(-15deg);
+                -moz-transform: skewX(-15deg);
+                transform: skewX(-15deg);
+            }
+
+            #Menu .superfish > li:last-child::after {
+                display: none;
+            }
+
+            #Menu .superfish > li > a {
+                color: #444444;
+                line-height: 50px;
+                position: relative;
+            }
+
+                #Menu .superfish > li:hover > a, #Menu .superfish > li > a:focus, #Menu .superfish > li.select > a {
+                    color: #cf4747;
+                }
+
+        #Menu .superfish ul {
+            position: absolute;
+            display: none;
+            width: 140px;
+            background-color: #fff;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0px 20px rgba(0,0,0,0.25);
+            -moz-box-shadow: 0 0px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 0px 20px rgba(0,0,0,0.25);
+        }
+
+            #Menu .superfish ul::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                left: 50%;
+                margin-left: -5px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 8px 5px;
+                border-color: transparent transparent #fff transparent;
+            }
+
+        #Menu .superfish li:hover > ul {
+            display: block;
+        }
+
+        #Menu .superfish ul a {
+            padding: 10px;
+            line-height: 26px;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+
+        #Menu .superfish > li > ul {
+            top: 55px;
+            left: 50%;
+            margin-left: -70px;
+        }
+
+            #Menu .superfish > li > ul ul {
+                top: 0;
+                left: 130px;
+            }
+
+            #Menu .superfish > li > ul li:last-child {
+                border-bottom: 0;
+            }
+
+            #Menu .superfish > li > ul li:hover a {
+                background-color: #f5f5f5;
+            }
+
+            #Menu .superfish > li > ul li:first-child a {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            #Menu .superfish > li > ul li:last-child a {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+        #Menu .superfish ul li:hover > a, #Menu .superfish ul li > a:focus {
+            color: #cf4747;
+        }
+
+@media screen and (max-width: 1439px) {
+    #Menu > div {
+        padding: 0 15px;
+    }
+
+    #Menu .superfish > li {
+        padding: 0 10px;
+        display: inline-block;
+        float: none;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #Menu .superfish > li {
+        padding: 0 15px;
+    }
+}
+
+/* 浮動效果 */
+/*.MenuFix #Header .logo{ float:none; padding-left:0; }*/
+.MenuFix .hd_top {
+    display: none;
+    position: fixed;
+    z-index: 10020;
+    height: auto;
+    padding: 0 20px;
+    width: auto;
+}
+
+    .MenuFix .hd_top > div {
+        height: 45px;
+    }
+
+    .MenuFix .hd_top .logo a {
+        width: 180px;
+    }
+
+    .MenuFix .hd_top .tool_box {
+        display: none;
+    }
+
+.MenuFix #Menu {
+    position: fixed;
+    top: 0;
+    border-top: 0;
+}
+
+    .MenuFix #Menu > div {
+        height: 45px;
+    }
+
+    .MenuFix #Menu .superfish > li > a {
+        line-height: 45px;
+    }
+
+        .MenuFix #Menu .superfish > li > a::after {
+            bottom: 10px;
+        }
+
+    .MenuFix #Menu .superfish > li > ul {
+        top: 50px;
+    }
+
+.MenuFix .IndexImage, .MenuFix #Center {
+    margin-top: 150px;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* Copyright */
+#Copyright {
+    padding: 25px 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* 視覺形象區塊 */
+.IndexImage .cont .desc {
+    padding-top: 1.5625rem;
+    padding-right: 3rem;
+}
+
+.IndexImage .tt1 {
+    padding: 0 15px;
+}
+
+    .IndexImage .tt1::after {
+        position: absolute;
+        top: 50%;
+    }
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .IndexImage {
+        padding: 3.5rem 20px 5.5rem;
+    }
+
+        .IndexImage::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            /*background-color:rgba(242, 225, 203, 0.6);*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.4;
+            background: -moz-linear-gradient(top, rgba(242,226,206,1) 0%, rgba(242,226,206,0.99) 1%, rgba(222,221,221,0) 97%, rgba(221,221,221,0) 100%);
+            background: -webkit-linear-gradient(top, rgba(242,226,206,1) 0%,rgba(242,226,206,0.99) 1%,rgba(222,221,221,0) 97%,rgba(221,221,221,0) 100%);
+            background: linear-gradient(to bottom, rgba(242,226,206,1) 0%,rgba(242,226,206,0.99) 1%,rgba(222,221,221,0) 97%,rgba(221,221,221,0) 100%);
+        }
+
+        .IndexImage .text_box {
+            width: 80%;
+        }
+
+        .IndexImage .tt1 span {
+            background-color: #f5e9d6;
+        }
+
+        .IndexImage .tt2 {
+            font-size: 1.375em;
+        }
+
+        .IndexImage .cont .desc {
+            color: #847259;
+        }
+}
+
+@media screen and (min-width: 1440px) {
+    .IndexImage {
+        padding-top: 7.5%;
+        padding-bottom: 9.5%;
+    }
+
+        .IndexImage .text_box {
+            width: 55%;
+            padding-right: 20px;
+        }
+
+        .IndexImage .tt1 span {
+            background-image: url('../images/bg2.jpg');
+        }
+
+        .IndexImage .tt2 {
+            font-size: 1.75em;
+        }
+}
+
+/*----------------------------------------------------------------------*/
+/* IndexCenter */
+/*共用區塊*/
+.indexTitle::after {
+    position: absolute;
+    top: 50%;
+}
+
+.indexTitle span {
+    margin-left: 3.75rem;
+    padding: 0 15px;
+}
+
+.IndexBlock .more_btn {
+    margin-bottom: 25px;
+}
+
+.IndexSDM .indexTitle {
+    text-align: right;
+}
+
+    .IndexSDM .indexTitle span {
+        margin-right: 3.75rem;
+    }
+
+.IndexLinks .indexTitle {
+    text-align: right;
+}
+
+    .IndexLinks .indexTitle span {
+        margin-right: 3.75rem;
+    }
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    #IndexCenter > div {
+        padding: 0 20px;
+    }
+
+    .indexTitle span {
+        font-size: 1.75em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .indexTitle span {
+        font-size: 2em;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 列表 */
+.IndexSDM {
+    margin-bottom: 5rem;
+}
+
+.sdmList {
+    padding: 0 10px;
+}
+
+    .sdmList .item {
+        width: 50%;
+        float: left;
+    }
+
+        .sdmList .item:nth-child(odd) {
+            padding-right: 40px;
+        }
+
+        .sdmList .item:nth-child(even) {
+            padding-left: 40px;
+        }
+
+        .sdmList .item:nth-child(5) > div, .sdmList .item:nth-child(6) > div {
+            border-bottom: 0;
+        }
+
+        .sdmList .item .title a {
+            width: 90%;
+            font-size: 1.125em;
+            font-weight: 300;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+            .sdmList .item .title a:hover {
+                text-decoration: underline;
+            }
+
+        .sdmList .item .goto {
+            bottom: 20px;
+        }
+
+        .sdmList .item:nth-child(odd) .goto {
+            right: 40px;
+        }
+
+        .sdmList .item:nth-child(even) .goto {
+            right: 0;
+        }
+
+/*----------------------------------------------------------------------*/
+/* 衛教專區 列表 */
+.IndexHealth .indexTitle {
+    margin-bottom: 2rem;
+}
+
+.IndexHealth .category_box > .item {
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.IndexHealth .category_box > .item {
+    float: left;
+}
+
+    .IndexHealth .category_box > .item:nth-child(odd) {
+        margin-right: 20px;
+    }
+
+    .IndexHealth .category_box > .item:nth-child(even) {
+        margin-left: 20px;
+    }
+
+.IndexHealth .category_box .title {
+    text-align: center;
+}
+
+.IndexHealth .bodyPart_btn {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.IndexHealth .cat_bodyPart {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .IndexHealth .category_box > .item {
+        width: 47.8%;
+        padding: 25px;
+    }
+
+    .IndexHealth .category_box .FormElmt {
+        margin-bottom: 20px;
+    }
+
+    .IndexHealth .category_box .tags li a {
+        padding: 4px 10px;
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    .IndexHealth .category_box > .item {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .IndexHealth .category_box > .item {
+        width: 48.3%;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 內容 */
+.inside_tags {
+    margin-bottom: 3.5rem;
+}
+
+    .inside_tags span {
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        background-color: #ab795b;
+        color: #fff;
+        padding: 5px 12px;
+        font-size: 0.875em;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+    }
+
+/* 步驟按鈕 */
+.TOP_STEPS_BTN {
+    margin-bottom: 3.5rem;
+}
+
+/* 評估表單:標題 */
+.form_title {
+    margin-bottom: 5rem;
+}
+
+    .form_title span {
+        font-size: 2em;
+    }
+
+/*----------------------------------------------------------------------*/
+/*相關網站*/
+.IndexLinks > div {
+    padding: 45px 0;
+}
+
+.IndexLinks .list_box ul li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+    .IndexLinks .list_box ul li:hover {
+        -webkit-transform: scale(1.02);
+        -moz-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .IndexLinks .list_box ul li {
+        max-width: 160px;
+        height: 55px;
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    .IndexLinks .list_box ul li {
+        max-width: 170px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .IndexLinks .list_box ul li {
+        max-width: 180px;
+        height: 65px;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* popup 彈出視窗 */
+.alert_box > div {
+    width: 70%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.alert_box > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.alert_box .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.alert_box .alert_boxBody {
+    height: auto;
+}
+
+
+/*===================================以下為內頁===================================*/
+/*----------------------------------------------------------------------*/
+/* 內頁 */
+#Center {
+    margin-top: 30px;
+}
+
+    #Center > div {
+        margin-top: 20px;
+    }
+
+#Content {
+    padding: 10px 10px 30px;
+    margin-bottom: 30px;
+}
+
+/* 標題 */
+.PageTitle h2 {
+    float: left;
+}
+
+/* 文章更新日期 */
+.post_info {
+    margin-top: -30px;
+    text-align: right;
+}
+
+/*----------------------------------------------------------------------*/
+/* popup 彈出視窗 */
+.alert_box > div {
+    width: 70%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.alert_box > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.alert_box .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.alert_box .alert_boxBody {
+    height: auto;
+    padding-bottom: 10px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 部位圖片:彈出視窗; */
+.bodyPart_box > div {
+    max-width: 800px;
+}
+
+.bodyPart_box .popup_title {
+    display: none;
+}
+
+.bodyPart_box .popup_detail {
+    padding-top: 20px;
+}
+
+.bodyPart_box .body_list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.bodyPart_box .body_list .item {
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding: 0 5px;
+    margin-bottom: 20px;
+}
+
+    .bodyPart_box .body_list .item a {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+.bodyPart_box .body_list .img {
+    max-width: 150px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bodyPart_box .body_list .item a .img::before {
+    content: '\f067';
+    color: #333;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 0;
+    font-size: 30px;
+    z-index: 999;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+}
+
+.bodyPart_box .body_list .item a .img:hover::before {
+    opacity: 1;
+}
+
+.bodyPart_box .body_list .img img {
+    width: 100%;
+    height: auto;
+}
+
+.bodyPart_box .body_list .img:hover img {
+    transform: scale(1.04);
+    opacity: 0.4;
+}
+
+.bodyPart_box .body_list .title {
+    position: relative;
+    font-size: 0.875em;
+    margin-top: 5px;
+}
+
+    .bodyPart_box .body_list .title::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -17px;
+        left: 50%;
+        margin-left: -10px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 12px 10px;
+        border-color: transparent transparent #fff transparent;
+    }
+
+    .bodyPart_box .body_list .title .en {
+        display: block;
+        margin-top: 2px;
+    }
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單+衛教專區:共用列表 */
+/* 頁籤 */
+.searchFilter {
+    margin-bottom: 20px;
+}
+
+    .searchFilter .tabStyle .tabs ul li {
+        padding: 10px 20px;
+    }
+
+    .searchFilter .tab_container {
+        padding: 20px 25px;
+    }
+
+    /* 篩選關鍵字 */
+    .searchFilter .SearchBOX {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+/* tags */
+.filter_tags a {
+    padding: 5px 16px;
+}
+/*.searchFilter .filter_tags{ max-height:86px; }*/
+
+/*----------------------------------------------------------------------*/
+/* 評估表單:表格 */
+.compareChart table .cont {
+    font-size: 1.125em;
+}
+
+.compareChart table .info {
+    font-size: 1.125em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 問答題型 */
+.question_box .ques_title {
+    font-weight: 900;
+}
+
+.question_box .cont_box {
+    font-size: 1.125em;
+}
+
+/* 題型綜合樣式 */
+.evaluationForm table th, .evaluationForm table td {
+    padding: 15px 20px;
+    font-size: 1.125em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 暫存 */
+.save_box > div {
+    max-width: 850px;
+}
+
+.save_box .alert_boxBody {
+    padding-right: 30px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 相關網站 */
+.LinkWrap .item .tt {
+    padding: 10px 25px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 搜尋結果 */
+.SearchResult .desc, .SearchResult .cat, .SearchResult .cat a {
+    font-size: 0.938em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 文字列表 */
+.ListTable {
+    margin-bottom: 50px;
+}
+
+    .ListTable table th {
+        padding: 10px 15px;
+        white-space: nowrap;
+        color: #333;
+        background: #d6e0e1 url(../images/table_th_divide.png) no-repeat 0 center;
+    }
+
+    .ListTable table tr th:first-child {
+        background-image: none;
+    }
+
+    .ListTable table td {
+        padding: 13px 15px;
+        vertical-align: middle;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .ListTable table tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    .ListTable table tr:nth-child(even) {
+        background-color: transparent;
+    }
+
+    .ListTable table th.date {
+        width: 105px;
+    }
+
+    .ListTable table th.cat {
+        width: 120px;
+    }
+
+    .ListTable table th.type {
+        width: 120px;
+    }
+
+    .ListTable table th.no {
+        width: 30px;
+    }
+
+    .ListTable table td.number {
+        width: 90px;
+        color: #444;
+    }
+
+    .ListTable table td.date {
+        width: 105px;
+        color: #7e7e7e;
+        font-size: 87.5%;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .ListTable table td.type {
+        width: 120px;
+        color: #000;
+    }
+
+    .ListTable table td.no {
+        width: 30px;
+        font-family: 'Arial', sans-serif;
+        white-space: nowrap;
+        color: #a3a3a3;
+    }
+
+    .ListTable .p-date span {
+        display: inline-block;
+    }
+
+    .ListTable .sign-up a {
+        background-color: #90c4c9;
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+        .ListTable .sign-up a:hover {
+            background-color: #35a3b0;
+        }
+
+    .ListTable table td.download {
+        width: 200px;
+        text-align: left;
+        padding: 13px 25px;
+    }
+
+        .ListTable table td.download li {
+            padding-bottom: 8px;
+        }
+
+            .ListTable table td.download li a:hover {
+                opacity: 0.7;
+            }
+
+    .ListTable table th.number {
+        width: 10%;
+    }
+
+    .ListTable td.download a.file_ext {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+@media screen and (max-width: 1179px) {
+    .ListTable table td {
+        padding: 13px;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* 圖文列表 */
+.ListPicText {
+    margin-bottom: 30px;
+}
+
+    .ListPicText > div {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .ListPicText .item {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* list-view */
+    .ListPicText.list-view .item {
+    }
+
+        .ListPicText.list-view .item > div {
+            border-bottom: 1px solid #ddd;
+        }
+
+    .ListPicText.list-view .img {
+        float: left;
+        width: 320px;
+        max-width: 50%;
+    }
+
+    .ListPicText.list-view .btn a {
+        padding-right: 0;
+    }
+
+    /* grid-view */
+    .ListPicText.grid-view .item > div {
+        overflow: hidden;
+        padding-bottom: 15px;
+    }
+    /* 按鈕的高度 */
+    .ListPicText.grid-view .desc {
+        /* 限制行數 */
+        line-height: 1.75em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        max-height: 7em;
+    }
+
+    .ListPicText.grid-view .img {
+        padding: 15px;
+        -webkit-transition: transform 0.3s ease-out;
+        -moz-transition: transform 0.3s ease-out;
+        transition: transform 0.3s ease-out;
+    }
+
+    .ListPicText.grid-view .btn {
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+        right: 20px;
+    }
+    /* hover效果 */
+    .ListPicText.grid-view .item:hover .img {
+        transform: scale(0.98);
+    }
+
+
+    /* 單欄 */
+    .ListPicText.list-view.single .item {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .ListPicText.list-view.single .img {
+        padding-right: 20px;
+    }
+
+    .ListPicText.list-view.single.staggered .item:nth-child(2n+2) .img {
+        float: right;
+        padding-right: 10px;
+        padding-left: 20px;
+    }
+
+    .ListPicText.list-view.single.staggered .item:nth-child(2n+2) .cont .btn {
+        left: 15px;
+        right: auto;
+    }
+
+    .ListPicText.single .cont {
+        padding: 20px;
+    }
+
+    .ListPicText.single .title {
+        font-size: 1.25em;
+    }
+
+    .ListPicText.single .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText.single .desc {
+        font-size: 0.938em;
+    }
+
+    /* 兩欄 */
+    .ListPicText.bisection .item {
+        float: left;
+        width: 50%;
+    }
+
+    .ListPicText.bisection .cont {
+        padding: 20px;
+    }
+
+    .ListPicText.bisection .title {
+        font-size: 1.25em;
+    }
+
+    .ListPicText.bisection .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText.bisection .desc {
+        font-size: 0.875em;
+        /* 限制行數 */
+        line-height: 1.75em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        max-height: 7em;
+    }
+
+    .ListPicText.list-view.bisection .item {
+        margin-bottom: 0;
+        padding: 15px;
+    }
+
+    .ListPicText.list-view.bisection .img {
+        padding: 20px 15px 10px 20px;
+    }
+
+    .ListPicText.list-view.bisection .cont {
+        padding: 25px 20px;
+    }
+
+    /* 三欄 */
+    .ListPicText.trisection .item {
+        float: left;
+        width: 33.3333%;
+    }
+
+    .ListPicText.trisection .desc {
+        clear: both;
+    }
+
+    .ListPicText.trisection .cont {
+        padding: 5px 20px 20px;
+    }
+
+    .ListPicText.trisection .title {
+        font-size: 1.188em;
+    }
+
+    .ListPicText.trisection .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText.trisection .desc {
+        font-size: 0.875em;
+    }
+
+    .ListPicText.list-view.trisection .item {
+        border-bottom: 0;
+    }
+
+    .ListPicText.list-view.trisection .img {
+        padding: 15px 15px 5px 15px;
+    }
+
+    .ListPicText.list-view.trisection .cont {
+        padding: 15px;
+    }
+
+    /* 四欄 */
+    .ListPicText.quarters .item {
+        float: left;
+        width: 25%;
+    }
+
+    .ListPicText.quarters .cont {
+        padding: 5px 15px 15px;
+    }
+
+    .ListPicText.quarters .title {
+        font-size: 1.188em;
+    }
+
+    .ListPicText.quarters .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText.quarters .desc {
+        font-size: 0.875em;
+    }
+
+    .ListPicText.list-view.quarters .item {
+        border-bottom: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .ListPicText.list-view.quarters .img {
+        padding: 5px;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .ListPicText.list-view.quarters .cont {
+        padding: 10px;
+    }
+
+    .ListPicText.list-view.quarters .desc {
+        padding-bottom: 10px;
+        /* 限制行數 */
+        line-height: 1.75em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        max-height: 7em;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 表單 */
+.FormTable > tbody > tr > th, .FormTable > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.FormTable > tbody > tr > th {
+    width: 125px;
+    padding: 0px 5px 10px 0;
+    text-align: right;
+}
+
+    .FormTable > tbody > tr > th:empty::after {
+        display: none;
+    }
+
+.FormTable > tbody > tr > td {
+    padding: 5px 10px;
+}
+
+table.FormTable > tbody > tr > th, table.FormTable > tbody > tr > td {
+    vertical-align: top;
+    border-bottom: 1px dotted #ccc;
+}
+
+table.FormTable > tbody > tr:last-child > th, table.FormTable > tbody > tr:last-child > td {
+    border-bottom: 0;
+}
+/*table.FormTable > tbody > tr:first-child > th, table.FormTable > tbody > tr:first-child > td{ border-top:1px dotted #ccc; }*/
+table.FormTable > tbody > tr > th {
+    width: 150px;
+    padding: 15px 15px 15px 6px;
+    text-align: right;
+}
+
+    table.FormTable > tbody > tr > th::after {
+        position: absolute;
+        top: 14px;
+        right: 0;
+    }
+
+    table.FormTable > tbody > tr > th:empty::after {
+        display: none;
+    }
+
+table.FormTable > tbody > tr > td {
+    padding: 10px 6px 5px 6px;
+}
+/*table.FormTable > tbody > tr:nth-child(odd) > th, table.FormTable > tbody > tr:nth-child(odd) > td { background-color:#f5f5f5; }*/
+
+/* 表單元件 */
+.FormElmt .input_group > div {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 12px;
+    padding-bottom: 3px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 內頁元素 */
+/* 工具列 */
+.ToolBar .colm_right {
+    float: right;
+}
+
+.ToolBar dl.font_size {
+    float: left;
+}
+
+.ToolBar dl.share {
+    float: left;
+    padding-left: 8px;
+}
+
+/* 列表搜尋 */
+.ListSearch {
+    padding: 10px 10px 10px 0px;
+}
+
+    .ListSearch .BtnCommon {
+        position: absolute;
+        right: 20px;
+        bottom: 25px;
+    }
+
+        .ListSearch .BtnCommon input {
+            line-height: 30px;
+        }
+
+    .ListSearch .item span.label {
+        position: relative;
+    }
+
+    .ListSearch .item span.label, .ListSearch .item span.cont {
+        display: inline-block;
+    }
+
+/* 分類下拉 */
+.CatTitle h3 {
+    float: left;
+}
+
+.CatTitle .cat_select {
+    float: right;
+}
+
+
+/* 頁碼 */
+#Pagination {
+    margin-top: 3rem;
+    margin-bottom: 10px;
+}
+
+    #Pagination a {
+        margin: 0 2px;
+        position: relative;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+        #Pagination a.first, #Pagination a.prev, #Pagination a.next, #Pagination a.last {
+            background-color: transparent;
+            font-weight: bold;
+            /*-webkit-border-radius:5px; 
+    -moz-border-radius:5px; 
+    border-radius:5px;  */
+        }
+
+        #Pagination a.prev {
+            margin-right: 8px;
+        }
+
+        #Pagination a.next {
+            margin-left: 8px;
+        }
+
+            #Pagination a.first:hover, #Pagination a.prev:hover, #Pagination a.next:hover, #Pagination a.last:hover {
+                color: #df7b39;
+            }
+
+            #Pagination a.first::before, #Pagination a.first::after, #Pagination a.last::before, #Pagination a.last::after,
+            #Pagination a.prev::before, #Pagination a.next::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid #7b7b7b;
+                border-left: 1px solid #7b7b7b;
+            }
+
+        #Pagination a.first::before, #Pagination a.first::after, #Pagination a.prev::before {
+            margin-top: -4px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        #Pagination a.last::before, #Pagination a.last::after, #Pagination a.next::before {
+            margin-top: -5px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+
+        #Pagination a.first:hover::before, #Pagination a.first:hover::after, #Pagination a.last:hover::before, #Pagination a.last:hover::after,
+        #Pagination a.first:focus::before, #Pagination a.first:focus::after, #Pagination a.last:focus::before, #Pagination a.last:focus::after,
+        #Pagination a.prev:hover::before, #Pagination a.next:hover::before,
+        #Pagination a.prev:focus::before, #Pagination a.next:focus::before {
+            border-color: #f39800;
+        }
+
+        #Pagination a.first::before {
+            left: 0;
+        }
+
+        #Pagination a.first::after {
+            left: 4px;
+        }
+
+        #Pagination a.prev::before {
+            left: 2px;
+        }
+
+        #Pagination a.last::before {
+            right: 0;
+        }
+
+        #Pagination a.last::after {
+            right: 4px;
+        }
+
+        #Pagination a.next::before {
+            right: 2px;
+        }
+
+    #Pagination .current {
+        display: none;
+    }
+
+/* colorbox */
+#colorbox_thum a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    #colorbox_thum a {
+        width: 160px;
+        margin: 8px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #colorbox_thum a {
+        width: 215px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+        #colorbox_thum a:nth-child(5n+1) {
+            margin-left: 0;
+        }
+
+        #colorbox_thum a:nth-child(5n+5) {
+            margin-right: 0;
+        }
+}
+
+/*----------------------------------------------------------------------*/
+/* 編輯器 */
+#Content > .editable_content.content {
+    margin-bottom: 15px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 按鈕 */
+.BtnCommon.mid div[class] a, .BtnCommon.mid div[class] input {
+    padding-left: 56px;
+    padding-right: 30px;
+}
+
+.BtnCommon.mid div[class] span::before {
+    left: 30px;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* 表單 */
+/* 表單群組 */
+
+/* 滿意度調查使用的表單樣式 */
+.FormGroup .question_box {
+    padding: 0 20px;
+}

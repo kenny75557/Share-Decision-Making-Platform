@@ -1,0 +1,21 @@
+﻿@*@{
+        Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+    }*@
+@{
+    string ControllerName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+    switch (ControllerName.ToUpper())
+    {
+        case "HOME":
+            Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+            break;
+        case "PATIENTS":
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+        case "AIRCUTLISTS":
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+        default:
+            Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+            break;
+    }
+}

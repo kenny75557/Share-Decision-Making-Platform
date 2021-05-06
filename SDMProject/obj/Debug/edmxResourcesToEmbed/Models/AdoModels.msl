@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SDMdbModelStoreContainer" CdmEntityContainer="SDMdbEntities">
+    <EntitySetMapping Name="AircutList">
+      <EntityTypeMapping TypeName="SDMdbModel.AircutList">
+        <MappingFragment StoreEntitySet="AircutList">
+          <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+          <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+          <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+          <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+          <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+          <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+          <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+          <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+          <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+          <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+          <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+          <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+          <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+          <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+          <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+          <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+          <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+          <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+          <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+          <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+          <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+          <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+          <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+          <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+          <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+          <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+          <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+          <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+          <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+          <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+          <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+          <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+          <ScalarProperty Name="Yesno1" ColumnName="Yesno1" />
+          <ScalarProperty Name="Yesno2" ColumnName="Yesno2" />
+          <ScalarProperty Name="Yesno3" ColumnName="Yesno3" />
+          <ScalarProperty Name="Decision" ColumnName="Decision" />
+          <ScalarProperty Name="Determine" ColumnName="Determine" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kidney">
+      <EntityTypeMapping TypeName="SDMdbModel.Kidney">
+        <MappingFragment StoreEntitySet="Kidney">
+          <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+          <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+          <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+          <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+          <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+          <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+          <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+          <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+          <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+          <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+          <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+          <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+          <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+          <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+          <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+          <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+          <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+          <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+          <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+          <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+          <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+          <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+          <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+          <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+          <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+          <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+          <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+          <ScalarProperty Name="Degree6" ColumnName="Degree6" />
+          <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+          <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+          <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+          <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+          <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+          <ScalarProperty Name="Cognition6" ColumnName="Cognition6" />
+          <ScalarProperty Name="Cognition7" ColumnName="Cognition7" />
+          <ScalarProperty Name="Cognition8" ColumnName="Cognition8" />
+          <ScalarProperty Name="Cognition9" ColumnName="Cognition9" />
+          <ScalarProperty Name="Cognition10" ColumnName="Cognition10" />
+          <ScalarProperty Name="Yesno1" ColumnName="Yesno1" />
+          <ScalarProperty Name="Yesno2" ColumnName="Yesno2" />
+          <ScalarProperty Name="Yesno3" ColumnName="Yesno3" />
+          <ScalarProperty Name="Decision" ColumnName="Decision" />
+          <ScalarProperty Name="Determine" ColumnName="Determine" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kidplaza">
+      <EntityTypeMapping TypeName="SDMdbModel.Kidplaza">
+        <MappingFragment StoreEntitySet="Kidplaza">
+          <ScalarProperty Name="checkAnsWrong" ColumnName="checkAnsWrong" />
+          <ScalarProperty Name="checkAnsTure" ColumnName="checkAnsTure" />
+          <ScalarProperty Name="Patient_token" ColumnName="Patient_token" />
+          <ScalarProperty Name="Dr_token" ColumnName="Dr_token" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Ques10" ColumnName="Ques10" />
+          <ScalarProperty Name="Ques9" ColumnName="Ques9" />
+          <ScalarProperty Name="Ques8" ColumnName="Ques8" />
+          <ScalarProperty Name="Ques7" ColumnName="Ques7" />
+          <ScalarProperty Name="Ques6" ColumnName="Ques6" />
+          <ScalarProperty Name="Ques5" ColumnName="Ques5" />
+          <ScalarProperty Name="Ques4" ColumnName="Ques4" />
+          <ScalarProperty Name="Ques3" ColumnName="Ques3" />
+          <ScalarProperty Name="Ques2" ColumnName="Ques2" />
+          <ScalarProperty Name="Ques1" ColumnName="Ques1" />
+          <ScalarProperty Name="Ans10" ColumnName="Ans10" />
+          <ScalarProperty Name="Ans9" ColumnName="Ans9" />
+          <ScalarProperty Name="Ans8" ColumnName="Ans8" />
+          <ScalarProperty Name="Ans7" ColumnName="Ans7" />
+          <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+          <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+          <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+          <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+          <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+          <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Text2Content" ColumnName="Text2Content" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+          <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+          <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+          <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+          <ScalarProperty Name="Degree4" ColumnName="Degree4" />
+          <ScalarProperty Name="Degree5" ColumnName="Degree5" />
+          <ScalarProperty Name="Degree6" ColumnName="Degree6" />
+          <ScalarProperty Name="Degree7" ColumnName="Degree7" />
+          <ScalarProperty Name="Degree8" ColumnName="Degree8" />
+          <ScalarProperty Name="Degree9" ColumnName="Degree9" />
+          <ScalarProperty Name="Cognition1" ColumnName="Cognition1" />
+          <ScalarProperty Name="Cognition2" ColumnName="Cognition2" />
+          <ScalarProperty Name="Cognition3" ColumnName="Cognition3" />
+          <ScalarProperty Name="Cognition4" ColumnName="Cognition4" />
+          <ScalarProperty Name="Cognition5" ColumnName="Cognition5" />
+          <ScalarProperty Name="Cognition6" ColumnName="Cognition6" />
+          <ScalarProperty Name="Decision" ColumnName="Decision" />
+          <ScalarProperty Name="Determine" ColumnName="Determine" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Text2" ColumnName="Text2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login">
+      <EntityTypeMapping TypeName="SDMdbModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="DrName" ColumnName="DrName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Keypass" ColumnName="Keypass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient">
+      <EntityTypeMapping TypeName="SDMdbModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="CheckFinish" ColumnName="CheckFinish" />
+          <ScalarProperty Name="CheckMsg" ColumnName="CheckMsg" />
+          <ScalarProperty Name="DrName" ColumnName="DrName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DiseaseType" ColumnName="DiseaseType" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Form" ColumnName="Form" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SDMdbModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

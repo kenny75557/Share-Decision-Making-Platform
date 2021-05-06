@@ -1,0 +1,311 @@
+﻿.check_msg_notice {
+    color: green
+}
+
+.check_msg_warning {
+    color: #ff6347
+}
+
+.check_msg_err {
+    color: red;
+    font-weight: bold
+}
+
+.display_none {
+    left: -1000px;
+    width: 0;
+    position: absolute;
+    top: -1000px;
+    height: 0;
+    display: none
+}
+
+.dev-option-list div {
+    float: left;
+    padding-right: 18px
+}
+
+ul.bxSlider_list {
+    position: relative
+}
+
+    ul.bxSlider_list li {
+        float: left;
+        list-style: none;
+        position: relative;
+        display: none
+    }
+
+#KeyVisual.noscript .bxSlider_list li {
+    display: block
+}
+
+ul.bxSlider_list li:first-child {
+    display: block
+}
+
+div.bx-viewport ul.bxSlider_list li {
+    display: block
+}
+
+.theme_website ul {
+    list-style-type: none !important;
+    margin: 0 !important
+}
+
+#Header .search_box .btn input[type="submit"] {
+    opacity: 0;
+    z-index: 99
+}
+
+.theme_website ul::after {
+    display: block;
+    content: '';
+    clear: both
+}
+
+.theme_website ul li {
+    float: left;
+    width: 20%;
+    padding: 0 5px;
+    min-width: 145px;
+    min-height: 135px;
+    margin-bottom: 10px;
+    box-sizing: border-box
+}
+
+    .theme_website ul li, .theme_website ul li a, .theme_website ul li a::after, .theme_website ul li span.title, .theme_website ul li span.icon {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        transition: all .3s ease
+    }
+
+        .theme_website ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative
+        }
+
+        .theme_website ul li.item1 a {
+            background-image: url("../images/theme_website1.jpg")
+        }
+
+        .theme_website ul li.item2 a {
+            background-image: url("../images/theme_website2.jpg")
+        }
+
+        .theme_website ul li.item3 a {
+            background-image: url("../images/theme_website3.jpg")
+        }
+
+        .theme_website ul li.item4 a {
+            background-image: url("../images/theme_website4.jpg")
+        }
+
+        .theme_website ul li.item5 a {
+            background-image: url("../images/theme_website5.jpg")
+        }
+
+.theme_website.customize ul li a {
+    background-image: none
+}
+
+.theme_website ul li a::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.2);
+    z-index: 1
+}
+
+.theme_website.customize ul li a::after {
+    display: none
+}
+
+.theme_website ul li img {
+    width: 100%
+}
+
+.theme_website ul li span {
+    display: block;
+    position: absolute;
+    z-index: 2
+}
+
+    .theme_website ul li span.title {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 38px;
+        margin-top: -19px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        font-family: "Noto Sans TC",sans-serif;
+        color: #fff;
+        text-align: center;
+        line-height: 120%;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-shadow: 0 0 5px rgba(0,0,0,1)
+    }
+
+.theme_website.customize ul li span.title {
+    text-shadow: none
+}
+
+.theme_website ul li span.icon {
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 0 0 -15px;
+    opacity: 0
+}
+
+    .theme_website ul li span.icon::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 6px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #fff;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%
+    }
+
+    .theme_website ul li span.icon::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 70%;
+        left: 20px;
+        width: 8px;
+        height: 4px;
+        background-color: #fff;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+
+.theme_website ul li:hover a {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    transform: scale(1.03)
+}
+
+    .theme_website ul li:hover a::after {
+        background-color: rgba(0,0,0,.4)
+    }
+
+.theme_website ul li:hover span.title {
+    top: 60%
+}
+
+.theme_website ul li:hover span.icon {
+    opacity: 1
+}
+
+@media screen and (max-width:1023px) {
+    .theme_website ul li span.title {
+        font-size: 18px
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .theme_website ul li span.title {
+        font-size: 20px
+    }
+}
+
+@media screen and (max-width:799px) {
+    .theme_website ul li span.icon {
+        top: 20%
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:1023px) {
+    .theme_website ul li span.icon {
+        top: 25%
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1279px) {
+    .theme_website ul li span.icon {
+        top: 27%
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .theme_website ul li span.icon {
+        top: 32%
+    }
+}
+
+.editable_content .imgcenter span {
+    margin: auto 0
+}
+
+.personal_box .FormElmt .check_msg {
+    position: absolute;
+    right: 5px;
+    top: 25%
+}
+
+div.randomcode .input .check_msg, div.item.edu .check_msg {
+    right: 25px
+}
+
+.item2 > div {
+    position: relative
+}
+
+.personal_box .FormElmt .item2 .check_msg {
+    top: 0
+}
+
+div.item.birth .check_msg {
+    right: 30px
+}
+
+.evaluationForm.st2 table th.choose.haveTop {
+    padding-top: 20px
+}
+
+.hide {
+    display: none
+}
+
+.compareChart table .icon {
+    display: inline-block;
+    font-size: 1.85em;
+    width: 8%;
+    margin-bottom: 10px
+}
+
+.compareChart table .info .icon {
+    width: 10%
+}
+
+.compareChart table .people_box.thousand .icon {
+    width: 2%;
+    font-size: 1em;
+    margin-bottom: 2px
+}

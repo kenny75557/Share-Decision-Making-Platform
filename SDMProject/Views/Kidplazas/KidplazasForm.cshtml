@@ -1,0 +1,690 @@
+﻿@model SDMProject.Models.Kidplaza
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+@{
+    ViewBag.Title = "KidplazasForm";
+}
+
+<html>
+<head>
+    <title>
+        新光醫院－我有子宮頸癌，有什麼治療選擇？該選擇放射治療或是手術
+    </title>
+    <style>
+        body {
+            background-image: url('../../img/bg.jpg');
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        #table01 {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #table02 {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .tab02 tr:nth-child(odd) {
+            background-color: #C4E1FF;
+        }
+
+        .tab02 tr:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+
+        #th01 {
+            background-color: #FFCCCC;
+            text-align: center;
+        }
+
+        #th02 {
+            text-align: center;
+        }
+
+        #c01 {
+            color: #5500DD;
+            font-weight: bolder;
+        }
+
+        #c02 {
+            color: #FF0000;
+            font-weight: bolder;
+            text-align: center;
+            display: block;
+        }
+
+        #c03 {
+            font-weight: bolder;
+        }
+
+        #hr01 {
+            border: 1px solid #CC00CC;
+        }
+
+        #boxtext01 {
+            border: 2px gray dashed;
+            padding: 6px;
+            width: auto;
+            border-radius: 10px;
+            background-color: #00EC00;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        img {
+            /*width: auto;*/
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .select input {
+            display: none;
+        }
+
+            .select input + label {
+                display: inline-block;
+                border: 1px solid #000;
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 2px 8px;
+            }
+
+            .select input:checked + label {
+                background-color: #FFFF00;
+            }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function checkDegree1(control) {
+            for (i = 0; i < control.length; i++)
+                if (control[i].checked)
+                    return (true);
+            alert("還有題目未填寫！");
+            return (false);
+        }
+
+        function validateForm(form) {
+            if (!checkDegree1(form.Step1) || !checkDegree1(form.Step2) || !checkDegree1(form.Step3) || !checkDegree1(form.Step4) || !checkDegree1(form.Step5) || !checkDegree1(form.Step6) || !checkDegree1(form.Step7) || !checkDegree1(form.Step8) || !checkDegree1(form.Step9) || !checkDegree1(form.Cognition1) || !checkDegree1(form.Cognition2) || !checkDegree1(form.Cognition3) || !checkDegree1(form.Cognition4) || !checkDegree1(form.Cognition5) || !checkDegree1(form.Cognition6) || !checkDegree1(form.Decision) || !checkDegree1(form.Decision) || !checkDegree1(form.Determine) || !checkDegree1(form.Treatment))
+                return;
+            alert("所有資料驗證通過！\n表單即將送出！");
+            document.getElementById("form01").submit();
+        }
+
+        function validatePrompt(control, promptStr) {
+            alert(promptStr);
+            control.focus();
+            return;
+        }
+/**/</script>
+
+    <br>
+    <h1 id="c03" style="text-align:center;">
+        我有子宮頸癌，有什麼治療選擇？
+        <br>
+        該選擇
+        <span style="color:#008B00">手術治療</span>或是
+        <span style="color:#EE9A00">放射治療</span>呢？
+    </h1>
+    <br><br>
+
+    &emsp;&emsp;當醫師藉由子宮頸抹片、切片證實您罹患子宮頸癌，並經由影像學診斷分期為 IB（第 1 期末）至 IIA（第 2 期初）之間時，代表您現在需要思考下一步的治療手段，該選擇手術治療或是放射治療。本表單將協助您瞭解病因及有哪些治療選擇，請跟著我們的步驟，一步步探索自己的需求及在意的事情，希望能幫助您思考適合自己後續的治療計畫。<br><br>
+    ● <span id="c01">適用對象：</span><br>
+    &emsp;✓ 年滿 20 歲<br>
+    &emsp;✓ 罹患子宮頸癌<br>
+    &emsp;✓ 疾病期別介於 IB 到 IIA<br><br>
+
+    ● <span id="c01">疾病簡介：</span><br><br>
+    <img src="~/img/img01.png" style="display:block; margin:auto;">&emsp;
+    <img src="~/img/img02.png" style="display:block; margin:auto;"><br><br>
+
+    ● <span id="c01">治療選項簡介：</span><br>
+    ✦ 手術治療：早期子宮頸癌的標準治療是手術療法，臨床分期 IIA 之前的子宮頸癌，通常會進行根除性子宮切除手術，以及骨盆淋巴廓清手術。另外對 IB 期之前，腫瘤體積小於 2 公分的子宮頸癌，又想保留生育能力的婦女，可考慮子宮頸切除手術（或合併骨盆腔淋巴清除手術）。<br><br>
+    ✦ 放射線治療：研究顯示對於腫瘤分期 IB-IIA 的子宮頸癌，放射治療也可以達到跟手術治療相同的效果。在接受放射治療前，會先進行治療前的定位準備，一至二周內會開始進行放射治療，需進行 5 次以上的放射治療。<br><br>
+    ✦ 熱治療：熱能夠造成腫瘤細胞暫時性的生長停滯，有效增加放射治療的效果，因此在較大的腫瘤（&gt;4cm）以上可以考慮配合化放射治療療程同步加上熱治療。<br><br>
+
+    ● <span id="c01">您目前比較想要選擇的方式是：</span><br>
+
+    @*@using (Html.BeginForm())
+        {*@
+
+    <form id="form01" action="/Kidplazas/KidplazasForm" method="post">
+
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.PatientID)
+
+            <div class="select">
+                <input type="radio" name="Treatment" id="t01" value="手術治療">
+                <label for="t01">手術治療</label>
+                <input type="radio" name="Treatment" id="t02" value="放射治療±熱療">
+                <label for="t02">放射治療<span style="color:#FF0000">±熱療</span></label>
+                <input type="radio" name="Treatment" id="t03" value="目前還不清楚">
+                <label for="t03">目前還不清楚</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Pattern, "", new { @class = "text-danger" })
+
+                ●
+                <span id="c01">接著請透過以下四個步驟來幫助您做決定</span>
+                <br>
+                <br>
+
+                <div id="boxtext01">步驟一、選項間的比較</div>
+                <br>
+
+                <table id="table01" border=1 align=center>
+                    <tr bgcolor=#FFAA33 align=center>
+                        <th rowspan=2 width="100px">考量\選項</th>
+                        <th rowspan=2 width="350px">手術治療</th>
+                        <th colspan=2>放射治療</th>
+                    </tr>
+
+                    <tr bgcolor=#FFAA33 align=center>
+                        <th width="350px">放射治療</th>
+                        <th width="350px">加上熱治療</th>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">20年存活率</th>
+                        <td align=center>100人中有 72 個人治療後會存活超過 20 年</td>
+                        <td colspan=2 align=center>100人中有 77 個人治療後會存活超過 20 年</td>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">復發率</th>
+                        <td align=center>100人中有 28 個人治療後會復發</td>
+                        <td colspan=2 align=center>100人中有 27 個人治療後會復發</td>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">優點</th>
+                        <td>
+                            1.手術為一次性治療。
+                            <br>
+                            2.卵巢可以選擇性保留。
+                            <br>
+                            3.傳統手術治療全程健保給付。
+                            <br>
+                        </td>
+                        <td>
+                            1.沒有手術傷口。
+                            <br>
+                            2.可以搭配熱治療療程，同時進行。
+                            <br>
+                            3.放射治療全程健保給付。
+                        </td>
+                        <td>
+                            1.沒有手術傷口。
+                            <br>
+                            2.可以搭配放射治療，同時進行。
+                            <br>
+                            3.增加放射治療之療效。
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">缺點/風險/副作用</th>
+                        <td>
+                            1.傷口疼痛。
+                            <br>
+                            2.傷口有可能會感染。
+                            <br>
+                            3.恢期較長。
+                            <br>
+                            4.膀胱與腸道功能障礙。
+                            <br>
+                            5.淋巴水腫。
+                            <br>
+                            6.需住院進行治療。
+                            <br>
+                        </td>
+                        <td>
+                            1.主要腫瘤仍殘存體內。
+                            <br>
+                            2.卵巢及附近器官輻射傷害作用較大。
+                            <br>
+                            3.黏膜出血。
+                            <br>
+                            4.腸粘黏/腸阻塞。
+                            <br>
+                            5.陰道乾澀，影響性生活。
+                            <br>
+                            6.放射治療需治療5次以上。
+                        </td>
+                        <td>
+                            1.需與放射治療同步進行，缺點/風險/副作用與放射治療同。
+                            <br>
+                            2.體內植入金屬或安裝節律器的病人無法進行熱治療，以免燙傷。
+                            <br>
+                            3.可能會有脂肪結塊的情形。
+                            <br>
+                            4.需自費進行療程。
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <div id="boxtext01">步驟二、您在意的項目是什麼？以及在意的程度？</div>
+                <br>
+
+                <div class="tab02">
+                    <table id="table02" border=1 align=center>
+                        <tr align=center>
+                            <th rowspan=2>考量項目</th>
+                            <th colspan=6>在意程度</th>
+                        </tr>
+
+                        <tr align=center>
+                            <th colspan=6>完全不在意 → 非常在意</th>
+                        </tr>
+
+                        <tr id="th02">
+                            <th>疼痛</th>
+                            <td>
+                                <input type="radio" name="Step1" id="s01" value="0">
+                                <label for="s01">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step1" id="s02" value="1">
+                                <label for="s02">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step1" id="s03" value="2">
+                                <label for="s03">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step1" id="s04" value="3">
+                                <label for="s04">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step1" id="s05" value="4">
+                                <label for="s05">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step1" id="s06" value="5">
+                                <label for="s06">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree1, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>擔心體內殘存大體積腫瘤</th>
+                            <td>
+                                <input type="radio" name="Step2" id="s07" value="0">
+                                <label for="s07">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step2" id="s08" value="1">
+                                <label for="s08">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step2" id="s09" value="2">
+                                <label for="s09">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step2" id="s10" value="3">
+                                <label for="s10">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step2" id="s11" value="4">
+                                <label for="s11">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step2" id="s12" value="5">
+                                <label for="s12">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree2, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>影響卵巢賀爾蒙功能</th>
+                            <td>
+                                <input type="radio" name="Step3" id="s13" value="0">
+                                <label for="s13">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step3" id="s14" value="1">
+                                <label for="s14">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step3" id="s15" value="2">
+                                <label for="s15">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step3" id="s16" value="3">
+                                <label for="s16">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step3" id="s17" value="4">
+                                <label for="s17">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step3" id="s18" value="5">
+                                <label for="s18">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree3, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>影響生育功能</th>
+                            <td>
+                                <input type="radio" name="Step4" id="s19" value="0">
+                                <label for="s19">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step4" id="s20" value="1">
+                                <label for="s20">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step4" id="s21" value="2">
+                                <label for="s21">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step4" id="s22" value="3">
+                                <label for="s22">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step4" id="s23" value="4">
+                                <label for="s23">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step4" id="s24" value="5">
+                                <label for="s24">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree4, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>影響性生活</th>
+                            <td>
+                                <input type="radio" name="Step5" id="s25" value="0">
+                                <label for="s25">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step5" id="s26" value="1">
+                                <label for="s26">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step5" id="s27" value="2">
+                                <label for="s27">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step5" id="s28" value="3">
+                                <label for="s28">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step5" id="s29" value="4">
+                                <label for="s29">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step5" id="s30" value="5">
+                                <label for="s30">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree5, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>擔心輻射後遺症</th>
+                            <td>
+                                <input type="radio" name="Step6" id="s31" value="0">
+                                <label for="s31">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step6" id="s32" value="1">
+                                <label for="s32">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step6" id="s33" value="2">
+                                <label for="s33">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step6" id="s34" value="3">
+                                <label for="s34">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step6" id="s35" value="4">
+                                <label for="s35">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step6" id="s36" value="5">
+                                <label for="s36">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree6, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>擔心手術後遺症</th>
+                            <td>
+                                <input type="radio" name="Step7" id="s37" value="0">
+                                <label for="s37">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step7" id="s38" value="1">
+                                <label for="s38">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step7" id="s39" value="2">
+                                <label for="s39">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step7" id="s40" value="3">
+                                <label for="s40">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step7" id="s41" value="4">
+                                <label for="s41">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step7" id="s42" value="5">
+                                <label for="s42">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree7, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>擔心療程需多次治療</th>
+                            <td>
+                                <input type="radio" name="Step8" id="s43" value="0">
+                                <label for="s43">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step8" id="s44" value="1">
+                                <label for="s44">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step8" id="s45" value="2">
+                                <label for="s45">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step8" id="s46" value="3">
+                                <label for="s46">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step8" id="s47" value="4">
+                                <label for="s47">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step8" id="s48" value="5">
+                                <label for="s48">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree8, "", new { @class = "text-danger" })
+                        </tr>
+
+                        <tr id="th02">
+                            <th>其它</th>
+                            <td>
+                                <input type="radio" name="Step9" id="s49" value="0">
+                                <label for="s49">0</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step9" id="s50" value="1">
+                                <label for="s50">1</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step9" id="s51" value="2">
+                                <label for="s51">2</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step9" id="s52" value="3">
+                                <label for="s52">3</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step9" id="s53" value="4">
+                                <label for="s53">4</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="Step9" id="s54" value="5">
+                                <label for="s54">5</label>
+                            </td>
+                            @Html.ValidationMessageFor(model => model.Degree9, "", new { @class = "text-danger" })
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+                <br>
+                <div id="boxtext01">步驟三、對於以上提供的資訊，您是否已經了解呢？</div>
+                <br>
+
+                <span id="c03">1.接受手術治療，傷口會疼痛，復原需要時間。</span>
+                <br>
+                <input type="radio" name="Cognition1" id="cog01" value="對">
+                <label for="cog01">對</label>
+                <input type="radio" name="Cognition1" id="cog02" value="不對">
+                <label for="cog02">不對</label>
+                <input type="radio" name="Cognition1" id="cog03" value="不確定">
+                <label for="cog03">不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition1, "", new { @class = "text-danger" })
+                <span id="c03">2.接受放射治療的效果等同手術治療，雖然沒有割除腫瘤，但陰道會乾澀且影響性生活。</span>
+                <br>
+                <input type="radio" name="Cognition2" id="cog04" value="對">
+                <label for="cog04">對</label>
+                <input type="radio" name="Cognition2" id="cog05" value="不對">
+                <label for="cog05">不對</label>
+                <input type="radio" name="Cognition2" id="cog06" value="不確定">
+                <label for="cog06">不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition2, "", new { @class = "text-danger" })
+                <span id="c03">3.接受放射治療，卵巢亦有可能遭受輻射傷害。</span>
+                <br>
+                <input type="radio" name="Cognition3" id="cog07" value="對">
+                <label for="cog07">對</label>
+                <input type="radio" name="Cognition3" id="cog08" value="不對">
+                <label for="cog08">不對</label>
+                <input type="radio" name="Cognition3" id="cog09" value="不確定">
+                <label for="cog09">不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition3, "", new { @class = "text-danger" })
+                <span id="c03">4.進行手術治療之後，有可能產生暫時性或慢性膀胱與腸道功能障礙。</span>
+                <br>
+                <input type="radio" name="Cognition4" id="cog10" value="對">
+                <label for="cog10">對</label>
+                <input type="radio" name="Cognition4" id="cog11" value="不對">
+                <label for="cog11">不對</label>
+                <input type="radio" name="Cognition4" id="cog12" value="不確定">
+                <label for="cog12">不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition4, "", new { @class = "text-danger" })
+                <span id="c03">5.進行骨盆腔淋巴廓清手術之後，有可能發生淋巴水腫的副作用。</span>
+                <br>
+                <input type="radio" name="Cognition5" id="cog13" value="對">
+                <label for="cog13">對</label>
+                <input type="radio" name="Cognition5" id="cog14" value="不對">
+                <label for="cog14">不對</label>
+                <input type="radio" name="Cognition5" id="cog15" value="不確定">
+                <label for="cog15">不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition5, "", new { @class = "text-danger" })
+                <span id="c03">6.接受放射治療，我必須分階段，經過至少 5 次的治療。</span>
+                <br>
+                <input type="radio" name="Cognition6" id="cog16" value="對">
+                <label for="cog16">對</label>
+                <input type="radio" name="Cognition6" id="cog17" value="不對">
+                <label for="cog17">不對</label>
+                <input type="radio" name="Cognition6" id="cog18" value="不確定">
+                <label for="cog18">不確定</label>
+                <br>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition6, "", new { @class = "text-danger" })
+
+                <div id="boxtext01">步驟四、您現在確認好醫療方式了嗎？</div>
+                <br>
+
+                <span id="c03">7.我已經確認好想要的治療方式，我決定選擇：（下列擇一）</span>
+                <br>
+                <input type="radio" name="Decision" id="de01" value="手術治療">
+                <label for="de01">手術治療</label>
+                <input type="radio" name="Decision" id="de02" value="放射治療±熱療">
+                <label for="de02">放射治療<span style="color:#FF0000">±熱療</span></label>
+                <input type="radio" name="Decision" id="de03" value="目前還不清楚">
+                <label for="de03">目前還不清楚</label>
+                <br>
+                <br>
+
+
+                <span id="c03">8.我目前還無法決定</span>
+                <br>
+                <input type="radio" name="Determine" id="det01" value="我想要再與我的主治醫師討論我的決定。">
+                <label for="det01">我想要再與我的主治醫師討論我的決定。</label>
+                <br>
+                <input type="radio" name="Determine" id="det02" value="我想要再與其他人（包含配偶、家人、朋友或第二意見提供者…）討論我的決定。">
+                <label for="det02">我想要再與其他人（包含配偶、家人、朋友或第二意見提供者…）討論我的決定。</label>
+                <br>
+                @*<input type="radio" name="Determine" id="det03" value="對於以上治療方式，我想要再瞭解更多，我的問題有："> 對於以上治療方式，我想要再瞭解更多，我的問題有：*@
+                <input type="radio" name="Determine" id="det03" value="對於以上治療方式，我想要再瞭解更多">
+                <label for="det03">對於以上治療方式，我想要再瞭解更多</label>
+                <br>
+                我的問題有：
+                <br>
+                <textarea name="Content01" style="width:100%; height:100px;"></textarea>
+                <br>
+                @*<input type="radio" name="Determine" id="det04" value="不進行任何治療，原因："> 不進行任何治療，原因：*@
+                <input type="radio" name="Determine" id="det04" value="不進行任何治療">
+                <label for="det04">不進行任何治療</label>
+                <br>
+                原因：
+                <br>
+                <textarea name="Content02" style="width:100%; height:100px;"></textarea>
+                <br>
+                <br>
+            </div>
+        </div>
+
+        <input type="button" value="送出" class="btn btn-outline-primary" onclick="validateForm(this.form)">
+        <br>
+
+        <span id="c02"> 完成以上評估後，您可以列印及攜帶此份結果與您的主治醫師討論。</span>
+        <br>
+    </form>
+    @*}*@
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

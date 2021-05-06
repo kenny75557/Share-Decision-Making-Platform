@@ -1,0 +1,525 @@
+﻿@model SDMProject.Models.AircutList
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+@{
+    ViewBag.Title = "AircutForm";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('../../img/bg.jpg');
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        #table01 {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #table02 {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #th01 {
+            background-color: #FFCCCC;
+            text-align: center;
+        }
+
+        #th02 {
+            text-align: center;
+        }
+
+        #c01 {
+            color: #5500DD;
+            font-weight: bolder;
+        }
+
+        #c02 {
+            color: #FF0000;
+            font-weight: bolder;
+            text-align: center;
+            display: block;
+        }
+
+        #c03 {
+            font-weight: bolder;
+        }
+
+        #boxtext01 {
+            border: 2px gray dashed;
+            padding: 6px;
+            width: auto;
+            border-radius: 10px;
+            background-color: #00EC00;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        img {
+            /*width: auto;*/
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .select input {
+            display: none;
+        }
+
+            .select input + label {
+                display: inline-block;
+                border: 1px solid #000;
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 2px 8px;
+            }
+
+            .select input:checked + label {
+                background-color: #FFFF00;
+            }
+    </style>
+</head>
+
+<body>
+    <script>
+        function checkDegree1(control) {
+            for (i = 0; i < control.length; i++)
+                if (control[i].checked)
+                    return (true);
+            alert("還有題目未填寫！");
+            return (false);
+        }
+
+        function validateForm(form) {
+            if (!checkDegree1(form.Way) || !checkDegree1(form.Degree1) || !checkDegree1(form.Degree2) || !checkDegree1(form.Degree3) || !checkDegree1(form.Degree4) || !checkDegree1(form.Degree5) || !checkDegree1(form.Cognition1) || !checkDegree1(form.Cognition2) || !checkDegree1(form.Cognition3) || !checkDegree1(form.Cognition4) || !checkDegree1(form.Cognition5) || !checkDegree1(form.Yesno1) || !checkDegree1(form.Yesno2) || !checkDegree1(form.Yesno3) || !checkDegree1(form.decision4) || !checkDegree1(form.determine))
+                return;
+            alert("所有資料驗證通過！\n表單即將送出！");
+            document.getElementById("form01").submit();
+        }
+
+        function validatePrompt(control, promptStr) {
+            alert(promptStr);
+            control.focus();
+            return;
+        }
+
+/**/</script>
+
+    <br>
+    <h1 id="c03" style="text-align:center;">氣管造口術－氣切要不要？</h1>
+    <br><br>
+    &emsp;&emsp;放置氣管內管管或氣切造口，都是搶救生命的一種緊急醫療處置，能快速爭取時間幫助病人度過生死關頭，但若病人需要長期使用機器幫助呼吸，通常會考慮施行氣切造口術，將原本經由口腔或鼻腔進入氣管的氣管內管，換成直接從頸部氣管開口處直接放入氣管的氣切管，以利病人能順利排除分泌物，維持呼吸道通暢。<br><br>
+
+    ● <span id="c01">適用對象：</span><br>
+    &emsp;➤ 使用氣管內管無法脫離呼吸器之病人，且有清除呼吸道痰液困難病人。<br>
+    &emsp;➤ 呼吸道阻塞之緊急狀況，如口鼻外傷、急性會厭炎急性發作、支氣管腫脹等。<br><br>
+
+    ● <span id="c01">適用狀況：</span><br>
+    &emsp;➤ 使用氣管內管無法脫離呼吸器之病人，且有清除呼吸道痰液困難病人。<br>
+    &emsp;➤ 無法經口鼻放置氣管內管維持呼吸道通暢病人。<br><br>
+
+    ● <span id="c01">疾病介紹：</span><br>
+    &emsp;&emsp;因病人患有肺部或其他疾病導致呼吸功能異常，無法順利清除呼吸道分泌物，或需長期依賴呼吸器時，經醫師評估建議氣切造口，藉由氣管造口的使用，以期提升長期使用呼吸器病人的生活品質。<br><br>
+
+    ● <span id="c01">治療方式介紹：</span><br>
+    &emsp;&emsp;氣管造口屬於人工氣道，目的是要建立一個與外界連接的管道，可接上呼吸器或作為抽痰的通道，可較長期使用。<br>
+    &emsp;&emsp;在執行氣切時通常會使用局部麻醉或全身麻醉，而且病人使用氣切管的不舒服會比使用氣管內管輕微，相關併發症也較少，病人做起呼吸訓練也比較容易。<br><br>
+
+    ● <span id="c01">想要選擇的治療方式是？</span><br>
+
+    <form id="form01" action="/AircutLists/AircutForm" method="post">
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.PatientID)
+
+            <div class="select">
+                <input type="radio" name="Way" id="m01" value="氣切手術">
+                <label for="m01">氣切手術</label>
+                <input type="radio" name="Way" id="m02" value="插管治療">
+                <label for="m02">插管治療</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Method, "", new { @class = "text-danger" })
+
+                ●
+                <span id="c01">接著請透過以下四個步驟來幫助您做決定</span>
+                <br>
+                <br>
+
+                <div id="boxtext01">步驟一：比較每一項選擇的優點、風險、副作用(併發率)、替代方案</div>
+                <br>
+
+                <table id="table01" border=1 align=center>
+                    <tr bgcolor=#FFAA33 align=center>
+                        <td width="110px"></td>
+                        <th width="500px">氣切手術</th>
+                        <th width="500px">插管治療</th>
+                    </tr>
+                    <tr>
+                        <th id="th01">優點</th>
+                        <td>
+                            1.固定時不需在臉部黏貼膠布或綁棉繩，較美觀且舒適度較佳。
+                            <br>
+                            2.口腔衛生較易維持。
+                            <br>
+                            3.呼吸較不費力，有助於脫離呼吸器。
+                            <br>
+                            4.抽痰容易。
+                            <br>
+                            5.經訓練後可以使用發聲器說話。
+                            <br>
+                            6.經訓練後可以以口進食。
+                            <br>
+                            7.更換容易，風險低。
+                            <br>
+                            8.可居家照顧。
+                        </td>
+                        <td>緊急狀況下能快速建立呼吸道，在病況緊急救命時施行。</td>
+                    </tr>
+                    <tr>
+                        <th id="th01">風險</th>
+                        <td>手術都是有風險，包括麻醉、出血及感染風險。</td>
+                        <td>咽喉受傷、牙齒斷落、心律不整、食道傷害、氣管攣縮，皮下氣腫等。</td>
+                    </tr>
+                    <tr>
+                        <th id="th01">副作用（併發率）</th>
+                        <td>出血、局部皮膚感染、氣胸、氣管狹窄等，後期可能會有氣管狹窄的問題，但是機率低於15%。</td>
+                        <td>若插氣管內管時間過久，容易造成口腔潰瘍或出血、氣管潰瘍或出血、氣管狹窄或聲帶受損等併發症；因氣囊過度壓迫氣管造成氣管軟化症。</td>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">費用</th>
+                        <td>健保給付但氣切套管材質不同，有些需自費。</td>
+                        <td>健保給付。</td>
+                    </tr>
+
+                    <tr>
+                        <th id="th01">替代方案</th>
+                        <td>氣管內管。</td>
+                        <td>非侵襲性症壓呼吸。</td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <div id="boxtext01">步驟二：您選擇治療方式會在意的因素有什麼？以及在意的程度</div>
+                <br>
+                ●
+                <span id="c01">請圈選下列考量因素，由左至右代表對您不同的重要程度</span>
+                <br>
+
+                <table id="table02" border=1 align=center>
+                    <tr bgcolor=#FFAA33 align=center>
+                        <th width="400px"></th>
+                        <th width="100px">不重要</th>
+                        <th width="100px">較不重要</th>
+                        <th width="100px">普通</th>
+                        <th width="100px">重要</th>
+                        <th width="100px">很重要</th>
+                        <th width="100px">非常重要</th>
+                    </tr>
+
+                    <tr id="th02">
+                        <th id="th01">病人較有機會存活下來</th>
+                        <td>
+                            <input type="radio" name="Degree1" id="de01" value="0" />
+                            <label id="c03" for="de01">0</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree1" id="de02" value="1" />
+                            <label id="c03" for="de02">1</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree1" id="de03" value="2" />
+                            <label id="c03" for="de03">2</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree1" id="de04" value="3" />
+                            <label id="c03" for="de04">3</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree1" id="de05" value="4" />
+                            <label id="c03" for="de05">4</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree1" id="de06" value="5" />
+                            <label id="c03" for="de06">5</label>
+                        </td>
+                    </tr>
+
+                    <tr id="th02">
+                        <th id="th01">病人的呼吸功能恢復（例如：家人日後長期照顧的問題、生活自理功能等）</th>
+                        <td>
+                            <input type="radio" name="Degree2" id="de07" value="0" />
+                            <label id="c03" for="de07">0</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree2" id="de08" value="1" />
+                            <label id="c03" for="de08">1</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree2" id="de09" value="2" />
+                            <label id="c03" for="de09">2</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree2" id="de10" value="3" />
+                            <label id="c03" for="de10">3</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree2" id="de11" value="4" />
+                            <label id="c03" for="de11">4</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree2" id="de12" value="5" />
+                            <label id="c03" for="de12">5</label>
+                        </td>
+                    </tr>
+
+                    <tr id="th02">
+                        <th id="th01">治療的風險</th>
+                        <td>
+                            <input type="radio" name="Degree3" id="de13" value="0" />
+                            <label id="c03" for="de13">0</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree3" id="de14" value="1" />
+                            <label id="c03" for="de14">1</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree3" id="de15" value="2" />
+                            <label id="c03" for="de15">2</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree3" id="de16" value="3" />
+                            <label id="c03" for="de16">3</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree3" id="de17" value="4" />
+                            <label id="c03" for="de17">4</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree3" id="de18" value="5" />
+                            <label id="c03" for="de18">5</label>
+                        </td>
+                    </tr>
+
+                    <tr id="th02">
+                        <th id="th01">治療費用的高低</th>
+                        <td>
+                            <input type="radio" name="Degree4" id="de19" value="0" />
+                            <label id="c03" for="de19">0</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree4" id="de20" value="1" />
+                            <label id="c03" for="de20">1</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree4" id="de21" value="2" />
+                            <label id="c03" for="de21">2</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree4" id="de22" value="3" />
+                            <label id="c03" for="de22">3</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree4" id="de23" value="4" />
+                            <label id="c03" for="de23">4</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree4" id="de24" value="5" />
+                            <label id="c03" for="de24">5</label>
+                        </td>
+                    </tr>
+
+                    <tr id="th02">
+                        <th id="th01">治療所需要的時間</th>
+                        <td>
+                            <input type="radio" name="Degree5" id="de25" value="0" />
+                            <label id="c03" for="de25">0</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree5" id="de26" value="1" />
+                            <label id="c03" for="de26">1</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree5" id="de27" value="2" />
+                            <label id="c03" for="de27">2</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree5" id="de28" value="3" />
+                            <label id="c03" for="de28">3</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree5" id="de29" value="4" />
+                            <label id="c03" for="de29">4</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="Degree5" id="de30" value="5" />
+                            <label id="c03" for="de30">5</label>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <div id="boxtext01">步驟三：您對治療方式的認知有多少？</div>
+                <br>
+                ●
+                <span id="c01">請試著回答下列問題：</span>
+                <br>
+
+                <span id="c03">1.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口會增加住院天數？</span>
+                <br>
+                <input type="radio" name="Cognition1" id="co01" value="是">
+                <label for="co01">是</label>
+                <input type="radio" name="Cognition1" id="co02" value="否">
+                <label for="co02">否</label>
+                <input type="radio" name="Cognition1" id="co03" value="我不確定">
+                <label for="co03">我不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition1, "", new { @class = "text-danger" })
+
+                <span id="c03">2.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸會較穩定？</span>
+                <br>
+                <input type="radio" name="Cognition2" id="co04" value="是">
+                <label for="co04">是</label>
+                <input type="radio" name="Cognition2" id="co05" value="否">
+                <label for="co05">否</label>
+                <input type="radio" name="Cognition2" id="co06" value="我不確定">
+                <label for="co06">我不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition2, "", new { @class = "text-danger" })
+
+                <span id="c03">3.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，方式費用較高？</span>
+                <br>
+                <input type="radio" name="Cognition3" id="co07" value="是">
+                <label for="co07">是</label>
+                <input type="radio" name="Cognition3" id="co08" value="否">
+                <label for="co08">否</label>
+                <input type="radio" name="Cognition3" id="co09" value="我不確定">
+                <label for="co09">我不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition3, "", new { @class = "text-danger" })
+
+                <span id="c03">4.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人平均存活率較高？</span>
+                <br>
+                <input type="radio" name="Cognition4" id="co10" value="是">
+                <label for="co10">是</label>
+                <input type="radio" name="Cognition4" id="co11" value="否">
+                <label for="co11">否</label>
+                <input type="radio" name="Cognition4" id="co12" value="我不確定">
+                <label for="co12">我不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition4, "", new { @class = "text-danger" })
+
+                <span id="c03">5.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸狀態預後較好？</span>
+                <br>
+                <input type="radio" name="Cognition5" id="co13" value="是">
+                <label for="co13">是</label>
+                <input type="radio" name="Cognition5" id="co14" value="否">
+                <label for="co14">否</label>
+                <input type="radio" name="Cognition5" id="co15" value="我不確定">
+                <label for="co15">我不確定</label>
+                <br>
+                <br>
+                @Html.ValidationMessageFor(model => model.Cognition5, "", new { @class = "text-danger" })
+
+                <img src="~/img/img03.png" style="display:block; margin:auto; width:auto;">
+                <br>
+
+                <div id="boxtext01">步驟四：您現在確認好治療方式了嗎？</div>
+                <br>
+                ●
+                <span id="c01">經過前面幾個步驟，您已經花了一些時間了解亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口與氣管內管的差異和您在意的因素，現在決定好想要的治療方式了嗎？</span>
+                <br>
+
+                <span id="c03">6.我已經清楚知道有哪些治療的選擇</span>
+                <br>
+                <input type="radio" name="Yesno1" id="yn01" value="知道">
+                <label for="yn01">知道</label>
+                <input type="radio" name="Yesno1" id="yn02" value="不知道">
+                <label for="yn02">不知道</label>
+                <br>
+                <br>
+
+                <span id="c03">7.我清楚知道不同治療方式的優點和缺點</span>
+                <br>
+                <input type="radio" name="Yesno2" id="yn03" value="知道">
+                <label for="yn03">知道</label>
+                <input type="radio" name="Yesno2" id="yn04" value="不知道">
+                <label for="yn04">不知道</label>
+                <br>
+                <br>
+
+                <span id="c03">8.我已經接受足夠的知識及建議可以做決定</span>
+                <br>
+                <input type="radio" name="Yesno3" id="yn05" value="是">
+                <label for="yn05">是</label>
+                <input type="radio" name="Yesno3" id="yn06" value="否">
+                <label for="yn06">否</label>
+                <br>
+                <br>
+
+                <span id="c03">9.我做決定前還需要：</span>
+                <br>
+                <input type="radio" name="decision4" id="yn07" value="我想要再更深入了解每個治療方式">
+                <label for="yn07">我想要再更深入了解每個治療方式</label>
+                <input type="radio" name="decision4" id="yn08" value="我需要再和其他人（如家人、朋友等）討論看看">
+                <label for="yn08">我需要再和其他人（如家人、朋友等）討論看看</label>
+                <input type="radio" name="decision4" id="yn09" value="我還是想要再和醫師做更詳細的討論">
+                <label for="yn09">我還是想要再和醫師做更詳細的討論</label>
+                <input type="radio" name="decision4" id="yn10" value="完全不用，我已經做好選擇">
+                <label for="yn10">完全不用，我已經做好選擇</label>
+                <br>
+                <br>
+
+                <span id="c03">10.我對於自己的決定有多確定？</span>
+                <br>
+                <input type="radio" name="determine" id="yn11" value="完全確定">
+                <label for="yn11">完全確定</label>
+                <input type="radio" name="determine" id="yn12" value="不是很確定">
+                <label for="yn12">不是很確定</label>
+                <input type="radio" name="determine" id="yn13" value="完全不確定">
+                <label for="yn13">完全不確定</label>
+                <br>
+                <br>
+
+                <span id="c03">11.我還有想和醫師討論的問題：</span>
+                <br>
+                <textarea name="Text" style="width:100%; height:100px;"></textarea>
+                <br>
+            </div>
+        </div>
+
+        <br><input type="button" value="送出" class="btn btn-outline-primary" onclick="validateForm(this.form)">
+        <br>
+
+        <span id="c02">完成以上評估後，您可以列印及攜帶此份結果與您的主治醫師討論。</span>
+        <br>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

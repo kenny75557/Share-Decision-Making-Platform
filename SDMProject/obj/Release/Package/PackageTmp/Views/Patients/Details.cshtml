@@ -1,0 +1,44 @@
+﻿@model SDMProject.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>詳細資料</h2>
+
+<div>
+    @Html.DisplayNameFor(model => model.DrName)
+
+    @Html.DisplayFor(model => model.DrName)
+
+    @Html.DisplayNameFor(model => model.PatientID)
+
+    @Html.DisplayFor(model => model.PatientID)
+
+    @Html.DisplayNameFor(model => model.Name)
+
+    @Html.DisplayFor(model => model.Name)
+
+    @Html.DisplayNameFor(model => model.Date)
+
+    @Html.DisplayFor(model => model.Date)
+
+    @Html.DisplayNameFor(model => model.Age)
+
+    @Html.DisplayFor(model => model.Age)
+
+    @Html.DisplayNameFor(model => model.DiseaseType)
+
+    @Html.DisplayFor(model => model.DiseaseType)
+
+    @Html.DisplayNameFor(model => model.Gender)
+
+    @Html.DisplayFor(model => model.Gender)
+
+    @Html.DisplayNameFor(model => model.Form)
+
+    @Html.DisplayFor(model => model.Form)
+</div>
+
+@Html.ActionLink("編輯", "Edit", new { id = Model.ID })
+@Html.ActionLink("返回清單", "Index")

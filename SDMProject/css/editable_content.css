@@ -1,0 +1,817 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.editable_content h4, .editable_content h5, .editable_content h6 {
+    font-weight: 500;
+}
+
+
+.editable_content {
+    color: #222;
+    clear: both;
+}
+
+    .editable_content.content {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    /* 為文字上稿區可能出現的元素做設定 */
+    .editable_content, .editable_content p, .editable_content .para, .editable_content blockquote {
+        line-height: 180%;
+    }
+
+        .editable_content p, .editable_content .para, .editable_content div {
+            padding: 0;
+        }
+
+        .editable_content p, .editable_content .para, .editable_content ul, .editable_content ol, .editable_content div {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .editable_content table, .editable_content iframe {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .editable_content h4, .editable_content h5, .editable_content h6 {
+            line-height: 120%;
+        }
+
+        .editable_content blockquote {
+            max-width: 1100px;
+            letter-spacing: .03em;
+            margin: 45px auto;
+            padding: 40px 50px;
+            background-color: rgba(0,0,0,0.06);
+            color: #444;
+            position: relative;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+            .editable_content blockquote p {
+                font-size: 112.5%;
+            }
+
+            .editable_content blockquote::before, .editable_content blockquote::after {
+                content: '';
+                display: block;
+                position: absolute;
+                font-size: 3em;
+                font-family: "Arial", serif;
+                font-weight: bold;
+                color: #9fa1a2;
+                width: 24px;
+                height: 24px;
+                vertical-align: middle;
+            }
+
+            .editable_content blockquote::before {
+                content: '“';
+                top: 25px;
+                left: 25px;
+            }
+
+            .editable_content blockquote::after {
+                content: '”';
+                bottom: 15px;
+                right: 25px;
+            }
+
+            .editable_content blockquote ul, .editable_content blockquote ol {
+                text-align: left;
+            }
+
+                .editable_content blockquote ul li, .editable_content blockquote ol li {
+                    line-height: 180%;
+                }
+
+                    .editable_content blockquote ul li li, .editable_content blockquote ol li li {
+                        font-size: 0.938em;
+                        line-height: 160%;
+                    }
+
+        .editable_content ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        .editable_content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+            .editable_content ul[type="disc"] {
+                list-style-type: disc;
+            }
+
+            .editable_content ul[type="circle"] {
+                list-style-type: circle;
+            }
+
+            .editable_content ul[type="square"] {
+                list-style-type: square;
+            }
+
+        .editable_content li {
+            padding-bottom: 10px;
+            line-height: 190%;
+        }
+
+        .editable_content ol ol {
+            list-style-type: lower-alpha;
+        }
+
+        .editable_content ul ul {
+            list-style-type: circle;
+        }
+
+        .editable_content ul ul, .editable_content ul ol, .editable_content ol ul, .editable_content ol ol {
+            margin-bottom: 0;
+            margin-left: 20px;
+        }
+
+        .editable_content ul > li li:last-child, .editable_content ol > li li:last-child {
+            padding-bottom: 0;
+        }
+
+        .editable_content a {
+            text-decoration: underline;
+        }
+
+.font_red {
+    color: #e60000;
+}
+
+.font_blue {
+    color: #0052d0;
+}
+
+.font_bold {
+    font-weight: bold;
+}
+
+.font_italic {
+    font-style: italic;
+}
+
+.font_underline {
+    text-decoration: underline;
+}
+
+/* 影片、相關連結、相關檔案 */
+p.MsgModule_Download, p.MsgModule_Link {
+    padding: 0;
+    line-height: 160%;
+}
+
+    p.MsgModule_Download span, p.MsgModule_Link span {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+.MsgModule_Media {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0 !important;
+}
+
+    .MsgModule_Media iframe {
+        margin: 0 !important;
+    }
+
+    .MsgModule_Media .describe {
+        text-align: left;
+        margin: 0 !important;
+        padding: 10px;
+        background-color: #ebebeb;
+    }
+
+        .MsgModule_Media .describe span {
+            display: block;
+            line-height: 180%;
+        }
+
+noscript div.ytlink {
+    padding: 0;
+    line-height: 18px;
+}
+/* no script時影片區塊顯示的訊息 */
+
+.editable_content .MsgModule_Media {
+    margin-left: auto;
+    margin-right: auto;
+    width: 560px;
+}
+
+    .editable_content .MsgModule_Media.left {
+        margin-left: 0;
+    }
+
+    .editable_content .MsgModule_Media.right {
+        margin-right: 0;
+    }
+
+    .editable_content .MsgModule_Media.landscape {
+        width: 560px;
+    }
+
+    .editable_content .MsgModule_Media.portrait {
+        width: 315px;
+    }
+
+    .editable_content .MsgModule_Media .media_wrap {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 56.25%;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .editable_content .MsgModule_Media.landscape.ratio_16by9 .media_wrap {
+        padding-bottom: 56.25%;
+    }
+
+    .editable_content .MsgModule_Media.portrait.ratio_16by9 .media_wrap {
+        padding-bottom: 177.77%;
+    }
+
+    .editable_content .MsgModule_Media.landscape.ratio_4by3 .media_wrap {
+        padding-bottom: 75%;
+    }
+
+    .editable_content .MsgModule_Media.portrait.ratio_4by3 .media_wrap {
+        padding-bottom: 133.33%;
+    }
+
+    .editable_content .MsgModule_Media .media_wrap iframe,
+    .editable_content .MsgModule_Media .media_wrap object,
+    .editable_content .MsgModule_Media .media_wrap embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        margin: 0;
+    }
+
+    .editable_content .MsgModule_Media .describe {
+        text-align: left;
+        margin: 0;
+        padding: 20px;
+        background-color: #ebebeb;
+        line-height: 150%;
+    }
+
+        .editable_content .MsgModule_Media .describe span {
+            display: block;
+        }
+
+        .editable_content .MsgModule_Media .describe .title {
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+            .editable_content .MsgModule_Media .describe .title strong {
+                color: #444;
+            }
+
+        .editable_content .MsgModule_Media .describe .desc {
+            font-size: 0.9375rem;
+        }
+
+.editable_content noscript div.ytlink {
+    padding: 0;
+    margin: 0;
+    line-height: 18px;
+}
+/* no script時影片區塊顯示的訊息 */
+
+.editable_content .MsgModule_Media video {
+    display: block;
+    width: 100%;
+}
+
+
+/* 文繞圖設定 */
+.editable_content div.district {
+    overflow: hidden;
+}
+
+    .editable_content div.district p {
+        padding: 5px 0;
+        margin: 0;
+        color: #333;
+        letter-spacing: .02em;
+    }
+
+    .editable_content div.district h3 {
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+.editable_content .img_bg {
+    margin-bottom: 0;
+}
+
+.editable_content .imgleft {
+    float: left;
+    margin-right: 35px;
+    margin-top: 0px;
+}
+
+.editable_content .imgright {
+    float: right;
+    margin-left: 35px;
+    margin-top: 0px;
+}
+
+.editable_content .imgcenter {
+    clear: both;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 15px 0 15px;
+}
+
+.editable_content .imgleft, .editable_content .imgright {
+    max-width: 50%;
+}
+
+.editable_content .district .img.left {
+    float: left;
+    margin-right: 15px;
+}
+
+.editable_content .district .img.right {
+    float: right;
+    margin-left: 15px;
+}
+
+.editable_content .district .img.left, .editable_content .district .img.right {
+    max-width: 50%;
+}
+
+.editable_content .district .img_wrap {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.editable_content .img_bg span {
+    display: block;
+    padding: 5px 0 0 14px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 87.5%;
+    line-height: 140%;
+    text-align: left;
+    color: #7e7e7e;
+}
+
+    .editable_content .img_bg span::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        border-left: 5px solid rgba(255,255,255,0);
+        border-right: 5px solid rgba(255,255,255,0);
+        border-bottom: 5px solid #818181;
+    }
+
+/* 文繞圖插入影片 */
+.editable_content .district .media {
+    width: 560px;
+}
+
+    .editable_content .district .media .media_wrap {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 56.25%;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .editable_content .district .media.landscape {
+        width: 560px;
+    }
+
+    .editable_content .district .media.portrait {
+        width: 315px;
+    }
+
+    .editable_content .district .media.landscape.ratio_16by9 .media_wrap {
+        padding-bottom: 56.25%;
+    }
+
+    .editable_content .district .media.portrait.ratio_16by9 .media_wrap {
+        padding-bottom: 177.77%;
+    }
+
+    .editable_content .district .media.landscape.ratio_4by3 .media_wrap {
+        padding-bottom: 75%;
+    }
+
+    .editable_content .district .media.portrait.ratio_4by3 .media_wrap {
+        padding-bottom: 133.33%;
+    }
+
+    .editable_content .district .media .media_wrap iframe,
+    .editable_content .district .media .media_wrap object,
+    .editable_content .district .media .media_wrap embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        margin: 0;
+    }
+
+    .editable_content .district .media .describe {
+        text-align: left;
+        margin: 0;
+    }
+
+        .editable_content .district .media .describe span {
+            font-weight: 500;
+            display: block;
+            margin: 0;
+            padding: 15px;
+            background-color: #ebebeb;
+            line-height: 150%;
+        }
+
+        .editable_content .district .media .describe .desc {
+            font-size: 0.875rem;
+            line-height: 180%;
+        }
+
+        .editable_content .district .media .describe .title + .desc {
+            padding-top: 0;
+        }
+
+.editable_content noscript div.ytlink {
+    padding: 0;
+    line-height: 150%;
+}
+/* no script時影片區塊顯示的訊息 */
+
+/* html編輯區的表格預設樣式 */
+.editable_content table[align="center"] {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editable_content table caption, .editable_content .tableWrap_caption {
+    font-weight: bold;
+    color: #000;
+    font-size: 100%;
+    text-align: left;
+    line-height: 140%;
+}
+
+.editable_content table caption {
+    margin: 10px 0;
+}
+
+.editable_content .tableWrap_caption {
+    padding-top: 5px;
+    margin: 0;
+}
+
+.editable_content .tableWrap {
+    position: relative;
+}
+
+    .editable_content .tableWrap table {
+        margin: 0;
+    }
+
+/* html編輯區的表格外框樣式 */
+.editable_content .table_style1 > tbody > tr > th, .editable_content .table_style1 > tbody > tr > td {
+    padding: 8px;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    line-height: 160%;
+    background-color: #fff;
+}
+
+.editable_content .table_style1 > tbody > tr > th {
+    background-color: #eee;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* 移除第一個物件的上邊界、上間距避免過大的空白 */
+.editable_content > *:first-child, .editable_content td > *:first-child {
+    margin-top: 0 !important;
+}
+/* 移除最後一個物件的下邊界、下間距避免過大的空白 */
+.editable_content > *:last-child, .editable_content td > *:last-child {
+    /*padding-bottom:0 !important; */ 　margin-bottom: 0 !important;
+}
+
+.editable_content iframe, .editable_content img, .editable_content div, .editable_content table {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* 避免爆版 */
+.editable_content * {
+    word-wrap: break-word;
+}
+
+/* 條文 */
+.clause .l1 {
+    margin-bottom: 10px;
+}
+
+.clause .l2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 33px;
+    text-indent: -33px;
+}
+
+    .clause .l2.cont {
+        padding-left: 0;
+        text-indent: 0;
+    }
+
+.clause .l3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 62px;
+    text-indent: -26px;
+}
+
+    .clause .l3.cont {
+        padding-left: 36px;
+        text-indent: 0;
+    }
+
+.clause .l4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 78px;
+    text-indent: -13px;
+}
+
+.clause .l5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 100px;
+    text-indent: -20px;
+}
+
+    .clause .l1 + .l1, .clause .l2 + .l1, .clause .l3 + .l1, .clause .l4 + .l1, .clause .l5 + .l1,
+    .clause .l1 + h3, .clause .l2 + h3, .clause .l3 + h3, .clause .l4 + h3, .clause .l5 + h3 {
+        margin-top: 40px;
+    }
+
+    .clause .l1 + h4, .clause .l2 + h4, .clause .l3 + h4, .clause .l4 + h4, .clause .l5 + h4 {
+        margin-top: 20px;
+    }
+
+/*StyleStart*/
+/*段落*/
+.para {
+    display: block;
+}
+/*字級12px*/
+.font_12px {
+    font-size: 75%;
+}
+/*字級13px*/
+.font_13px {
+    font-size: 81.25%;
+}
+/*字級14px*/
+.font_14px {
+    font-size: 87.5%;
+}
+/*字級15px*/
+.font_15px {
+    font-size: 93.75%;
+}
+/*字級16px*/
+.font_16px {
+    font-size: 100%;
+}
+/*字級18px*/
+.font_18px {
+    font-size: 112.5%;
+}
+/*字級20px*/
+.font_20px {
+    font-size: 125%;
+}
+/*字級22px*/
+.font_22px {
+    font-size: 137.5%;
+}
+/*字級24px*/
+.font_24px {
+    font-size: 150%;
+}
+/*字級26px*/
+.font_26px {
+    font-size: 162.5%;
+}
+/*字級28px*/
+.font_28px {
+    font-size: 175%;
+}
+/*字級30px*/
+.font_30px {
+    font-size: 187.5%;
+}
+/*字級32px*/
+.font_32px {
+    font-size: 200%;
+}
+/*字級36px*/
+.font_36px {
+    font-size: 225%;
+}
+/*文字靠左*/
+.tl {
+    text-align: left;
+}
+/*文字置中*/
+.tc {
+    text-align: center;
+}
+/*文字靠右*/
+.tr {
+    text-align: right;
+}
+
+/*h4標題*/
+.editable_content h4 {
+    font-size: 150%;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 150%;
+}
+/*h5標題*/
+.editable_content h5 {
+    font-size: 125%;
+    color: #cf4747;
+    margin-bottom: 5px;
+}
+/*h6標題*/
+.editable_content h6 {
+    font-size: 112.5%;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+/* 單篇延伸區塊 */
+h4.ext_title {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 99;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 15px;
+    font-size: 125% !important;
+    line-height: 150% !important;
+    color: #333;
+    letter-spacing: 1px;
+    /*background:url("../images/icon_module.png") no-repeat; */ /*這是有icon的*/
+    background-image: url("../images/bg.jpg");
+}
+
+h4.icon_more {
+    background-position: 5px 6px;
+}
+
+h4.icon_file {
+    background-position: 5px -96px;
+}
+
+h4.icon_link {
+    background-position: 5px -196px;
+}
+
+h4.icon_photo {
+    background-position: 5px -296px;
+}
+
+.editable_content + h4.ext_title {
+    margin-top: 20px;
+}
+
+ul.ext_list {
+    list-style-type: decimal;
+    margin-top: -7px;
+    border-top: 1px solid #d7d7d7;
+    padding-top: 25px;
+    padding-left: 40px;
+}
+
+.editable_content ul.ext_list {
+    margin-left: 0;
+}
+
+ul.ext_list li {
+    position: relative;
+    padding: 4px 0;
+    line-height: 140%;
+}
+
+    ul.ext_list li a {
+        color: #555;
+        text-decoration: none;
+        word-wrap: break-word;
+        line-height: 1.6;
+    }
+
+        ul.ext_list li a:hover {
+            color: #df7b39;
+            text-decoration: underline;
+        }
+
+    ul.ext_list li span.file_ext {
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+        text-indent: -10000px;
+    }
+
+h4.ext_title + #colorbox_thum {
+    border-top: 1px solid #e5e5e5;
+    margin-top: -7px;
+}
+
+
+/* 表格外框樣式1 */
+.editable_content table.table_style1 {
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+}
+
+/* 表格外框樣式2 */
+.editable_content .table_style2 {
+    width: 100%;
+    min-width: 500px;
+}
+
+.editable_content table.table_style2 tbody {
+    border: 1px solid #ddd;
+}
+
+.editable_content .table_style2 > tbody > tr > th, .table_style2 > tbody > tr > td {
+    padding: 10px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    line-height: 180%;
+    text-align: center;
+}
+
+.editable_content .table_style2 > tbody > tr > th {
+    font-weight: bold;
+    min-width: 100px;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.editable_content .table_style2 .text-center {
+    text-align: center;
+}
+
+.editable_content .table_style2 .text-left {
+    text-align: left;
+}
+
+
+/*引言區塊裡的表格*/
+.editable_content blockquote table.table_style1 {
+    border-color: #b5bdbf;
+    font-size: 0.875em;
+}
+
+.editable_content blockquote > .table_style1 > tbody > tr > th {
+    background-color: #d0dadc;
+    border-color: #b5bdbf;
+}
+
+.editable_content blockquote > .table_style1 > tbody > tr > td {
+    background-color: #fff;
+    border-color: #b5bdbf;
+}
+
+
+
+/*StyleEnd*/
+
+

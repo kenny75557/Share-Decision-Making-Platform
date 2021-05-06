@@ -1,0 +1,301 @@
+﻿@model SDMProject.Models.Kidplaza
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        body {
+            line-height: 1.8;
+        }
+
+        #Header01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-bottom: 6px;
+            border-radius: 10px;
+        }
+
+        #Sidebar01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-top: 6px;
+            margin-right: 2px;
+            border-radius: 10px;
+            width: 49%;
+            height: 600px;
+            float: left;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        #Body01 {
+            border: 2px black dashed;
+            padding: 6px;
+            margin-top: 6px;
+            margin-left: 2px;
+            border-radius: 10px;
+            width: 49%;
+            height: 600px;
+            float: right;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        #c01 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>病歷號碼：@Html.DisplayFor(model => model.PatientID)</h4>
+    <hr />
+
+    <form action="/Kidplazas/Kidplazas_Dr_QA" method="post">
+        @Html.AntiForgeryToken()
+        <div id="Header01">
+            <span id="c01">開立醫師：</span>
+            @TempData["Dr_kidplaza_Detail_DrName"]
+            <br>
+            <span id="c01">病患姓名：</span>
+            @TempData["Dr_kidplaza_Detail_Name"]
+            <br>
+            <span id="c01">創建日期：</span>
+            @TempData["Dr_kidplaza_Detail_Date"]
+            <br>
+            <span id="c01">病患年齡：</span>
+            @TempData["Dr_kidplaza_Detail_Age"]
+            <br>
+            <span id="c01">病患性別：</span>
+            @TempData["Dr_kidplaza_Detail_Gender"]
+            <br>
+            <span id="c01">表單類別：</span>
+            @TempData["Dr_kidplaza_Detail_Form"]
+            <br>
+            <span id="c01">病患目前想要選擇的方式是：</span>
+            @Html.DisplayFor(model => model.Pattern)
+            <br>
+            <hr />
+
+            <span id="c01">步驟二：</span>
+            <br>
+            <div style="width:100%;">
+                <canvas id="heyChart"></canvas>
+            </div>
+            <hr />
+
+            <span id="c01">步驟三：</span>
+            <br>
+            <span id="c01">1.接受手術治療，傷口會疼痛，復原需要時間。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition1)
+            <br>
+            <span id="c01">2.接受放射治療的效果等同手術治療，雖然沒有割除腫瘤，但陰道會乾澀且影響性生活。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition2)
+            <br>
+            <span id="c01">3.接受放射治療，卵巢亦有可能遭受輻射傷害。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition3)
+            <br>
+            <span id="c01">4.進行手術治療之後，有可能產生暫時性或慢性膀胱與腸道功能障礙。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition4)
+            <br>
+            <span id="c01">5.進行骨盆腔淋巴廓清手術之後，有可能發生淋巴水腫的副作用。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition5)
+            <br>
+            <span id="c01">6.接受放射治療，我必須分階段，經過至少 5 次的治療。</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Cognition6)
+            <br>
+            <div style="width:50%;">
+                <canvas id="TFChart"></canvas>
+            </div>
+            <hr />
+
+            <span id="c01">步驟四：</span>
+            <br>
+            <span id="c01">7.我已經確認好想要的治療方式，我決定選擇：（下列擇一）</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Decision)
+            <br>
+            <span id="c01">8.我目前還無法決定</span>
+            <br>
+            病患答案：@Html.DisplayFor(model => model.Determine)
+            @Html.DisplayFor(model => model.Text)
+            @Html.DisplayFor(model => model.Text2)
+            <br>
+        </div>
+
+        <div id="Sidebar01">
+            <h4 id="c01" style="text-align:center;">醫師的回覆</h4>
+            <hr />
+            @if (Model.Ans1 != null)
+            {
+                @Html.DisplayFor(model => model.Ans6)
+                <span id="c01">回覆一：</span>
+                <br>@Html.DisplayFor(model => model.Ans1)
+                <br>
+            }
+            @if (Model.Ans2 != null)
+            {
+                @Html.DisplayFor(model => model.Ans7)
+                <span id="c01">回覆二：</span>
+                <br>@Html.DisplayFor(model => model.Ans2)
+                <br>
+            }
+            @if (Model.Ans3 != null)
+            {
+                @Html.DisplayFor(model => model.Ans8)
+                <span id="c01">回覆三：</span>
+                <br>@Html.DisplayFor(model => model.Ans3)
+                <br>
+            }
+            @if (Model.Ans4 != null)
+            {
+                @Html.DisplayFor(model => model.Ans9)
+                <span id="c01">回覆四：</span>
+                <br>@Html.DisplayFor(model => model.Ans4)
+                <br>
+            }
+            @if (Model.Ans5 != null)
+            {
+                @Html.DisplayFor(model => model.Ans10)
+                <span id="c01">回覆五：</span>
+                <br>@Html.DisplayFor(model => model.Ans5)
+                <br>
+            }
+
+            <hr />
+            <span id="c01">留言內容：</span>
+            <br>
+            <textarea name="Dr_QA" style="width:100%; height:100px;"></textarea>
+            <br>
+            <span id="c01">討論結果：</span>
+            <br>
+            <textarea name="Dr_QA_result" style="width:100%; height:50px;"></textarea>
+            <br>
+            <input type="submit" value="送出" class="btn btn-outline-primary" />
+            <br>
+
+            <hr />
+            <span id="c01">討論結果：</span>
+            @if (Model.Result != null)
+            {
+                @Html.DisplayFor(model => model.Result)
+            }
+        </div>
+
+        <div id="Body01">
+            <h4 id="c01" style="text-align:center;">病患的問題</h4>
+            <hr />
+            @if (Model.Ques1 != null)
+            {
+                @Html.DisplayFor(model => model.Ques6)
+                <span id="c01">問題一：</span>
+                <br>@Html.DisplayFor(model => model.Ques1)
+                <br>
+            }
+            @if (Model.Ques2 != null)
+            {
+                @Html.DisplayFor(model => model.Ques7)
+                <span id="c01">問題二：</span>
+                <br>@Html.DisplayFor(model => model.Ques2)
+                <br>
+            }
+            @if (Model.Ques3 != null)
+            {
+                @Html.DisplayFor(model => model.Ques8)
+                <span id="c01">問題三：</span>
+                <br>@Html.DisplayFor(model => model.Ques3)
+                <br>
+            }
+            @if (Model.Ques4 != null)
+            {
+                @Html.DisplayFor(model => model.Ques9)
+                <span id="c01">問題四：</span>
+                <br>@Html.DisplayFor(model => model.Ques4)
+                <br>
+            }
+            @if (Model.Ques5 != null)
+            {
+                @Html.DisplayFor(model => model.Ques10)
+                <span id="c01">問題五：</span>
+                <br>@Html.DisplayFor(model => model.Ques5)
+                <br>
+            }
+        </div>
+
+        <div style='clear:both;'></div>
+    </form>
+
+    <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+                data: {
+                    labels: ["疼痛程度", "擔心體內殘存大體積腫瘤", "影響卵巢賀爾蒙功能", "影響生育功能", "影響性生活", "擔心輻射後遺症", "擔心手術後遺症", "擔心療程需多次治療", "其它因素"],
+                    datasets: [{
+                        label: '子宮頸癌',
+                        data: [ @Html.DisplayFor(model => model.Degree1), @Html.DisplayFor(model => model.Degree2), @Html.DisplayFor(model => model.Degree3), @Html.DisplayFor(model => model.Degree4), @Html.DisplayFor(model => model.Degree5), @Html.DisplayFor(model => model.Degree6), @Html.DisplayFor(model => model.Degree7), @Html.DisplayFor(model => model.Degree8), @Html.DisplayFor(model => model.Degree9)],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, 1)'
+                    ],
+                    borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var tx = document.getElementById("TFChart");
+        var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '子宮頸癌',
+                data: [@Html.DisplayFor(model => model.checkAnsTure) , @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>

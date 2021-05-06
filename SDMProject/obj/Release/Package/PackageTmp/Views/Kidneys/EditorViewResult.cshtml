@@ -1,0 +1,74 @@
+﻿@model SDMProject.Models.Kidney
+
+@{
+    ViewBag.Title = "EditorViewResult";
+}
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<html>
+<head>
+    <style>
+        .select input {
+            display: none;
+        }
+
+            .select input + label {
+                display: inline-block;
+                border: 1px solid #000;
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 2px 8px;
+            }
+
+            .select input:checked + label {
+                background-color: #99BBFF;
+            }
+    </style>
+</head>
+
+<body>
+    <h2>您已填寫過表單，請選擇任一選項繼續進行。</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div align="center" valign="center">
+            <span style="color:#4400B3">請選擇一選項：</span>
+            <br>
+            <br>
+
+            <div class="select">
+                <input type="radio" name="check" id="m01" onclick="CheckAns(this.value)" value="ViewResult" checked="checked">
+                <label for="m01">查看上一次填寫結果</label>
+                <br>
+                <br>
+                <input type="radio" name="check" id="m02" onclick="CheckAns(this.value)" value="communication">
+                <label for="m02">與醫師討論</label>
+                <br>
+                <br>
+                <input type="radio" name="check" id="m03" onclick="CheckAns(this.value)" value="EditForm">
+                <label for="m03">再次填寫表單</label>
+                <br>
+                <br>
+            </div>
+
+            <input type="submit" value="送出" class="btn btn-outline-primary" />
+            <br>
+            <br>
+            <span style="color:#FF0000">如果選擇再次填寫表單，那將會覆蓋上次的結果。</span>
+        </div>
+
+        @*不行 要寫alert*@
+        <script>
+            function CheckAns(check) {
+                //document.getElementById("result").value = check
+                if (check == "EditForm")
+                    alert("請確認是否要重新填寫表單")
+            }
+        </script>
+    }
+</body>
+</html>

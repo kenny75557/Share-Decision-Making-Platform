@@ -1,0 +1,1864 @@
+﻿@charset "utf-8";
+@import url('font_NotoSerifCJKtc.css'); /*字型NotoSerifCJKtc, font-weight:500,600,700,900*/
+@import url('fontawesome.min.css'); /*icon字型*/
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe, form,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+em, img, q, strong, sub, sup,
+dl, dt, dd, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+p {
+    line-height: 160%;
+    padding: 3px 0;
+}
+
+select {
+    padding: 0;
+}
+
+select, input, textarea {
+    margin: 0;
+    font-family: 'Arial', "Heiti TC", "黑體-繁", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+    input[type="button"], input[type="submit"], input[type="reset"] {
+        padding: 6px 4px;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        margin-right: 3px;
+        vertical-align: middle;
+    }
+
+    input[type="button"], input[type="submit"], input[type="reset"], select, button {
+        cursor: pointer;
+    }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, input {
+    box-sizing: border-box;
+}
+
+/* 基本設定 */
+body {
+    color: #333;
+    font-family: 'Arial', "Microsoft JhengHei", "微軟正黑體", 'Noto Sans TC', "Heiti TC", "黑體-繁", sans-serif;
+    background: #fbfbfb url('../images/bg.jpg');
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: 'Arial', 'Noto Sans TC', "Microsoft JhengHei", "微軟正黑體", "Heiti TC", "黑體-繁", sans-serif;
+}
+
+.clear {
+    clear: both;
+    float: none;
+    height: 0px;
+    width: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.none {
+    display: none;
+}
+
+hr {
+    clear: both;
+    height: 1px;
+    border: 0;
+    background-color: #c0c0c0;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* 連結 */
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: #df7b39;
+    }
+
+/* 反選 */
+::selection {
+    background-color: #9a9a9a;
+    color: #FFF;
+}
+
+/* Body */
+body.fixed {
+    overflow: hidden;
+}
+
+#Wrap {
+    min-width: 320px;
+}
+
+/* Header */
+#Header {
+    background: #fbfbfb url('../images/bg.jpg');
+}
+
+    #Header::after {
+        content: '';
+        clear: both;
+    }
+
+    #Header .logo {
+        float: left;
+    }
+
+        #Header .logo a img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+    #Header .header-right {
+        float: right;
+    }
+
+.hd_top {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+    .hd_top::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .hd_top .tool_box {
+        float: right;
+    }
+
+    .hd_top .links {
+        margin-bottom: 10px;
+    }
+
+        .hd_top .links ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+            .hd_top .links ul li a {
+                color: #7e7e7e;
+                font-size: 0.875em;
+                font-family: 'Arial','Noto Sans TC', "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            }
+
+                .hd_top .links ul li a:hover {
+                    color: #df7b39;
+                    text-decoration: underline;
+                }
+
+            .hd_top .links ul li[class] a::before {
+                content: '';
+                color: #df7b39;
+                padding-right: 3px;
+                font-family: 'Font Awesome 5 Pro';
+                font-weight: 900;
+            }
+
+            .hd_top .links ul li.sitemap a::before {
+                content: "\f0e8";
+            }
+
+            .hd_top .links ul li.link a::before {
+                content: "\f08e";
+            }
+
+    .hd_top .search > div {
+        float: right;
+    }
+
+.search {
+    position: relative;
+    overflow: hidden;
+}
+
+    .search .label {
+        display: none;
+    }
+
+    .search .text input {
+        padding: 0 15px;
+        margin: 0;
+        width: 150px;
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid #dddddd;
+        border-right: 0;
+        border-radius: 50px;
+    }
+
+        .search .text input:focus {
+            outline: 0;
+        }
+
+    .search .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+        .search .btn input {
+            padding: 0;
+            margin: 0;
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            padding-left: 15px;
+            text-indent: -9999px;
+            border: 1px solid #dadada;
+            border-left: 0;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            background: url("../images/icon_search.png") no-repeat 4px center;
+            background-position: 0 7px;
+        }
+
+        .search .btn:hover input {
+            background-position: 0 -23px;
+        }
+
+/*----------------------------------------------------------------------*/
+/* Center */
+/* 頁籤 */
+.tabStyle .tabs::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*----------------------------------------------------------------------*/
+/* Btn Top */
+.BtnTop {
+    text-align: center;
+    z-index: 10001;
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+    .BtnTop.TopFix {
+        display: block;
+    }
+
+    .BtnTop a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255,255,255,1);
+        font-weight: 600;
+        color: #6d6d6d;
+        position: relative;
+        z-index: 10000;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        font-size: 14px;
+        padding-top: 24px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+        .BtnTop a::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            border-top: 3px solid #6d6d6d;
+            border-left: 3px solid #6d6d6d;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .BtnTop a:hover {
+            background-color: #df7b39;
+            color: #fff;
+        }
+
+            .BtnTop a:hover::after {
+                border-color: #fff;
+            }
+
+/*----------------------------------------------------------------------*/
+/* Copyright */
+#Copyright {
+    background-color: #e59560;
+    text-align: center;
+}
+
+    #Copyright span {
+        color: #fff;
+        font-size: 0.875em;
+    }
+
+/*----------------------------------------------------------------------*/
+/* popup 彈出視窗 */
+.alert_box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 10005;
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    .alert_box.close {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .alert_box.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .alert_box > div {
+        background-color: #fff;
+        position: relative;
+        z-index: 100000;
+        text-align: left;
+        overflow: hidden;
+        overflow-y: scroll;
+        box-sizing: border-box;
+        padding: 30px 35px;
+        -webkit-overflow-scrolling: touch;
+        -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    .alert_box .close {
+        display: block;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        background-color: #555;
+        box-sizing: border-box;
+        z-index: 1;
+        text-decoration: none;
+        font-family: Arial;
+        text-align: center;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+        .alert_box .close:hover {
+            background-color: #333;
+        }
+
+        .alert_box .close a {
+            display: block;
+            color: #f5f5f5;
+            font-size: 16px;
+            width: 100%;
+            height: 100%;
+        }
+
+
+/*----------------------------------------------------------------------*/
+/* 表單 */
+/* 表單群組 */
+/* 注意 ------
+fieldset內，表單元件max-width:100%會失效(但IE沒事),加上如下兩個fix(尚未經測試),但須確保fieldset沒有左右margin
+又或者,不要用fieldset,改用div
+*/
+/*IOS webkit fix*/
+fieldset.FormGroup, fieldset.FromSubGroup {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+}
+/*Mozilla fix*/
+@-moz-document url-prefix() {
+    fieldset.FormGroup, fieldset.FromSubGroup {
+        display: table-cell;
+    }
+}
+
+.FormGroup, .FromSubGroup {
+    max-width: 100%;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0; /*消除fieldset的左右margin*/
+}
+
+    .FormGroup::after, .FromSubGroup::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+legend.form_group_title, legend.form_subgroup_title {
+    padding-left: 0;
+    padding-right: 0;
+}
+/*消除legend的左右padding*/
+.FormGroup, .form_group_title, .FromSubGroup, .form_subgroup_title {
+    box-sizing: border-box;
+}
+
+.FormGroup {
+    border: 1px solid #dddddd;
+    background-color: #fff;
+    padding: 40px 35px 25px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .FormGroup:last-child {
+        margin-bottom: 30px;
+    }
+
+    .FormGroup > *:last-child {
+        margin-bottom: 0;
+    }
+
+.form_group_title {
+    position: absolute;
+    top: 0;
+    display: block;
+    margin-top: -20px;
+}
+
+    .form_group_title span {
+        background-color: #ab795b;
+        padding: 0 15px;
+        display: inline-block;
+        color: #fff;
+        line-height: 35px;
+        font-weight: bold;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+.FormGroup > *:last-child {
+    margin-bottom: 0;
+}
+
+.FromSubGroup {
+    border: 1px solid #dfdfdf;
+    background-color: #fff;
+    padding: 25px 20px 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .FromSubGroup + .FromSubGroup {
+        margin-top: 20px;
+    }
+
+    .FromSubGroup > *:last-child {
+        margin-bottom: 0;
+    }
+
+.form_subgroup_title {
+    position: absolute;
+    top: 0;
+    display: block;
+    margin-top: -17px;
+}
+
+    .form_subgroup_title span {
+        background-color: #dfdfdf;
+        border: 1px solid #cacaca;
+        padding: 0 10px;
+        display: inline-block;
+        color: #000;
+        font-size: 0.9375rem;
+        line-height: 32px;
+        font-weight: bold;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+.FromSubGroup > *:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 表單群組裡的元件 */
+.FormGroupWarp .FormElmt input[type="text"], .FormGroupWarp .FormElmt input[type="password"], .FormGroupWarp .FormElmt input[type="file"],
+.FormGroupWarp .FormElmt input[type="number"], .FormGroupWarp .FormElmt input[type="date"], .FormGroupWarp .FormElmt input[type="month"],
+.FormGroupWarp .FormElmt input[type="week"], .FormGroupWarp .FormElmt input[type="time"], .FormGroupWarp .FormElmt input[type="datetime-local"],
+.FormGroupWarp .FormElmt input[type="email"], .FormGroupWarp .FormElmt input[type="search"], .FormGroupWarp .FormElmt input[type="tel"],
+.FormGroupWarp .FormElmt input[type="url"], .FormGroupWarp .FormElmt textarea {
+    color: #777;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    vertical-align: inherit;
+    /* margin-right:3px;*/
+}
+
+.FormGroupWarp .FormElmt input[type="text"], .FormGroupWarp .FormElmt input[type="password"], .FormGroupWarp .FormElmt input[type="number"],
+.FormGroupWarp .FormElmt input[type="date"], .FormGroupWarp .FormElmt input[type="month"], .FormGroupWarp .FormElmt input[type="week"],
+.FormGroupWarp .FormElmt input[type="time"], .FormGroupWarp .FormElmt input[type="datetime-local"], .FormGroupWarp .FormElmt input[type="email"],
+.FormGroupWarp .FormElmt input[type="search"], .FormElmt input[type="tel"], .FormGroupWarp .FormElmt input[type="url"],
+.FormGroupWarp .FormElmt textarea, .FormGroupWarp .FormElmt select {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 1px 1px 8px #ccc;
+    -moz-box-shadow: inset 1px 1px 8px #ccc;
+    box-shadow: inset 1px 1px 8px #ccc;
+}
+
+    .FormGroupWarp .FormElmt input[type="text"]:focus, .FormGroupWarp .FormElmt input[type="password"]:focus, .FormGroupWarp .FormElmt input[type="file"]:focus,
+    .FormGroupWarp .FormElmt input[type="number"]:focus, .FormGroupWarp .FormElmt input[type="date"]:focus, .FormGroupWarp .FormElmt input[type="month"]:focus,
+    .FormGroupWarp .FormElmt input[type="week"]:focus, .FormGroupWarp .FormElmt input[type="time"]:focus, .FormGroupWarp .FormElmt input[type="datetime-local"]:focus,
+    .FormGroupWarp .FormElmt input[type="email"]:focus, .FormGroupWarp .FormElmt input[type="search"]:focus, .FormGroupWarp .FormElmt input[type="tel"]:focus,
+    .FormGroupWarp .FormElmt input[type="url"]:focus,
+    .FormGroupWarp .FormElmt textarea:focus, .FormGroupWarp .FormElmt select:focus {
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+.FormTableWrap {
+    margin-top: 10px;
+}
+
+.FormGroupWarp .FormTable {
+    margin-bottom: 0;
+}
+
+/* 滿意度調查使用的表單樣式 */
+.FormGroup .form_group_subtitle {
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+    .FormGroup .form_group_subtitle span {
+        font-size: 1.375em;
+        color: #898989;
+        background-color: #fff;
+        position: relative;
+        z-index: 999;
+        top: 14px;
+        left: 35px;
+        padding: 6px 10px;
+        box-sizing: border-box;
+        letter-spacing: 0.03em;
+    }
+
+.FormGroup .question_box .item .title {
+    font-size: 1.25em;
+    padding-left: 3rem;
+    color: #333;
+}
+
+    .FormGroup .question_box .item .title .no {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: 400;
+    }
+
+.FormGroup .question_box .item {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+    .FormGroup .question_box .item .cont_box {
+        padding-left: 3rem;
+        margin-bottom: 0;
+    }
+
+
+.FormTable {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+    .FormTable > tbody > tr > th::after {
+        content: '：';
+    }
+
+    .FormTable > tbody > tr > th, .FormTable > tbody > tr > td {
+        font-size: 100%;
+    }
+
+    .FormTable > tbody > tr > th {
+        font-weight: 400;
+        line-height: 28px;
+        position: relative;
+    }
+
+        .FormTable > tbody > tr > th span {
+            font-weight: bold;
+            color: #f2234a;
+        }
+
+    .FormTable > tbody > tr > td {
+        line-height: 35px;
+    }
+
+    .FormTable > tbody > tr > th.text-top {
+        vertical-align: top;
+    }
+
+    /* 表單內按鈕 */
+    .FormTable .inline_btn {
+        padding-right: 6px;
+    }
+
+        .FormTable .inline_btn span {
+            border: 1px solid #ba451a;
+            margin-left: 6px;
+            display: inline-block;
+            vertical-align: bottom;
+            background: -webkit-linear-gradient(top, #e67b52 0%, #ba451a 100%);
+            background: -moz-linear-gradient(top, #e67b52 0%, #ba451a 100%);
+            background: linear-gradient(to bottom, #e67b52 0%, #ba451a 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e67b52', endColorstr='#ba451a',GradientType=0 ); /* IE6-9 */
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            .FormTable .inline_btn span:hover {
+                border: 1px solid #fd2814;
+                background: -webkit-linear-gradient(top, #fe9b3b 0%, #fd2814 100%);
+                background: -moz-linear-gradient(top, #fe9b3b 0%, #fd2814 100%);
+                background: linear-gradient(to bottom, #fe9b3b 0%, #fd2814 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9b3b', endColorstr='#fd2814',GradientType=0 ); /* IE6-9 */
+            }
+
+            .FormTable .inline_btn span > * {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 0;
+                padding-bottom: 0;
+                border: 0;
+                color: #fff;
+                height: 30px;
+                line-height: 30px;
+                box-sizing: border-box;
+            }
+
+            .FormTable .inline_btn span[class] > * {
+                background: url("../images/icon_inline_btn.png") no-repeat;
+            }
+
+        .FormTable .inline_btn .search input {
+            background-position: 15px 0;
+            padding-left: 30px;
+        }
+
+/*----------------------------------------------------------------------*/
+/* 搜尋表單 */
+/* 表單元件 */
+.FormElmt input[type="text"], .FormElmt input[type="password"], .FormElmt input[type="file"],
+.FormElmt input[type="number"], .FormElmt input[type="date"], .FormElmt input[type="month"],
+.FormElmt input[type="week"], .FormElmt input[type="time"], .FormElmt input[type="datetime-local"],
+.FormElmt input[type="email"], .FormElmt input[type="search"], .FormElmt input[type="tel"],
+.FormElmt input[type="url"] {
+    line-height: 35px;
+    height: 35px;
+}
+
+.FormElmt input[type="text"], .FormElmt input[type="password"], .FormElmt input[type="file"],
+.FormElmt input[type="number"], .FormElmt input[type="date"], .FormElmt input[type="month"],
+.FormElmt input[type="week"], .FormElmt input[type="time"], .FormElmt input[type="datetime-local"],
+.FormElmt input[type="email"], .FormElmt input[type="search"], .FormElmt input[type="tel"],
+.FormElmt input[type="url"],
+.FormElmt select, .FormElmt textarea {
+    margin-bottom: 6px;
+    vertical-align: top;
+    resize: vertical;
+}
+
+.FormElmt input[type="text"], .FormElmt input[type="password"],
+.FormElmt input[type="number"], .FormElmt input[type="date"], .FormElmt input[type="month"],
+.FormElmt input[type="week"], .FormElmt input[type="time"], .FormElmt input[type="datetime-local"],
+.FormElmt input[type="email"], .FormElmt input[type="search"], .FormElmt input[type="tel"],
+.FormElmt input[type="url"],
+.FormElmt textarea, .FormElmt select {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 100%;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.FormElmt input[type="text"], .FormElmt input[type="password"], .FormElmt input[type="file"],
+.FormElmt input[type="number"], .FormElmt input[type="date"], .FormElmt input[type="month"],
+.FormElmt input[type="week"], .FormElmt input[type="time"], .FormElmt input[type="datetime-local"],
+.FormElmt input[type="email"], .FormElmt input[type="search"], .FormElmt input[type="tel"],
+.FormElmt input[type="url"],
+.FormElmt textarea {
+    padding-left: 8px;
+    color: #777;
+}
+
+.FormElmt select {
+    line-height: 28px;
+    background-color: #fff;
+    padding: 5px 5px 4px;
+    height: 35px;
+    color: #555;
+}
+
+.FormElmt textarea {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+    .FormElmt input[type="text"]:focus, .FormElmt input[type="password"]:focus, .FormElmt input[type="file"]:focus,
+    .FormElmt input[type="number"]:focus, .FormElmt input[type="date"]:focus, .FormElmt input[type="month"]:focus,
+    .FormElmt input[type="week"]:focus, .FormElmt input[type="time"]:focus, .FormElmt input[type="datetime-local"]:focus,
+    .FormElmt input[type="email"]:focus, .FormElmt input[type="search"]:focus, .FormElmt input[type="tel"]:focus,
+    .FormElmt input[type="url"]:focus,
+    .FormElmt textarea:focus, .FormElmt select:focus {
+        outline: 0;
+        border: 1px solid #df7b39;
+        　 -webkit-box-shadow: inset 1px 1px 10px #eddfd6 0 0 6px #e49865;
+        -moz-box-shadow: inset 1px 1px 10px #eddfd6, 0 0 6px #e49865;
+        box-shadow: inset 1px 1px 10px #eddfd6, 0 0 6px #e49865;
+        -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+.FormElmt hr {
+    margin: 25px 0;
+}
+
+.FormElmt input.addr {
+    margin-top: 8px;
+    display: block;
+}
+
+.FormElmt .gender {
+    display: inline-block;
+}
+
+    .FormElmt .gender input[type="radio"] {
+        margin-left: 25px;
+    }
+
+.FormElmt .w40 {
+    width: 40px;
+}
+
+.FormElmt .w60 {
+    width: 60px;
+}
+
+.FormElmt .w80 {
+    width: 80px;
+}
+
+.FormElmt .w150 {
+    width: 150px;
+}
+
+.FormElmt .w100 {
+    width: 100px;
+}
+
+.FormElmt .w200 {
+    width: 100%;
+    max-width: 200px;
+}
+
+.FormElmt .w300 {
+    width: 100%;
+    max-width: 300px;
+}
+
+.FormElmt .w400 {
+    width: 100%;
+    max-width: 400px;
+}
+
+.FormElmt .w500 {
+    width: 100%;
+    max-width: 500px;
+}
+
+.FormElmt .fullwidth {
+    width: 100%;
+}
+
+.FormElmt .date {
+    width: 120px;
+}
+
+.FormElmt .dev-calendar {
+    width: 150px;
+}
+
+.FormElmt .note {
+    color: #e60000;
+    line-height: 160%;
+    font-size: 92.85%;
+    display: inline-block;
+}
+
+.FormElmt .link {
+    color: #008aff;
+    text-decoration: underline;
+}
+
+    .FormElmt .link:hover {
+        color: #444;
+    }
+
+.input_group > span {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+
+.input_group .fullwidth {
+    margin-right: 0;
+}
+
+.input_table {
+    overflow: hidden;
+    border-top: 1px solid #e0d9cf;
+    border-left: 1px solid #e0d9cf;
+}
+
+    .input_table li {
+        float: left;
+        padding: 10px;
+        border-bottom: 1px solid #e0d9cf;
+        border-right: 1px solid #e0d9cf;
+        box-sizing: border-box;
+        font-size: 87.5%;
+        color: #707070;
+        line-height: 150%;
+    }
+
+        .input_table li a {
+            display: block;
+            color: #707070;
+            text-decoration: none;
+        }
+
+            .input_table li a span {
+                margin: 0 5px;
+                color: #ff4c11;
+            }
+
+            .input_table li a:hover {
+                color: #ff4c11;
+            }
+
+/* checkbox/radio群組 */
+.FormElmt .input_group.inline {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.FormElmt .input_group > div {
+    display: inline;
+    margin-right: 10px;
+    line-height: 32px;
+}
+
+.FormElmt .input_group.item_block > div {
+    display: block;
+    margin-right: 0;
+}
+
+.FormElmt .input_group .fullwidth {
+    margin-right: 0;
+}
+
+/* checkbox/radio樣式 */
+.radio-btn input[type="radio"], .check-box input[type="checkbox"] {
+    visibility: hidden;
+}
+/*Custom checkbox button*/
+.check-box {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 7px 0 0;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+    border: 1px solid #bbb;
+}
+
+    .check-box i {
+        background: url('../images/check_mark.png') no-repeat center center;
+        position: absolute;
+        left: 3px;
+        bottom: -15px;
+        width: 16px;
+        height: 16px;
+        opacity: .5;
+        /* 動畫 */
+        /* -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out; */
+        -webkit-transform: rotateZ(-180deg);
+        -moz-transform: rotateZ(-180deg);
+        -o-transform: rotateZ(-180deg);
+        transform: rotateZ(-180deg);
+    }
+
+.checkedBox {
+    -moz-box-shadow: inset 0 0 5px 1px #bbb;
+    -webkit-box-shadow: inset 0 0 5px 1px #bbb;
+    box-shadow: inset 0 0 5px 1px #bbb;
+    /*border-bottom-color: #fff;*/
+}
+
+    .checkedBox i {
+        bottom: 2px;
+        -webkit-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+        -o-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+/*Custom radio button*/
+.radio-btn {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    /*float: left;*/
+    margin: 0 7px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 1px solid #bbb;
+    box-shadow: 0 0 1px #bbb;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+}
+
+.checkedRadio {
+    -moz-box-shadow: inset 0 0 5px 1px #ccc;
+    -webkit-box-shadow: inset 0 0 5px 1px #ccc;
+    box-shadow: inset 0 0 5px 1px #ccc;
+}
+
+.radio-btn i {
+    border: 1px solid #bbb;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.checkedRadio i {
+    background-color: #777;
+    border: 1px solid #777;
+}
+
+
+/* 驗證碼 */
+.FormElmt .randomcode::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.FormElmt .randomcode > div {
+    float: left;
+    margin-right: 8px;
+}
+
+.FormElmt .randomcode .input input[type="text"] {
+    width: 100px !important;
+}
+
+.FormElmt .randomcode .img img {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.FormElmt .randomcode div.btn {
+    padding: 0;
+    border: 0;
+}
+
+    .FormElmt .randomcode div.btn > * {
+        background: url(../images/icon_randomcode.png) no-repeat;
+        border: 0;
+        margin: 0;
+        padding: 0 10px 0 26px;
+        height: 35px;
+        font-size: 100%;
+        line-height: 35px;
+        color: #333;
+        text-decoration: underline;
+    }
+
+.FormElmt .randomcode .btn .play {
+    background-position: 5px -77px;
+}
+
+.FormElmt .randomcode div.btn input.refresh {
+    background-position: 5px 10px;
+}
+
+.FormElmt .randomcode div.btn input:hover {
+    color: #09329c;
+}
+
+.FormElmt .randomcode div.btn input.refresh:hover {
+    color: #666;
+}
+
+/* 按鈕 */
+.BtnCommon {
+    clear: both;
+    text-align: center;
+}
+
+    .BtnCommon.tl {
+        text-align: left;
+    }
+
+    .BtnCommon.tr {
+        text-align: right;
+    }
+
+    .BtnCommon span, .BtnCommon a, .BtnCommon input {
+        display: block;
+    }
+
+    .BtnCommon.large a, .BtnCommon.large input {
+        height: 50px;
+    }
+
+    .BtnCommon.mid a, .BtnCommon.mid input {
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .BtnCommon.small a, .BtnCommon.small input {
+        height: 24px;
+        line-height: 24px;
+    }
+
+    .BtnCommon div {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+        .BtnCommon div:first-child {
+            margin-left: 0;
+        }
+
+    .BtnCommon span {
+        position: relative;
+        z-index: 1;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: #df7b39;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+        .BtnCommon span:hover {
+            opacity: 0.8;
+        }
+
+    .BtnCommon div[class] span::before {
+        /*display:block; position:absolute; top:50%; left:15px; width:20px; height:20px; margin-top:-10px; content:''; 
+	background:url("../images/icon_btn_common.png") no-repeat;*/
+    }
+
+    .BtnCommon span::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .BtnCommon a, .BtnCommon input {
+        color: #fff;
+        font-weight: 400;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 2;
+    }
+
+    .BtnCommon.large a, .BtnCommon.large input {
+        font-size: 100%;
+        padding: 0 35px;
+        box-sizing: border-box;
+    }
+
+    .BtnCommon.mid a, .BtnCommon.mid input {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 100%;
+    }
+
+    .BtnCommon.small a, .BtnCommon.small input {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    /*.BtnCommon.large div[class] a, .BtnCommon.large div[class] input { padding-left:45px; }*/
+    .BtnCommon.mid div[class] a, .BtnCommon.mid div[class] input {
+        padding-left: 40px;
+    }
+
+    .BtnCommon.small div[class] a, .BtnCommon.small div[class] input {
+        padding-left: 25px;
+    }
+
+    .BtnCommon span a {
+        text-decoration: none;
+    }
+
+    .BtnCommon span input {
+        border: 0;
+        background-color: transparent;
+        margin: 0;
+    }
+
+    .BtnCommon div.submit span::before {
+        background-position: 0 0;
+    }
+
+    .BtnCommon div.reset span::before {
+        background-position: 0 -20px;
+    }
+
+    .BtnCommon.mid div[class] span::before {
+        left: 15px;
+    }
+
+    .BtnCommon div:hover span {
+        background-color: #df7b39;
+    }
+
+    .BtnCommon.btn_form {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+        .BtnCommon.btn_form div {
+            margin: 5px;
+        }
+
+    .BtnCommon div.reset span {
+        background-color: #888;
+    }
+
+    .BtnCommon div.reset:hover span {
+        background-color: #555;
+    }
+
+    .BtnCommon.large div.reset:hover span {
+        background-color: #777;
+    }
+
+    .BtnCommon.large div[class] span::before {
+        left: 25px;
+    }
+
+    .BtnCommon.large span {
+        position: relative;
+    }
+
+        .BtnCommon.large span::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: url('../images/icon_btn_common.png') no-repeat;
+            width: 18px;
+            height: 18px;
+            margin-top: -9px;
+        }
+
+    .BtnCommon.large .return input {
+        width: 160px;
+    }
+
+    .BtnCommon.large .button span::before {
+        background-image: none;
+        display: none;
+    }
+
+    .BtnCommon.large .save span::before {
+        background-image: none;
+    }
+
+    .BtnCommon.large .GoOn span::before {
+        background-position: 0 -40px;
+    }
+
+    .BtnCommon.large .return span::before {
+        background-position: 0 -60px;
+    }
+
+    .BtnCommon.large .submit span, .BtnCommon.large .save span, .BtnCommon.large .reset span, .BtnCommon.large .button span,
+    .BtnCommon.large .return span {
+        background-color: #f36a6a;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+    }
+
+    .BtnCommon.large .save span {
+        background-color: #7f7f7f;
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 400;
+    }
+
+        .BtnCommon.large .save span::before {
+            content: '\f0c7';
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .BtnCommon.large .save span input {
+            padding: 0 25px 0 48px;
+        }
+
+    .BtnCommon.large .submit input, .BtnCommon.large .reset input {
+        padding: 0 25px 0 50px;
+    }
+
+    .BtnCommon.large .reset span {
+        background-color: #888;
+    }
+
+        .BtnCommon.large .reset span:hover {
+            background-color: #bbb;
+        }
+
+/*.BtnCommon.large .submit:hover span, .BtnCommon.large .reset:hover span, 
+.BtnCommon.large .button:hover span{
+ 	background-color:#721616;
+}*/
+
+/*----------------------------------------------------------------------*/
+/* datepicker共通設定 */
+.ui-datepicker {
+    background-color: #fff;
+    padding: 15px 8px 7px 8px;
+    position: relative;
+    display: none;
+    -webkit-box-shadow: 0 0 5px #b2b2b2;
+    -moz-box-shadow: 0 0 5px #b2b2b2;
+    box-shadow: 0 0 5px #b2b2b2;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: block;
+    position: absolute;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.ui-datepicker-prev {
+    left: 0;
+}
+
+.ui-datepicker-next {
+    right: 0;
+}
+
+    .ui-datepicker-prev span, .ui-datepicker-next span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -6px 0 0 -6px;
+        width: 12px;
+        height: 12px;
+        background: url("../images/icon_datepicker.png") no-repeat;
+        text-indent: -10000px;
+    }
+
+.ui-datepicker-prev span {
+    background-position: 0 0;
+}
+
+.ui-datepicker-next span {
+    background-position: 0 -12px;
+}
+
+.ui-datepicker-prev:hover span {
+    background-position: -12px 0;
+}
+
+.ui-datepicker-next:hover span {
+    background-position: -12px -12px;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+    .ui-datepicker-title select {
+        height: 30px;
+        padding: 4px 0 5px;
+    }
+
+        .ui-datepicker-title select.ui-datepicker-year {
+            margin-right: 2px;
+        }
+
+        .ui-datepicker-title select.ui-datepicker-month {
+            margin-left: 6px;
+        }
+
+            .ui-datepicker-title select.ui-datepicker-month:first-child {
+                margin-left: 0;
+            }
+
+            .ui-datepicker-title select.ui-datepicker-month + select.ui-datepicker-year {
+                margin-left: 6px;
+                margin-right: 0;
+            }
+
+.ui-datepicker-calendar {
+    margin-top: 5px;
+}
+
+    .ui-datepicker-calendar th, .ui-datepicker-calendar td {
+        width: 27px;
+        padding: 0;
+        font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+        text-align: center;
+    }
+
+    .ui-datepicker-calendar th {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .ui-datepicker-calendar td {
+        font-size: 12px;
+    }
+
+        .ui-datepicker-calendar th span, .ui-datepicker-calendar td span, .ui-datepicker-calendar td a {
+            display: block;
+            padding: 5px 0 5px;
+        }
+
+        .ui-datepicker-calendar td a {
+            text-decoration: none;
+            color: #333;
+        }
+
+.ui-datepicker-unselectable {
+    color: #cfcfcf;
+}
+
+.ui-datepicker-today {
+    background-color: #c40d1a;
+}
+
+.ui-datepicker-calendar td.ui-datepicker-today a {
+    color: #fff !important;
+}
+
+.ui-datepicker-unselectable.ui-datepicker-today {
+    background-color: #f0f0f0;
+}
+
+.ui-datepicker-calendar td a.ui-state-default:hover {
+    color: #c40d1a;
+}
+
+.ui-datepicker-current-day a {
+    border: 1px solid #21293c;
+}
+
+
+/*----------------------------------------------------------------------*/
+/*tinyscrollbar*/
+.tableWrap {
+    /*    width:251px;
+    margin:0 0 10px;*/
+}
+
+    .tableWrap .viewport {
+        /*    width:236px;
+    height:125px;*/
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+    }
+
+    .tableWrap .overview {
+        list-style: none;
+        /*    width:1416px;*/
+        padding: 0;
+        margin: 0;
+        /*    position:absolute;*/
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    /*.tableWrap .overview img
+{
+    float:left;
+}*/
+
+    .tableWrap .scrollbar {
+        /*background:transparent url(../images/bg-scrollbar-track-x.png) no-repeat 0 0;*/
+        position: relative;
+        margin: 0 0 5px;
+        clear: both;
+        height: 4px;
+    }
+
+    .tableWrap .track {
+        /*background:transparent url(../images/bg-scrollbar-trackend-x.png) no-repeat 100% 0;*/
+        background-color: #dbdbdb;
+        width: 100%;
+        height: 4px;
+        position: relative;
+        margin: 0;
+    }
+
+    .tableWrap .thumb {
+        /*background:transparent url(../images/bg-scrollbar-thumb-x.png) no-repeat 100% 50%;*/
+        background-color: #656565;
+        height: 8px;
+        cursor: pointer;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        margin: 0;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        -webkit-transition: background-color 0.2s ease-out;
+        -moz-transition: background-color 0.2s ease-out;
+        transition: background-color 0.2s ease-out;
+    }
+
+        .tableWrap .thumb:hover {
+            background-color: #df7b39;
+        }
+
+        .tableWrap .thumb .end {
+            /*background:transparent url(../images/bg-scrollbar-thumb-x.png) no-repeat 0 50%;*/
+            overflow: hidden;
+            height: 8px;
+            width: 5px;
+            margin: 0;
+        }
+
+    .tableWrap .disable {
+        display: none;
+    }
+
+.noSelect {
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+/*----------------------------------------------------------------------*/
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10050;
+    overflow: hidden;
+}
+
+#cboxOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#cboxMiddleLeft, #cboxBottomLeft {
+    clear: left;
+}
+
+#cboxContent {
+    position: relative;
+    font-size: 13px;
+}
+
+#cboxLoadedContent {
+    overflow: auto;
+    padding: 30px 5px 60px 5px;
+}
+
+#cboxTitle {
+    margin: 0;
+}
+
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+    cursor: pointer;
+}
+
+.cboxPhoto {
+    float: left;
+    margin: auto;
+    border: 0;
+    display: block;
+    max-width: none;
+}
+
+.cboxIframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+#colorbox, #cboxContent, #cboxLoadedContent {
+    box-sizing: content-box;
+}
+
+#colorbox_thum::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#colorbox_thum {
+    padding-top: 25px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+    #colorbox_thum a {
+        display: block;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+        -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        #colorbox_thum a:hover {
+            -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            -webkit-transform: scale(1.02);
+            -moz-transform: scale(1.02);
+            transform: scale(1.02);
+        }
+
+        #colorbox_thum a span {
+            padding-bottom: 66.666%;
+            display: block;
+        }
+
+/*#colorbox_thum { overflow:hidden; padding-top:10px; margin-top:0; margin-bottom:30px; }
+#colorbox_thum a { 
+	display:block; float:left;
+	text-align:center; vertical-align:middle; 
+	border:2px solid #e7e7e7; padding:8px;
+	-webkit-transition: border 0.5s ease, box-shadow 0.5s ease;
+	-moz-transition: border 0.5s ease, box-shadow 0.5s ease;
+	-o-transition: border 0.5s ease, box-shadow 0.5s ease;
+	transition: border 0.5s ease, box-shadow 0.5s ease;
+	}
+#colorbox_thum a:hover { 
+	border:2px solid #e60012; 
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	}
+#colorbox_thum a *{ vertical-align:middle; }
+#colorbox_thum a span { display:inline-block; height:100%; }
+#colorbox_thum a img { max-width:100%; max-height:100%; }*/
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+    background: #000;
+}
+
+#colorbox {
+}
+
+#cboxContent {
+    margin-top: 20px;
+}
+
+.cboxIframe {
+    background: #fff;
+}
+
+#cboxError {
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+
+#cboxLoadedContent {
+    border: 5px solid #000;
+    background: #000;
+}
+
+#cboxTitle {
+    position: absolute;
+    bottom: 10px;
+    *bottom: 20px;
+    left: 10px;
+    color: #fff;
+    line-height: 18px;
+}
+
+#cboxCurrent {
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    color: #ccc;
+}
+
+#cboxSlideshow {
+    position: absolute;
+    top: -20px;
+    right: 90px;
+    color: #fff;
+}
+
+#cboxPrevious {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    margin-top: -32px;
+    background: url("../images/colorbox_controls.png") no-repeat top left;
+    width: 28px;
+    height: 65px;
+    text-indent: -9999px;
+}
+
+    #cboxPrevious:hover {
+        background-position: bottom left;
+    }
+
+#cboxNext {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -32px;
+    background: url("../images/colorbox_controls.png") no-repeat top right;
+    width: 28px;
+    height: 65px;
+    text-indent: -9999px;
+}
+
+    #cboxNext:hover {
+        background-position: bottom right;
+    }
+
+#cboxLoadingOverlay {
+    background: #000;
+}
+
+#cboxLoadingGraphic {
+    background: url("../images/colorbox_loading.gif") no-repeat center center;
+}
+
+#cboxClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    background: url("../images/colorbox_controls.png") no-repeat top center;
+    width: 38px;
+    height: 19px;
+    text-indent: -9999px;
+}
+
+    #cboxClose:hover {
+        background-position: bottom center;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 測試用menu */
+.ifun_text_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10200;
+}
+
+    .ifun_text_menu a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .ifun_text_menu > ul > li > a {
+        text-indent: -10000px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .ifun_text_menu > ul ul {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 150px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    .ifun_text_menu > ul > li:hover > ul {
+        display: block;
+    }
+
+    .ifun_text_menu > ul ul > li a:focus, .ifun_text_menu > ul ul > li a:hover {
+        color: #e33f3f;
+    }
+
+    .ifun_text_menu > ul ul > li > ul {
+        top: 80px;
+        left: 150px;
+        width: 150px;
+    }
+
+    .ifun_text_menu > ul ul > li:hover > ul {
+        display: block;
+    }
+
+    .ifun_text_menu > ul ul li {
+        background-color: rgba(255,255,255,0.9);
+    }
+
+    .ifun_text_menu > ul ul a {
+        padding: 7px 10px;
+        line-height: 180%;
+        font-size: 14px;
+        color: #333;
+        line-height: 140%;
+    }
+
+        .ifun_text_menu > ul ul a:hover {
+            font-weight: bold;
+        }

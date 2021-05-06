@@ -1,0 +1,58 @@
+﻿@model SDMProject.Models.Patient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>刪除病歷</h2>
+    <hr />
+
+    醫師姓名：
+    @Html.DisplayFor(model => model.DrName)
+    <br>
+    病歷號碼：
+    @Html.DisplayFor(model => model.PatientID)
+    <br>
+    病患姓名：
+    @Html.DisplayFor(model => model.Name)
+    <br>
+    身分證字號：
+    @Html.DisplayFor(model => model.DiseaseType)
+    <br>
+    建立日期：
+    @Html.DisplayFor(model => model.Date)
+    <br>
+    病患年齡：
+    @Html.DisplayFor(model => model.Age)
+    <br>
+    @*疾病類型：
+        @Html.DisplayFor(model => model.DiseaseType)
+        <br>*@
+    病患性別：
+    @Html.DisplayFor(model => model.Gender)
+    <br>
+    表單類型：
+    @Html.DisplayFor(model => model.Form)
+    <br>
+    <br>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="刪除" class="btn btn-outline-primary" />
+        <span>&emsp;</span>
+        <span class="btn btn-outline-primary"><a>@Html.ActionLink("返回清單", "Index")</a></span>
+    }
+</body>
+</html>

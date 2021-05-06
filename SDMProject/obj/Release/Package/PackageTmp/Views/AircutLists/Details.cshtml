@@ -1,0 +1,181 @@
+﻿@model SDMProject.Models.AircutList
+@{
+    ViewBag.Title = "Details";
+}
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.8;
+        }
+
+        #c01 {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center;font-weight:bold;">氣管改造手術填表結果</h2>
+    <br>
+
+    <h4>病歷號碼：@Html.DisplayFor(model => model.PatientID)</h4>
+    <hr />
+
+    <span id="c01">開立醫師：</span>
+    @TempData["Detail_DrName"]
+    <br>
+    <span id="c01">病患姓名：</span>
+    @TempData["Detail_Name"]
+    <br>
+    <span id="c01">身分證字號：</span>
+    @TempData["Detail_ID"]
+    <br>
+    <span id="c01">創建日期：</span>
+    @TempData["Detail_Date"]
+    <br>
+    <span id="c01">病患年齡：</span>
+    @TempData["Detail_Age"]
+    <br>
+    <span id="c01">病患性別：</span>
+    @TempData["Detail_Gender"]
+    <br>
+    <span id="c01">表單類別：</span>
+    @TempData["Detail_Form"]
+    <br>
+    <span id="c01">病患想要選擇的方式是：</span>
+    @Html.DisplayFor(model => model.Method)
+    <br>
+    <hr />
+
+    <span id="c01">步驟二：</span>
+    <br>
+    <div style="width:50%;">
+        <canvas id="heyChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟三：</span>
+    <br>
+    <span id="c01">1.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口會增加住院天數？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+    <span id="c01">2.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸會較穩定？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+    <span id="c01">3.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，方式費用較高？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+    <span id="c01">4.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人平均存活率較高？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+    <span id="c01">5.亞急性呼吸照護病房脫離呼吸器訓練治療合併氣切造口，病人的呼吸狀態預後較好？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+    <div style="width:25%;">
+        <canvas id="TFChart"></canvas>
+    </div>
+    <hr />
+
+    <span id="c01">步驟四：</span>
+    <br>
+    <span id="c01">6.我已經清楚知道有哪些治療的選擇</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno1)
+    <br>
+    <span id="c01">7.我清楚知道不同治療方式的優點和缺點</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno2)
+    <br>
+    <span id="c01">8.我已經接受足夠的知識及建議可以做決定</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno3)
+    <br>
+    <span id="c01">9.我做決定前還需要：</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    <span id="c01">10.我對於自己的決定有多確定？</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Determine)
+    <br>
+    <span id="c01">11.我還有想和醫師討論的問題：</span>
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Text)
+    <br>
+    <br>
+    @*<span class="btn btn-outline-primary"><a>@Html.ActionLink("編輯", "Edit", new { id = Model.ID })</a></span>*@
+    <span class="btn btn-outline-primary"><a>@Html.ActionLink("返回清單", "Index", "Patients")</a></span>
+
+    <script>
+        var ctx = document.getElementById("heyChart");
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["存活重要性", "日後照護", "治療風險", "治療費用", "治療所需時間"],
+            datasets: [{
+                label: '氣管開口術',
+                data: [@Html.DisplayFor(model => model.Degree1),@Html.DisplayFor(model => model.Degree2),@Html.DisplayFor(model => model.Degree3),@Html.DisplayFor(model => model.Degree4),@Html.DisplayFor(model => model.Degree5)],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    <script>
+        var tx = document.getElementById("TFChart");
+        var Chart2 = new Chart(tx, {
+        type: 'pie',
+        data: {
+            labels: ["正確", "錯誤"],
+            datasets: [{
+                label: '氣管開口術',
+                data: [ @Html.DisplayFor(model => model.checkAnsTure), @Html.DisplayFor(model => model.checkAnsWrong)],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>

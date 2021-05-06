@@ -1,0 +1,919 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------------------------*/
+/* Header */
+#Header {
+    border-bottom: 5px solid #df7b39;
+}
+
+    #Header .logo {
+        width: 200px;
+        float: inherit;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #Header .hd_top .tool_box {
+        display: none;
+    }
+
+/*----------------------------------------------------------------------*/
+/* Menu */
+#Menu {
+    display: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* Copyright */
+#Copyright {
+    padding: 20px 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* 視覺形象區塊 */
+.IndexImage {
+    padding: 2.5rem 15px 3rem;
+    background-position: center center;
+}
+
+    .IndexImage::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        /*background-color:rgba(242, 225, 203, 0.6);*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: -moz-linear-gradient(top, rgba(242,226,206,1) 0%, rgba(242,226,206,0.99) 1%, rgba(222,221,221,0) 97%, rgba(221,221,221,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(242,226,206,1) 0%,rgba(242,226,206,0.99) 1%,rgba(222,221,221,0) 97%,rgba(221,221,221,0) 100%);
+        background: linear-gradient(to bottom, rgba(242,226,206,1) 0%,rgba(242,226,206,0.99) 1%,rgba(222,221,221,0) 97%,rgba(221,221,221,0) 100%);
+    }
+
+    .IndexImage .tt1 span {
+        padding: 10px 0;
+    }
+
+    .IndexImage .tt2 {
+        font-size: 1.375em;
+    }
+
+    .IndexImage .cont .img {
+        max-width: 150px;
+    }
+
+    .IndexImage .cont .desc {
+        color: #847259;
+        font-size: 0.938em;
+        padding-top: 20px;
+    }
+
+/*----------------------------------------------------------------------*/
+/* IndexCenter */
+/* 共用區塊 */
+#IndexCenter > div {
+    padding: 0 15px;
+}
+
+.indexTitle {
+    margin-bottom: 15px;
+}
+
+    .indexTitle span {
+        font-size: 1.375em;
+        display: inline-block;
+        padding: 10px 0;
+    }
+
+.IndexBlock .more_btn {
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 */
+.IndexSDM {
+    margin-bottom: 2.5rem;
+}
+
+.sdmList .item:last-child > div {
+    border-bottom: 0;
+}
+
+.sdmList .item .tags {
+    padding-right: 3.75rem;
+}
+
+.sdmList .item .title a {
+    padding-right: 3.75rem;
+    font-weight: 400;
+}
+
+.sdmList .item .goto {
+    right: 0;
+    top: 50%;
+    margin-top: -15px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 衛教專區 */
+.IndexHealth .indexTitle {
+    margin-bottom: 25px;
+}
+
+.IndexHealth .category_box .title {
+    padding-bottom: 10px;
+}
+
+.IndexHealth .category_box > .item {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.IndexHealth .category_box .tags li a {
+    padding: 5px 15px;
+}
+
+.IndexHealth .category_box .FormElmt {
+    margin-bottom: 15px;
+}
+
+.IndexHealth .bodyPart_btn {
+    display: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* 相關網站 */
+.IndexLinks > div {
+    padding: 25px 0;
+}
+
+.IndexLinks .list_box {
+    padding-top: 15px;
+}
+
+    .IndexLinks .list_box ul li {
+        margin-right: 15px;
+        margin-bottom: 15px;
+        max-width: 150px;
+        height: 50px;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 彈出視窗 */
+.alert_box > div {
+    max-height: 90%;
+    margin: 20px;
+}
+
+.alert_box .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+/*===================================以下為內頁===================================*/
+/*----------------------------------------------------------------------*/
+/* 內頁 */
+#Center.content > div {
+    padding: 10px 10px 20px;
+}
+
+#Content {
+    padding: 20px 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* 標題 */
+.PageTitle h2 {
+    padding: 5px 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* 文章內容 */
+h3.title {
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+    h3.title span {
+        line-height: 150%;
+    }
+
+/*文章日期*/
+.postdate {
+    margin-top: 10px;
+}
+
+/*文章更新日期*/
+.post_info {
+    text-align: left;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單+衛教專區:共用列表 */
+/* 頁籤 */
+.searchFilter {
+    margin-bottom: 20px;
+}
+
+    .searchFilter .tabStyle .tabs ul li {
+        padding: 8px 12px;
+    }
+
+    .searchFilter .tab_container {
+        padding: 15px;
+    }
+
+    /* 篩選關鍵字 */
+    .searchFilter .SearchBOX {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+/* tags */
+.filter_tags a {
+    font-size: 0.875em;
+    padding: 5px 12px;
+}
+
+/* 部位圖片按鈕 */
+.bodyPart_searchBtn {
+    display: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* SDM評估表單 內容元素 */
+.inside_tags {
+    margin-bottom: 2.5rem;
+}
+
+    .inside_tags span {
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-right: 8px;
+        color: #999;
+        font-size: 0.875em;
+        position: relative;
+        padding-left: 9px;
+    }
+
+        .inside_tags span::before {
+            content: '';
+        }
+
+/* 步驟按鈕 */
+.TOP_STEPS_BTN {
+    margin-bottom: 3rem;
+}
+
+    .TOP_STEPS_BTN a {
+        font-size: 1.25em;
+        font-weight: 900;
+    }
+
+        .TOP_STEPS_BTN a span {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+/* 評估表單:標題 */
+.form_title {
+    margin-bottom: 3.5rem;
+}
+
+    .form_title span {
+        font-size: 1.5em;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 評估表單:表格 */
+.compareChart table .tt {
+    min-width: 180px;
+}
+
+.compareChart table .cont {
+    min-width: 320px;
+    font-size: 1.125em;
+}
+
+.compareChart table .info {
+    font-size: 1.125em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 暫存 */
+.save_box .alert_boxBody {
+    padding-right: 20px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 填寫個人資料 */
+.personal_box .FormElmt .edu::before {
+    display: none;
+}
+
+.personal_box select {
+    padding-left: 10px;
+}
+
+/* 響應式時將icon圖示隱藏 */
+.personal_box .FormElmt .item::before, .personal_box .FormElmt .randomcode .input::before, .personal_box .FormElmt .item2 .label::before {
+    display: none;
+}
+
+.personal_box .FormElmt input[type="text"] {
+    padding-left: 10px;
+}
+
+.personal_box .item2 .label {
+    padding-left: 0;
+}
+
+.personal_box .FormElmt .another .label {
+    padding-left: 10px;
+}
+
+.personal_box .item2 > div {
+    padding: 10px;
+}
+
+.personal_box .item.another {
+    padding: 10px;
+}
+
+.personal_box .FormElmt .another .label {
+    padding-left: 0;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* 問答題型 */
+.question_box .ques_title {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.question_box .item .title {
+    font-size: 1.25em;
+}
+
+.question_box .cont_box {
+    font-size: 1.125em;
+}
+
+@media screen and (max-width: 767px) {
+    .question_box .ques_title {
+        font-size: 1.5em;
+        padding-left: 4rem;
+    }
+
+        .question_box .ques_title span {
+            width: 50px;
+            height: 50px;
+        }
+
+            .question_box .ques_title span::before {
+                font-size: 25px;
+            }
+
+    .question_box .item {
+        margin-bottom: 15px;
+    }
+
+        .question_box .item .title {
+            padding-left: 20px;
+        }
+
+            .question_box .item .title .no {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-right: 5px;
+                position: relative;
+            }
+
+        .question_box .cont_box, .question_box .item .cont_box {
+            padding-left: 25px;
+        }
+}
+
+/* 題型綜合樣式 */
+.evaluationForm table th, .evaluationForm table td {
+    padding: 8px 12px;
+    font-size: 1.125em;
+}
+
+/* 題型三 */
+.evaluationForm.st3 table th.choose .line-right {
+    width: 65%;
+}
+
+
+
+/*----------------------------------------------------------------------*/
+/* 瞭解更多資訊及資源 */
+.information_wrap .QRcode_block > div {
+    max-width: 100%;
+}
+
+.information_wrap .QRcode_block .img_box {
+    width: 49%;
+    display: inline-block;
+}
+
+.information_wrap .QRcode_block .cont {
+    display: block;
+}
+
+/*----------------------------------------------------------------------*/
+/* 相關網站 */
+.LinkWrap .item .tt {
+    padding: 8px 20px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 搜尋結果 */
+.SearchResult .desc, .SearchResult .cat, .SearchResult .cat a {
+    font-size: 0.938em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 文字列表 */
+.ListTable {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+    .ListTable table, .ListTable table tbody, .ListTable table tr, .ListTable table th, .ListTable table td {
+        display: block;
+    }
+
+        .ListTable table tr:first-child {
+            position: absolute;
+            left: -10000px;
+            top: -10000px;
+        }
+
+        .ListTable table tr {
+            padding: 5px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .ListTable table tr:nth-child(2) {
+                border-top: 1px solid #ddd;
+            }
+
+            .ListTable table tr:nth-child(odd) {
+                background-color: #fff;
+            }
+
+            .ListTable table tr:nth-child(even) {
+                background-color: #f5f5f5;
+            }
+
+        .ListTable table th, .ListTable table td {
+            font-size: 100%;
+        }
+
+        .ListTable table td {
+            margin: 3px 0;
+            text-align: left;
+        }
+
+            .ListTable table td::before {
+                color: #333;
+                font-weight: bold;
+                content: attr(data-th)"：";
+                display: inline-block;
+            }
+
+            .ListTable table td.title a {
+                color: #4d4d4d;
+            }
+
+            .ListTable table td.no {
+                display: none;
+            }
+
+                .ListTable table td.no::before, .ListTable table td:first-child.date::before, .ListTable table td.title::before, .ListTable table td.type::before,
+                .ListTable table td.thum::before, .ListTable td.status::before {
+                    content: "";
+                }
+
+            .ListTable table td.date {
+                background: url("../images/icon_date.png") no-repeat 0 center;
+                margin-bottom: 0;
+                padding-left: 16px;
+                color: #7e7e7e;
+                font-size: 93.8%;
+            }
+
+            .ListTable table td.cat {
+                font-size: 93.8%;
+            }
+
+            .ListTable table td.title {
+                font-size: 100%;
+            }
+
+    .ListTable td {
+        margin: 5px 0;
+        padding: 3px 0;
+        font-size: 87.5%;
+        text-align: left;
+    }
+
+    .ListTable table td.title {
+        margin-top: 0;
+    }
+
+    .ListTable table td.download li {
+        white-space: nowrap;
+        margin: 10px 8px 10px 0;
+        display: inline-block;
+    }
+
+/*----------------------------------------------------------------------*/
+/* 圖文列表 */
+.ListPicText > div {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.ListPicText .item {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.ListPicText .desc {
+    margin-bottom: 25px;
+}
+
+/* list-view */
+.ListPicText.list-view .item {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* grid-view */
+.ListPicText.grid-view .img {
+    padding: 15px;
+}
+
+/* 限制行數 */
+.ListPicText.list-view .desc {
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 4.5em;
+}
+
+.ListPicText.list-view.trisection .title a {
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 3em;
+}
+
+.ListPicText.list-view .desc {
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 4.5em;
+}
+
+.ListPicText.list-view.trisection .desc {
+    clear: none;
+}
+
+@media screen and (max-width: 767px) {
+    .ListPicText .cont {
+        padding: 15px;
+    }
+
+    .ListPicText .title {
+        font-size: 1.25em;
+    }
+
+    .ListPicText .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText .desc {
+        font-size: 0.875em;
+    }
+
+    /* list-view 一律以單欄顯示 */
+    .ListPicText.list-view .img {
+        float: left;
+        width: 360px;
+        max-width: 50%;
+        padding-right: 15px;
+    }
+
+    /* grid-view 一律以兩欄顯示 */
+    .ListPicText.grid-view .item {
+        float: left;
+        width: 50%;
+    }
+
+        .ListPicText.grid-view .item > div {
+            padding-bottom: 30px;
+        }
+    /* 按鈕的高度 */
+    .ListPicText.grid-view .btn {
+        position: absolute;
+        width: 100%;
+        bottom: 15px;
+        right: 10px;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ListPicText .cont {
+        padding: 15px;
+    }
+
+    .ListPicText .title {
+        font-size: 1.25em;
+    }
+
+    .ListPicText .date {
+        font-size: 0.8125em;
+    }
+
+    .ListPicText .desc {
+        font-size: 0.875em;
+    }
+
+    /* list-view 一律以單欄顯示 */
+    .ListPicText.list-view .img {
+        float: left;
+        width: 360px;
+        max-width: 50%;
+        padding-right: 15px;
+    }
+
+    /* grid-view 一律以三欄顯示 */
+    .ListPicText.grid-view .item {
+        float: left;
+        width: 33.3333%;
+    }
+
+        .ListPicText.grid-view .item > div {
+            padding-bottom: 30px;
+        }
+    /* 按鈕的高度 */
+    .ListPicText.grid-view .btn {
+        position: absolute;
+        width: 100%;
+        bottom: 15px;
+        left: 0;
+        padding-left: 15px;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* 內頁元素 */
+.ToolBar {
+    margin-bottom: 20px;
+}
+
+    .ToolBar .colm_left {
+        display: none;
+    }
+
+    .ToolBar dl.font_size {
+        float: left;
+    }
+
+    .ToolBar dl.share {
+        float: right;
+    }
+
+    .ToolBar dl.font_size::after {
+        display: none;
+    }
+
+/* 標題 */
+.PageTitle .searchBox {
+    margin-top: 13px;
+}
+
+    .PageTitle .searchBox > div {
+        width: 100%;
+    }
+
+    .PageTitle .searchBox.pro_search > div {
+        width: 49%;
+        margin-left: 2%;
+    }
+
+        .PageTitle .searchBox.pro_search > div:first-child {
+            margin-left: 0px;
+        }
+
+
+/* 頁碼 */
+#Pagination {
+    margin-top: 0;
+}
+
+    #Pagination a {
+        margin: 0 5px;
+        display: none;
+    }
+
+        #Pagination a.first, #Pagination a.prev, #Pagination a.next, #Pagination a.last, #Pagination .current {
+            display: inline-block;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        #Pagination a.first, #Pagination a.last {
+            background-color: #eee;
+        }
+
+        #Pagination a.prev, #Pagination a.next {
+            background-color: #eee;
+        }
+
+    #Pagination .setting {
+        display: none;
+    }
+
+/* colorbox */
+#colorbox_thum a {
+    width: 170px;
+    margin: 8px;
+}
+
+@media screen and (max-width: 820px) {
+    #colorbox_thum a {
+        width: 150px;
+        margin: 5px;
+    }
+}
+
+/* 列表搜尋 */
+.ListSearch {
+    padding: 10px 10px 10px 0px;
+}
+
+    .ListSearch.FormElmt {
+        margin-bottom: 15px;
+    }
+
+@media screen and (max-width: 767px) {
+    .ListSearch .item:first-child + .item {
+        padding-left: 0;
+    }
+
+    .ListSearch .item label, .ListSearch .item::before {
+        display: none;
+    }
+
+    .ListSearch .item span.label {
+        display: block;
+    }
+}
+
+/* 編輯器 */
+.editable_content blockquote {
+    padding: 30px 45px;
+    font-size: 93.8%;
+}
+
+    .editable_content blockquote p {
+        font-size: 106.3%;
+        line-height: 180%;
+    }
+
+h4.ext_title {
+    font-weight: 400;
+}
+
+.editable_content h4 {
+    font-size: 1.375em;
+}
+
+.editable_content h5 {
+    font-size: 1.25em;
+}
+
+.editable_content h6 {
+    font-size: 1.125em;
+}
+
+/*----------------------------------------------------------------------*/
+/* 表單 */
+.FormTable > tbody > tr > th, .FormTable > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.FormTable > tbody > tr:last-child > th, .FormTable > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+.FormTable > tbody > tr > th {
+    width: 125px;
+    padding: 15px 5px 15px 0;
+    text-align: right;
+}
+
+    .FormTable > tbody > tr > th:empty::after {
+        display: none;
+    }
+
+.FormTable > tbody > tr > td {
+    padding: 10px 0 4px;
+}
+
+/* 表單群組 */
+/* 滿意度調查使用的表單樣式 */
+.FormGroup .question_box .item .title .no {
+    position: absolute;
+}
+
+/*----------------------------------------------------------------------*/
+/* 表單 */
+table.FormTable > tbody > tr > th, table.FormTable > tbody > tr > td {
+    vertical-align: top;
+    border-bottom: 1px dotted #ccc;
+}
+/*table.FormTable > tbody > tr:first-child > th, table.FormTable > tbody > tr:first-child > td{ border-top:1px dotted #ccc; }*/
+table.FormTable > tbody > tr:last-child > th, table.FormTable > tbody > tr:last-child > td {
+    border-bottom: 0;
+}
+
+table.FormTable > tbody > tr > th {
+    width: 150px;
+    padding: 15px 15px 15px 6px;
+    text-align: right;
+}
+
+    table.FormTable > tbody > tr > th::after {
+        position: absolute;
+        top: 14px;
+        right: 0;
+    }
+
+    table.FormTable > tbody > tr > th:empty::after {
+        display: none;
+    }
+
+table.FormTable > tbody > tr > td {
+    padding: 10px 6px 5px 6px;
+}
+/*table.FormTable > tbody > tr:nth-child(odd) > th, table.FormTable > tbody > tr:nth-child(odd) > td { background-color:#fff; }*/
+
+/* 表單元件 */
+.FormElmt .input_group > div {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+
+.FormElmt input + input, .FormElmt input + select, .FormElmt select + input, .FormElmt select + select {
+    margin-left: 4px;
+}
+
+.input_table li {
+    width: 33.33%;
+}
+
+/*表格*/
+.editable_content table.table_style2 tr:nth-child(2n+3) {
+    background-color: #fff;
+}
+
+.editable_content table.table_style2 caption {
+    display: block;
+}
+
+.editable_content .table_style2 > tbody > tr {
+    border-bottom: 1px solid #6e6e6e;
+}
+
+    .editable_content .table_style2 > tbody > tr > th {
+        white-space: normal;
+    }

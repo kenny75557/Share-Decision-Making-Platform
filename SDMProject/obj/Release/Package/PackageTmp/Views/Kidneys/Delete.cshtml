@@ -1,0 +1,92 @@
+﻿@model SDMProject.Models.Kidney
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h2>刪除病歷</h2>
+    <hr />
+
+    病歷號碼：
+    @Html.DisplayFor(model => model.PatientID)
+    <br>
+    治療方法：
+    @Html.DisplayFor(model => model.Method)
+    <br>
+    <br>
+    @*1.腹膜透析治療分為人工洗和自動洗。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition1)
+    <br>
+    2.選擇人工洗治療一天需換液3 ~ 5次，每次約20 ~ 30分。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition2)
+    <br>
+    3.選擇自動洗治療一天只需上機一次，一次約8 ~ 10小時。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition3)
+    <br>
+    4.接受人工洗或自動洗治療可至國內外旅遊。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition4)
+    <br>
+    5.接受腹膜透析治療不限磷，需維持高蛋白質（1.2 ~ 1.5 gm/kg）。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition5)
+    <br>
+    6.人工洗治療需要生活可獨立自理（矯正視力良好，可執行精細動作）或生活無法完全獨立自理有家人或外傭協助。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition6)
+    <br>
+    7.腹膜透析場所需要無菌室。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition7)
+    <br>
+    8.統計腹膜透析腹膜炎的感染途徑，最常見是「經導管內感染 transuluminal，30 ~ 40%」，主要來自未注意無菌技術及不當的操作技術所造成。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition8)
+    <br>
+    9.APD「自動洗」腹膜透析應該是居家透析治療的第一選擇。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition9)
+    <br>
+    10.CAPD「人工洗」腹膜透析應該是居家透析治療的第一選擇。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Cognition10)
+    <br>
+    11.我已經了解有腹膜透析治療有 2 種方式。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno1)
+    <br>
+    12.我已經了解不同腹膜透析治療方式的優缺點。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno2)
+    <br>
+    13.我已經有足夠的知識可以做決定。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Yesno3)
+    <br>
+    14.我做決定前，有想要在了解腹膜透析治療方式：
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Decision)
+    <br>
+    15.我有多麼確定自己的抉擇：
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Determine)
+    <br>
+    16.我還有問題，想和我的醫師及護人員再次討論清楚。
+    <br>
+    病患答案：@Html.DisplayFor(model => model.Text)
+    <br>
+    <br>*@
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="刪除" class="btn btn-outline-primary" />
+            <span class="btn btn-outline-primary">@Html.ActionLink("返回清單", "Index","Patients")</span>
+        </div>
+    }
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<form action="/Logins/check_key" align="center" valign="center" method="post">
+    @Html.AntiForgeryToken()
+    <h1>請輸入驗證碼</h1>
+    <br>
+    <input type="text" name="Check">
+    <input type="submit" value="登入" class="btn btn-outline-primary" />
+</form>
+
+<br><br>
+<h2 style="text-align:center;font-weight:bold;">@ViewBag.ckMsg</h2>

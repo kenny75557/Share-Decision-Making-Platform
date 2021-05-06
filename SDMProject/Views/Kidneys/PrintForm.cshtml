@@ -1,0 +1,557 @@
+﻿@model SDMProject.Models.Kidney
+
+@{
+    ViewBag.title = "PrintForm";
+}
+@{
+    Layout = "~/Views/Shared/_NoLayoutPage.cshtml";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        #table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #th01 {
+            text-align: center;
+        }
+
+        #c02 {
+            font-weight: bolder;
+            text-align: center;
+            display: block;
+        }
+
+        #c03 {
+            font-weight: bolder;
+        }
+
+        #boxtext01 {
+            border: 1px black solid;
+            padding: 6px;
+            width: auto;
+            border-radius: 10px;
+            font-weight: bolder;
+            text-align: center;
+        }
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+</head>
+
+<body>
+    <br />
+    <h1 style="text-align:center;">
+        慢性腎臟疾病：我選腹膜透析！
+        <br />人工洗？自動洗？
+    </h1>
+
+    <br />
+    <br />
+
+    &emsp;&emsp;近年來腹膜透析的設備和裝置都有很大的進步，不僅大幅降低腹膜炎的感染，而且提高腹膜透析的可用性及方便性，改善透析患者的生活品質。
+    目前居家腹膜透析有連續性活動式腹膜透析（人工洗）及全自動腹膜透析（自動洗）二種，且兩種模式的預後並無太大的差異性。
+    故選擇前詳細的為末期腎臟病病人全面評估與衛教諮詢，能使病人與家屬了解腹膜透析兩種治療模式，幫助病人依其需求選擇適當的腹膜透析模式，
+    以減少對治療的恐懼，進而成功因應未來的透析生活。
+    <br />
+    <br />
+
+    如有問題請向您的醫師提出咨詢。
+    <br />
+
+    ●
+    <span id="c03">適用對象：</span>
+    <br />
+    &emsp;➤ 獨立生活者可生活起居自理。
+    <br />
+    &emsp;➤ 需完全或部分由旁人照護病人，必須要有主要照顧者協助換液。
+    <br />
+    <br />
+
+    ●
+    <span id="c03">適用對象：</span>
+    <br />
+    &emsp;➤ 獨立生活者可生活起居自理。
+    <br />
+    &emsp;➤ 需完全或部分由旁人照護病人，必須要有主要照顧者協助換液。
+    <br />
+    <br />
+
+    ●
+    <span id="c03">適用狀況：</span>
+    <br />
+    &emsp;➤ 您有末期腎臟病想要接受腹膜透析替代療法治療及符合以下適應症及伴隨以下症狀。
+    <br />
+    &emsp;➤ 您的主治醫師告知需要接受腹膜透析替代療法治療及符合以下適應症及伴隨以下症狀：
+    <br />
+    <br />
+
+    &emsp;1.健保規定－絕對適應症、相對適應症
+    <br />
+    &emsp;絕對適應症：為末期腎臟病且肌酸酐廓清率（CCr）&lt; 5 ml/min、或血清肌酸酐Cr ≧ 10.0 mg/dl並合併下列併發症。
+    <br />
+    <br />
+    &emsp;相對適應症：為末期腎臟病且肌酸酐廓清率（CCr）≦ 15 ml/min、或血清肌酸酐Cr ≧ 6.0 mg/dl並合併下列併發症：
+    <br />
+    &emsp;2.伴隨症狀：
+    <br />
+    &emsp;A.出現與尿毒有關之症狀：
+    <br />
+    &emsp;➤ 噁心、嘔吐、食慾不振、皮膚癢。
+    <br />
+    &emsp;➤ 意識改變，包括昏睡、疲倦、譫妄、昏迷。
+    <br />
+    &emsp;➤ 尿毒性腦症：出現一些不正常之反射、顫抖、痙攣等。
+    <br />
+    &emsp;➤ 因血小板功能改變而出現之出血。
+    <br />
+    <br />
+    &emsp;B.出現對藥物治療反應不佳：
+    <br />
+    &emsp;➤ 體液過多症（腳水腫、呼吸喘）。
+    <br />
+    &emsp;➤ 鉀離子過高（K &gt; 6 mmol/L）。
+    <br />
+    &emsp;➤ 出現嚴重之酸血症。
+    <br />
+    <br />
+
+    ●
+    <span id="c03">疾病介紹：</span>
+    <br />
+    &emsp;&emsp;末期腎臟疾病；也稱為慢性腎臟疾病（chronic kidney disease，CKD）第五期，指雙側腎臟腎元進行不可逆損壞，造成無法代謝廢物，造成體液電解質 調節障礙及內分泌功能異常，這時需靠血液透析或腹膜透析來治療及延續其生命。
+    <br />
+    <br />
+
+    ●
+    <span id="c03">治療方式介紹：</span>
+    <br />
+    &emsp;&emsp;連續性活動式腹膜透析（人工洗）－為一天自行操作約 4 次換液，每次換液時先將腹腔內含代謝廢物的透析液引流出來，再灌入新鮮的透析液，歷時約 30 分鐘，新鮮透析液在腹腔內停留4 ~ 6小時做廢物的交換後，才需再次換液。
+    <br />
+    &emsp;&emsp;全自動腹膜透析（自動洗）－每日一次連結一次脫離，由全自動腹膜透析機執行注入及引流透析液等步驟已完成治療。
+    <br />
+    <br />
+
+    ●
+    <span id="c03">您想要選擇的方式是？</span>
+    <br />
+    <input type="checkbox" />連續性活動式腹膜透析（人工洗）
+    <input type="checkbox" />全自動腹膜透析（自動洗）
+    <input type="checkbox" />需與主治醫師再討論
+    <input type="checkbox" />不進行任何治療
+    <br />
+    <br />
+
+    ●
+    <span id="c03">接著請透過以下四個步驟來幫助您做決定</span>
+    <br />
+    <br />
+
+    <div id="boxtext01">步驟一：您瞭解腹膜透析治療CAPD「人工洗」及APD「自動洗」之優缺點？您所面臨的風險有多大嗎？我們可以用一個很簡單的小問卷來幫您回答。</div>
+    <br />
+
+    <table id="table" border=1 align=center>
+        <tr align=center>
+            <th width="90px" align=center>項目</th>
+            <th align=center>連續性活動式腹膜透析（人工洗）</th>
+            <th align=center>全自動腹膜透析（自動洗）</th>
+        </tr>
+
+        <tr>
+            <th id="th01">操作方式</th>
+            <td>
+                1.自行操作4 ~ 5次換液，每次換液時先將腹腔內含代謝廢物的透析液引流出來，再灌入新鮮的透析液。
+                <br />
+                2.每次換液灌入量1500 ~ 2500CC，換液程序包括引流、注入、留置。
+                <br />
+                3.每次換液時間20 ~ 30分鐘。
+                <br />
+            </td>
+            <td>
+                1.藉由「桌上型全自動腹膜透析機」於夜間睡眠時，連續執行 4 週期以上的換液，只需操作連接機器一次換液即可。
+                <br />
+                2.每週期包括引流、注入、留置。灌入量1500 ~ 2500CC。
+                <br />
+                3.接機總治療時間8 ~ 10小時，治療結束後，可機器管路分離。
+                <br />
+            </td>
+        </tr>
+
+        <tr>
+            <th id="th01">優勢</th>
+            <td>
+                1.可攜式－任何地方可執行。
+                <br />
+                2.有彈性－符合您的時間表。
+                <br />
+                3.時間－回醫院次數少。
+                <br />
+                4.操作簡單－1 ~ 2個星期內。
+                <br />
+                5.可輕鬆學習完成技術。
+                <br />
+                6.無扎針－避免針扎痛。
+                <br />
+                7.飲食限制少－膳食更容易。
+                <br />
+            </td>
+            <td>
+                1.可攜式－任何地方可執行。
+                <br />
+                2.方便性－白天時間自由。
+                <br />
+                3.時間－回醫院次數少。
+                <br />
+                4.操作簡單－1 ~ 2個星期內。
+                <br />
+                5.可輕鬆學習完成技術。
+                <br />
+                6.無扎針－避免針扎痛。
+                <br />
+                7.飲食限制少－膳食更容易。
+                <br />
+                8.日常工作－感覺健康，沒有生病。
+                <br />
+            </td>
+        </tr>
+
+        <tr>
+            <th id="th01">藥水</th>
+            <td>
+                1.透析液加溫須藉由電毯或微波爐，須自我注意藥水溫度是否過熱。
+                <br />
+                2.停電時，不影響執行換液，可自我調整換液時間。
+                <br />
+            </td>
+            <td>
+                1.透析液須藉由「全自動腹膜透析機」自動加溫透析液至攝氏 37 度。
+                <br />
+                2.停電時，暫時無法執行換液，須改用「人工式」腹膜透析。
+                <br />
+            </td>
+        </tr>
+
+        <tr>
+            <th id="th01">風險</th>
+            <td>
+                1.換液時操作次數比APD（自動洗）多，增加腹膜感染率，所以無菌操作技術是非常重要。
+                <br />
+                2.腹膜炎以及導管出口處等感染。
+                <br />
+                3.會經由腹膜透析出蛋白質，會流失少量蛋白質，需要高蛋白飲食。
+                <br />
+                4.高濃度葡萄糖透析液，可能增血中三酸甘油脂及體脂。
+                <br />
+            </td>
+            <td>
+                1.換液時操作次數比CAPD（人工洗）少，APD腹膜感染率比CAPD少，但無菌操作技術仍是非常重要。
+                <br />
+                2.腹膜炎以及導管出口處等感染。
+                <br />
+                3.會經由腹膜透析出蛋白質，會流失少量蛋白質，需要高蛋白飲食。
+                <br />
+                4.高濃度葡萄糖透析液，可能增血中三酸甘油脂及體脂。
+                <br />
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+    <div id="boxtext01">步驟二：您選CAPD「人工洗」或APD「自動洗」治療方式，您會在意的因素有什麼？</div>
+    <br />
+
+    ●
+    <span id="c03">腹膜透析有兩種治療方式，您比較適合哪一種方式？</span>
+    <br />
+    您自身經歷感受和醫學客觀數據是一樣重要。接下來請想一想，以下幾個情況，哪一邊對您比較重要？請圈選。
+    <br />
+    採用簡易可靠的行為觀察方式，來評估自我感受，可以1至4分之4項指標，分別予以1至4分之記分。總分 1 = 沒有差別； 2 = 一點點符合； 3 = 中度符合； 4 = 非常符合。
+    <br />
+    <br />
+
+    <table id="table" border=1 align=center>
+        <tr align=center>
+            <td width="460px"></td>
+            <th width="40px">非常符合</th>
+            <td width="40px"></td>
+            <td width="40px"></td>
+            <th width="40px">沒有差別</th>
+            <td width="40px"></td>
+            <td width="40px"></td>
+            <th width="40px">非常符合</th>
+            <td width="460px"></td>
+        </tr>
+
+        <tr align=center>
+            <td>我喜歡白天享受自由的生活，在夜間休息睡眠時，利用機器換液APD「自動洗」，隔天睡醒時再與機器分離即可。</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>我白天利用三餐前後和睡前進行換液，每次換液完成後，可外出活動4 ~ 6小時後，再進行CAPD「人工洗」。</td>
+        </tr>
+
+        <tr align=center>
+            <td>我白天忙碌無法白天操作換液4 ~ 5次，影響我現在白天的活動，我選APD「自動洗」。</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>白天更換藥水4 ~ 5次，有合適的操作換液場所，我都覺得不影響我白天現在的活動。</td>
+        </tr>
+
+        <tr align=center>
+            <td>我了解CAPD「人工洗」，白天活動頻繁，無合適的換液場所，無法換液，我選APD「自動洗」。</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>我了解APD「自動洗」，但我不願意嘗試機器洗，影響睡眠，我選CAPD「人工洗」。</td>
+        </tr>
+
+        <tr align=center>
+            <td>我有疝氣，白天活動要避免腹壓過大，需於夜間平躺換液，再進行APD「自動洗」。</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>夜晚睡眠必須與機器相連，使活動受限制，較不能適應，我選CAPD「人工洗」。</td>
+        </tr>
+
+        <tr align=center>
+            <td>病人不方便往返透析中心，需家人協助，機器操作需於下班後 或睡前協助執行夜間透析治療。</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>對於機器操作有困難者，病人及操作者無法面對機器，我選CAPD「人工洗」。</td>
+        </tr>
+
+        <tr align=center>
+            <th>我選自動洗</th>
+            <td>4</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <th>我選人工洗</th>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+    <div id="boxtext01">步驟三：您是否已清楚了解 CAPD「人工洗」及APD「自動洗」的好處和風險？</div>
+    <br />
+
+    ●
+    <span id="c03">以下幾個小問題可以幫助您自我檢測您對於兩種腹膜透析的了解程度：</span>
+    <br />
+
+    <span id="c03">1.腹膜透析治療分為人工洗和自動洗。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">2.選擇人工洗治療一天需換液3 ~ 5次，每次約20 ~ 30分。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">3.選擇自動洗治療一天只需上機一次，一次約8 ~ 10小時。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">4.接受人工洗或自動洗治療可至國內外旅遊。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">5.接受腹膜透析治療不限磷，需維持高蛋白質（1.2 ~ 1.5 gm/kg）。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">6.人工洗治療需要生活可獨立自理（矯正視力良好，可執行精細動作）或生活無法完全獨立自理有家人或外傭協助。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">7.腹膜透析場所需要無菌室。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">8.統計腹膜透析腹膜炎的感染途徑，最常見是「經導管內感染 transuluminal，30 ~ 40%」，主要來自未注意無菌技術及不當的操作技術所造成。</span>
+    <br />
+    <input type="checkbox" />是（大多數病人可以用正確且適當的換液技術預防腹膜炎發生。）
+    <input type="checkbox" />否
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">9.APD「自動洗」腹膜透析應該是居家透析治療的第一選擇。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否（先CAPD人工洗，有無法克服的因素，才要考慮APD自動洗。）
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+
+    <span id="c03">10.CAPD「人工洗」腹膜透析應該是居家透析治療的第一選擇。</span>
+    <br />
+    <input type="checkbox" />是
+    <input type="checkbox" />否（先APD自動洗，有無法克服的因素，才要考慮CAPD人工洗。）
+    <input type="checkbox" />我不確定
+    <br />
+    <br />
+    <br />
+
+    <div id="boxtext01">步驟四：您準備好做決定了嗎？</div>
+    <br />
+
+    ●
+    <span id="c03">經過前面幾個步驟，您已經花了一些時間了解腹膜透析「人工洗」及「自動洗」之間的差異和自己考量的因素，現在決定想要的治療方式嗎？</span>
+    <br />
+
+    <span id="c03">11.我已經了解有腹膜透析治療有2種方式。</span>
+    <br />
+    <input type="checkbox" />知道
+    <input type="checkbox" />不知道
+    <br />
+    <br />
+
+    <span id="c03">12.我已經了解不同腹膜透析治療方式的優缺點。</span>
+    <br />
+    <input type="checkbox" />知道
+    <input type="checkbox" />不知道
+    <br />
+    <br />
+
+    <span id="c03">13.我已經有足夠的知識可以做決定。</span>
+    <br />
+    <input type="checkbox" />知道
+    <input type="checkbox" />不知道
+    <br />
+    <br />
+
+    <span id="c03">14.我做決定前，有想要在了解腹膜透析治療方式：</span>
+    <br />
+    <input type="checkbox" />我想再更深層理解不同治療方式
+    <input type="checkbox" />我需要再和其他人（如家人、朋友等）討論看看
+    <input type="checkbox" />我想和醫師做更仔細的討論和建議
+    <input type="checkbox" />完全不需要，我已經做好決定
+    <br />
+    <br />
+
+    <span id="c03">15.我有多麼確定自己的抉擇：</span>
+    <br />
+    <input type="checkbox" />完全不確定
+    <input type="checkbox" />不是很確定
+    <input type="checkbox" />完全確定
+    <br />
+    <br />
+
+    <span id="c03">16.我還有問題，想和我的醫師及護人員再次討論清楚。</span>
+    <br />
+    <textarea cols="100" rows="4"></textarea>
+    <br />
+    <br />
+    <span id="c02">完成以上所有內容後，請攜帶著這份結果到門診，與您的醫師及護理師共討論適合您的治療。</span>
+
+    @{
+        string str = TempData["kidneyprintform"].ToString();
+    }
+
+<div style="visibility:hidden">
+    @*<input id="text" type="text" value=" @Url.Action("KidneyForm", "Kidneys", new { id = str }, "http")" />*@
+    <input id="text" type="text" value=" @Url.Action("check_ID", "Kidneys", new { id = str }, "http")" />
+</div>
+
+    <div id="qrcode"></div>
+
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 120,
+            height: 120
+        });
+
+        function makeCode() {
+            var elText = document.getElementById("text");
+
+            if (!elText.value) {
+                alert("Input a text");
+                elText.focus();
+                return;
+            }
+            qrcode.makeCode(elText.value);
+        }
+        makeCode();
+        $("#text").
+            on("blur", function () {
+                makeCode();
+            }).
+            on("keydown", function (e) {
+                if (e.keyCode == 13) {
+                    makeCode();
+                }
+            });
+    </script>
+</body>
+</html>

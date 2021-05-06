@@ -1,0 +1,21 @@
+﻿.beforeQQ::before {
+    content: none !important;
+}
+.nav:before {
+    content: none !important;
+}
+
+.nav:after {
+    content: none !important;
+}
+
+.row:before {
+    content: none !important;
+}
+
+.row:after {
+    content: none !important;
+}
+.homeFont {
+    font-size: 4.5rem !important;
+}
